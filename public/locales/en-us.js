@@ -18,4 +18,5 @@ Em 2016, tive a oportunidade de construir minha primeira aplicação web, para r
 Segui até 2020 desenvolvendo alguns poucos projetos que surgiram, sendo o último uma plataforma de videoaulas para treinamento durante a pandemia.\
 \
 Em janeiro de 2021, entrei na HVEX como Desenvolvedor Full Stack e tive a oportunidade de aprender muitas coisas novas com toda a equipe de desenvolvimento.',
+  homeButton: 'Visualize CV',
 }

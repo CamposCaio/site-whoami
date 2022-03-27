@@ -12,5 +12,9 @@ export const Container = styled.div`
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%) !important;
+
+    & Button {
+      margin-top: 2rem;
+    }
   }
 `

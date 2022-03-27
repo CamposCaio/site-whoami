@@ -45,13 +45,19 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     }
 
     h1 {
-      font-size: 3rem;
       text-align: left;
+      font-size: 3rem;
+      @media (max-width: 620px) {
+        font-size: 2.5rem;
+      }
     }
 
     h2 {
-      font-size: 1.5rem;
       text-align: left;
+      font-size: 1.5rem;
+      @media (max-width: 620px) {
+        font-size: 1.2rem;
+      }
     }
 
     button {
@@ -66,7 +72,11 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       outline: 0 !important;
       border: none !important;
     }
-  `
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  `
   return globalStyle
 }

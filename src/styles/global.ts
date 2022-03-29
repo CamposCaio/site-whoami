@@ -7,6 +7,10 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      white-space: pre-line;
+      letter-spacing: 1px;
+      word-spacing: 4px;
+      line-height: 1.5rem;
     }
 
     html {
@@ -41,7 +45,8 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     strong {
       font-weight: 700;
       font-family: 'Arvo', serif;
-      display: inline-block;
+      display: inline;
+      line-height: normal;
     }
 
     h1 {

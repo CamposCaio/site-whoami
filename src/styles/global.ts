@@ -1,5 +1,5 @@
-import { css } from '@emotion/react'
-import { Theme } from '@mui/material/styles/createTheme'
+import { css } from '@emotion/react';
+import { Theme } from '@mui/material/styles/createTheme';
 
 export const getGlobalStyleTheme = (activeTheme: Theme) => {
   const globalStyle = css`
@@ -8,9 +8,11 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       padding: 0;
       box-sizing: border-box;
       white-space: pre-line;
-      letter-spacing: 1px;
-      word-spacing: 4px;
+      letter-spacing: 0.8px;
       line-height: 1.5rem;
+      scroll-behavior: smooth;
+      word-spacing: 4px;
+      text-align: justify;
     }
 
     html {
@@ -46,7 +48,7 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       font-weight: 700;
       font-family: 'Arvo', serif;
       display: inline;
-      line-height: normal;
+      line-height: 100%;
     }
 
     h1 {
@@ -58,6 +60,14 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     }
 
     h2 {
+      text-align: left;
+      font-size: 2rem;
+      @media (max-width: 620px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    h3 {
       text-align: left;
       font-size: 1.5rem;
       @media (max-width: 620px) {

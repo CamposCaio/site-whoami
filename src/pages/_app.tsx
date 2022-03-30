@@ -1,12 +1,14 @@
-import * as React from 'react'
-import PropTypes from 'prop-types'
-import Head from 'next/head'
-import { ThemeProvider } from '@mui/material/styles'
-import { CacheProvider, Global } from '@emotion/react'
-import createEmotionCache from '../createEmotionCache'
-import { getGlobalStyleTheme } from '../styles/global'
-import { ThemeContext } from '../providers/theme'
-import { darkTheme, lightTheme } from '../theme'
+import Head from 'next/head';
+import PropTypes from 'prop-types';
+import * as React from 'react';
+
+import { CacheProvider, Global } from '@emotion/react';
+import { ThemeProvider } from '@mui/material/styles';
+
+import createEmotionCache from '../createEmotionCache';
+import { ThemeContext } from '../providers/theme';
+import { getGlobalStyleTheme } from '../styles/global';
+import { darkTheme, lightTheme } from '../theme';
 
 const clientSideEmotionCache = createEmotionCache()
 

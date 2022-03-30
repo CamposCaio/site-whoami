@@ -1,18 +1,36 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import * as React from 'react';
 
-import * as React from 'react'
-import { Hero } from '../components/hero'
-import { LocaleContext } from '../providers/locale'
-import pt from '../../public/locales/pt-br'
-import en from '../../public/locales/en-us'
-import { TopNav } from '../components/topNav'
-import { SideBar } from '../components/sideBar'
-import { AboutPart1 } from '../components/aboutPart1'
-import { AboutTitleContainer, Container } from '../styles/pages/home'
-import { AboutPart2 } from '../components/aboutPart2'
-import { ThemeContext } from '../providers/theme'
+import en from '../../public/locales/en-us';
+import pt from '../../public/locales/pt-br';
+import { SectionAbout1 } from '../components/SectionAbout1';
+import { SectionAbout2 } from '../components/SectionAbout2';
+import { SectionHome } from '../components/SectionHome';
+import { SettingsTopBar } from '../components/SettingsTopBar';
+import { SideNavbar } from '../components/SideNavbar';
+import { LocaleContext } from '../providers/locale';
+import { ThemeContext } from '../providers/theme';
+import { ContainerSections } from '../styles/pages/home';
+
+const hoverScroll = () => {
+  const pageHeight = document.body.clientHeight
+  const scrollPosition = document.getElementById('container-sections').scrollTop
+  const section = Math.round(scrollPosition / pageHeight)
+  document
+    .getElementsByClassName('link-active')[0]
+    ?.classList.remove('link-active')
+
+  switch (section) {
+    case 0: //Home
+      document.getElementById('side-navbar__home').classList.add('link-active')
+      break
+    case 1: //About
+    case 2:
+      document.getElementById('side-navbar__about').classList.add('link-active')
+  }
+}
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -31,21 +49,21 @@ const Home: NextPage = () => {
       <Head>
         <title>Caio Campos</title>
       </Head>
-      <TopNav />
-      <SideBar />
-      <Container>
-        <AboutTitleContainer>
-          <h2
-            style={{ backgroundColor: activeTheme.palette.background.default }}
-          >
-            {t.aboutTitle}
-          </h2>
-        </AboutTitleContainer>
-        <Hero />
-        <AboutPart1 />
-        <AboutPart2 />
-        <AboutPart2 />
-      </Container>
+      <SettingsTopBar />
+      <ContainerSections
+        onScroll={hoverScroll}
+        id="container-sections"
+        color={activeTheme.palette.background.default}
+      >
+        <SideNavbar />
+        <div className="about__title-sticky-limiter">
+          <h2>{t.aboutTitle}</h2>
+        </div>
+        <SectionHome />
+        <SectionAbout1 />
+        <SectionAbout2 />
+        <SectionAbout2 />
+      </ContainerSections>
     </LocaleContext.Provider>
   )
 }

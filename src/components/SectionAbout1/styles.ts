@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 export const Container = styled.section`
   height: 100vh;
@@ -8,7 +8,7 @@ export const Container = styled.section`
 `
 
 export const Content = styled.div`
-  max-width: 618px;
-  padding: 0 1rem;
-  margin-top: 18vh;
+  max-width: 512px;
+  padding: 0 2rem;
+  margin-top: 20vh;
 `

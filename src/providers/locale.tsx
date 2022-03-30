@@ -1,5 +1,6 @@
-import { createContext, Dispatch, SetStateAction } from 'react'
-import pt from '../../public/locales/pt-br'
+import { createContext, Dispatch, SetStateAction } from 'react';
+
+import pt from '../../public/locales/pt-br';
 
 type PropsLocaleContext = {
   t: typeof pt

@@ -1,6 +1,8 @@
-import { Theme } from '@mui/material'
-import { createContext } from 'react'
-import { lightTheme } from '../theme'
+import { createContext } from 'react';
+
+import { Theme } from '@mui/material';
+
+import { lightTheme } from '../theme';
 
 type PropsThemeContext = {
   activeTheme: Theme

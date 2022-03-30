@@ -1,17 +1,19 @@
-import { Button } from '@mui/material'
-import { useContext } from 'react'
-import { LocaleContext } from '../../providers/locale'
-import { Container } from './styles'
+import { useContext } from 'react';
 
-export function Hero() {
+import { Button } from '@mui/material';
+
+import { LocaleContext } from '../../providers/locale';
+import { Container, Content } from './styles';
+
+export function SectionHome() {
   const { t } = useContext(LocaleContext)
 
   return (
-    <Container>
-      <div className="hero-content">
-        <h2>{t.homeTitleL1}</h2>
+    <Container id="home">
+      <Content>
+        <h3>{t.homeTitleL1}</h3>
         <br />
-        <h2>{t.homeTitleL2}</h2>
+        <h3>{t.homeTitleL2}</h3>
         <br />
         <h1>{t.homeTitleL3}</h1>
         <br />
@@ -25,7 +27,7 @@ export function Hero() {
             {t.homeButton}
           </a>
         </Button>
-      </div>
+      </Content>
     </Container>
   )
 }

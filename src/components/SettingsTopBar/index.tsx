@@ -17,9 +17,9 @@ export function SettingsTopBar() {
     <Container>
       <Button onClick={toggleTheme} className="btnToggleTheme">
         {activeTheme === lightTheme ? (
-          <DarkModeOutlinedIcon fontSize={'small'} />
+          <DarkModeOutlinedIcon fontSize="inherit" color="secondary" />
         ) : (
-          <LightModeOutlinedIcon fontSize={'small'} />
+          <LightModeOutlinedIcon fontSize="inherit" color="secondary" />
         )}
       </Button>
       <Select
@@ -27,14 +27,9 @@ export function SettingsTopBar() {
         onChange={(e) => setLocale(e.target.value)}
         displayEmpty
         inputProps={{ 'aria-label': 'Without label' }}
-        sx={{ fontSize: '93.5%' }}
       >
-        <MenuItem value="en-us" sx={{ fontSize: '93.5%' }}>
-          En US
-        </MenuItem>
-        <MenuItem value="pt-br" sx={{ fontSize: '93.5%' }}>
-          Pt BR
-        </MenuItem>
+        <MenuItem value="en-us">EN US</MenuItem>
+        <MenuItem value="pt-br">PT BR</MenuItem>
       </Select>
     </Container>
   )

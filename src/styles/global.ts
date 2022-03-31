@@ -41,16 +41,6 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       color: ${activeTheme.palette.text.primary};
     }
 
-    .MuiButton-root {
-      border-radius: 2px;
-      box-shadow: none;
-      height: 36px;
-    }
-
-    .MuiButton-root:hover {
-      box-shadow: none;
-    }
-
     h1,
     h2,
     h3,

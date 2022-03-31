@@ -1,23 +1,57 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, Theme } from '@mui/material/styles';
+
+const components: Theme['components'] = {
+  MuiButton: {
+    variants: [
+      {
+        props: { variant: 'contained' },
+        style: [
+          {
+            borderRadius: '2px',
+            boxShadow: 'none',
+            height: '36px',
+          },
+        ],
+      },
+      {
+        props: { variant: 'text' },
+        style: [
+          {
+            minWidth: '2rem',
+          },
+        ],
+      },
+    ],
+  },
+  MuiSelect: {
+    variants: [
+      {
+        props: { variant: 'outlined' },
+        style: [
+          {
+            fontSize: '81.25%',
+          },
+        ],
+      },
+    ],
+  },
+  MuiMenuItem: {
+    variants: [
+      {
+        props: {},
+        style: [
+          {
+            fontSize: '81.25%',
+          },
+        ],
+      },
+    ],
+  },
+}
 
 // Create a theme instance.
 export const lightTheme = createTheme({
-  components: {
-    MuiButton: {
-      variants: [
-        {
-          props: { variant: 'contained' },
-          style: [
-            {
-              borderRadius: '2px',
-              boxShadow: 'none',
-              height: '36px',
-            },
-          ],
-        },
-      ],
-    },
-  },
+  components,
   palette: {
     mode: 'light',
     primary: {
@@ -30,22 +64,7 @@ export const lightTheme = createTheme({
 })
 
 export const darkTheme = createTheme({
-  components: {
-    MuiButton: {
-      variants: [
-        {
-          props: { variant: 'contained' },
-          style: [
-            {
-              borderRadius: '2px',
-              boxShadow: 'none',
-              height: '36px',
-            },
-          ],
-        },
-      ],
-    },
-  },
+  components,
   palette: {
     mode: 'dark',
     primary: {

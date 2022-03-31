@@ -3,13 +3,16 @@ import { Theme } from '@mui/material/styles/createTheme';
 
 export const getGlobalStyleTheme = (activeTheme: Theme) => {
   const globalStyle = css`
+    :root {
+      --primary-color: #3f51b3;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       white-space: pre-line;
       letter-spacing: 0.8px;
-      line-height: 1.5rem;
       scroll-behavior: smooth;
       word-spacing: 4px;
       text-align: justify;
@@ -38,6 +41,16 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       color: ${activeTheme.palette.text.primary};
     }
 
+    .MuiButton-root {
+      border-radius: 2px;
+      box-shadow: none;
+      height: 36px;
+    }
+
+    .MuiButton-root:hover {
+      box-shadow: none;
+    }
+
     h1,
     h2,
     h3,
@@ -45,33 +58,30 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     h5,
     h6,
     strong {
-      font-weight: 700;
-      font-family: 'Arvo', serif;
+      font-weight: 800;
+      font-family: 'Kanit', sans-serif;
       display: inline;
-      line-height: 100%;
+      text-align: left;
+      letter-spacing: 0px;
     }
 
     h1 {
-      text-align: left;
-      font-size: 3rem;
-      @media (max-width: 620px) {
-        font-size: 2.5rem;
-      }
+      text-transform: uppercase;
+      font-size: 56px;
+      line-height: 75%;
     }
 
     h2 {
-      text-align: left;
+      text-transform: uppercase;
       font-size: 2rem;
-      @media (max-width: 620px) {
-        font-size: 1.5rem;
-      }
     }
 
     h3 {
-      text-align: left;
-      font-size: 1.5rem;
-      @media (max-width: 620px) {
-        font-size: 1.2rem;
+      font-weight: 300;
+      font-size: 1.25rem;
+      line-height: 120%;
+      @media (max-width: 516px) {
+        font-size: 1rem;
       }
     }
 

@@ -1,33 +1,81 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
+import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import { Button } from '@mui/material';
 
 import { LocaleContext } from '../../providers/locale';
-import { Container, Content } from './styles';
+import { Container, Section } from './styles';
+
+function getElementsByClassName(className: string) {
+  return Array.from(
+    document.getElementsByClassName(className) as HTMLCollectionOf<HTMLElement>
+  )
+}
+
+function changeElementsDisplay(
+  elements: HTMLElement[],
+  displayType: 'inline-block' | 'none'
+) {
+  elements.forEach((element) => {
+    element.style.display = displayType
+  })
+}
 
 export function SectionHome() {
   const { t } = useContext(LocaleContext)
 
+  function handleResize() {
+    const viewportWidth = window.innerWidth
+    const elementsTitleVariant = getElementsByClassName('js-title-variant')
+    const elementsTitle = getElementsByClassName('js-title')
+
+    if (viewportWidth < 516) {
+      changeElementsDisplay(elementsTitleVariant, 'inline-block')
+      changeElementsDisplay(elementsTitle, 'none')
+    } else {
+      changeElementsDisplay(elementsTitleVariant, 'none')
+      changeElementsDisplay(elementsTitle, 'inline-block')
+    }
+  }
+
+  useEffect(() => {
+    handleResize()
+    window.addEventListener('resize', handleResize)
+  }, [])
+
   return (
-    <Container id="home">
-      <Content>
-        <h3>{t.homeTitleL1}</h3>
+    <Section id="home">
+      <Container>
+        <h3>{t.homeTitleSmall[0]}</h3>
         <br />
-        <h3>{t.homeTitleL2}</h3>
+        <h3>{t.homeTitleSmall[1]}</h3>
         <br />
-        <h1>{t.homeTitleL3}</h1>
+        <h1 className="js-title">{t.homeTitleLarge.normal[0]}</h1>
+        <h1 className="js-title-variant">{t.homeTitleLarge.variant[0]}</h1>
         <br />
-        <h1>{t.homeTitleL4}</h1>
-        <br />
-        <Button variant="outlined">
-          <a
+        <h1 className="home__title--blue js-title">
+          {t.homeTitleLarge.normal[1]}
+        </h1>
+        <h1 className="home__title--blue js-title-variant">
+          {t.homeTitleLarge.variant[1]}
+        </h1>
+        <div className="home__div-buttons">
+          <Button variant="contained" color="secondary">
+            <FileDownloadOutlinedIcon sx={{ mr: '0.5rem' }} />
+            {t.homeButtonDownloadCV}
+          </Button>
+          <Button
+            variant="contained"
             href="https://drive.google.com/file/d/1p6rGQDahJ8CTOpQJqX5APrSnQfDnKXUF/view?usp=sharing"
             target="_blank"
           >
-            {t.homeButton}
-          </a>
-        </Button>
-      </Content>
-    </Container>
+            <OpenInNewOutlinedIcon sx={{ mr: '0.5rem' }} />
+
+            {t.homeButtonOpenCV}
+          </Button>
+        </div>
+      </Container>
+    </Section>
   )
 }

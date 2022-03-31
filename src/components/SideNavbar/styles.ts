@@ -34,7 +34,7 @@ export const Container = styled.div`
 
       a {
         filter: opacity(50%);
-        font-weight: 500;
+        font-weight: 400;
         padding: 0.75rem 1.5rem;
         font-size: 81.25%;
         text-transform: uppercase;

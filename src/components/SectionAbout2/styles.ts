@@ -8,7 +8,7 @@ export const Container = styled.section`
 `
 
 export const Content = styled.div`
-  max-width: 512px;
+  max-width: 516px;
   padding: 0 2rem;
   margin-top: 20vh;
 `

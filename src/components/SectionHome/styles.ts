@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.section`
+export const Section = styled.section`
   height: 100vh;
   scroll-snap-align: start;
   display: flex;
@@ -8,12 +8,22 @@ export const Container = styled.section`
   align-items: center;
 `
 
-export const Content = styled.div`
+export const Container = styled.div`
   display: inline-block;
   padding: 0 2rem;
-  transform: translateY(clamp(-20%, -50vh + 225px, 0%));
 
-  & Button {
-    margin-top: 2rem;
+  .home__title--blue {
+    color: var(--primary-color);
+  }
+
+  .home__div-buttons {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+
+    @media (min-width: 516px) {
+      align-items: flex-start;
+    }
   }
 `

@@ -1,14 +1,16 @@
 export default {
   sideNavbarHome: 'Home',
   sideNavbarAbout: 'About me',
-  sideNavbarValues: 'My Values',
   sideNavbarTecnologies: 'Tecnologies',
+  sideNavbarPortfolio: 'Portfolio',
   sideNavbarContact: 'Contact',
-  homeTitleL1: 'Hello!',
-  homeTitleL2: "My name is Caio Campos and I'm",
-  homeTitleL3: 'Full Stack',
-  homeTitleL4: 'Web Developer.',
-  homeButtonVisualizeCV: 'Visualize CV',
+  homeTitleSmall: ['Hello!', "My name is Caio Campos and I'm a"],
+  homeTitleLarge: {
+    normal: ['Full Stack', 'Web Developer.'],
+    variant: ['Full\nStack', 'Web Dev\neloper.'],
+  },
+  homeButtonOpenCV: 'Open CV',
+  homeButtonDownloadCV: 'Download CV',
   aboutTitle: 'About me',
   aboutContent1:
     "Hello! My name is Caio, and I'm a Full Stack Web Developer and DevOps enthusiast.\n\n\

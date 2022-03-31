@@ -11,7 +11,7 @@ export const ContainerSections = styled.div`
     top: 100vh;
     height: calc(114vh + 2rem);
     width: 100%;
-    max-width: 512px;
+    max-width: 516px;
     left: 50%;
     transform: translateX(-50%);
     padding: 0 2rem;

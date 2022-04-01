@@ -35,6 +35,30 @@ const components: Theme['components'] = {
       },
     ],
   },
+  MuiPaper: {
+    variants: [
+      {
+        props: {},
+        style: [
+          {
+            borderRadius: '2px',
+          },
+        ],
+      },
+    ],
+  },
+  MuiList: {
+    variants: [
+      {
+        props: {},
+        style: [
+          {
+            padding: 0,
+          },
+        ],
+      },
+    ],
+  },
   MuiMenuItem: {
     variants: [
       {
@@ -49,18 +73,50 @@ const components: Theme['components'] = {
   },
 }
 
-// Create a theme instance.
+const shadows: Theme['shadows'] = [
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+  'none',
+]
+
 export const lightTheme = createTheme({
   components,
   palette: {
     mode: 'light',
     primary: {
-      main: '#3F51B5',
+      main: '#247BA0',
     },
     secondary: {
-      main: 'rgba(0, 0, 0, 0.87)',
+      main: '#13293D',
+    },
+    text: {
+      primary: 'rgba(0, 0, 0, 0.7)',
+      secondary: 'rgba(0, 0, 0, 0.5)',
     },
   },
+  shadows,
 })
 
 export const darkTheme = createTheme({
@@ -68,10 +124,15 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#3F51B5',
+      main: '#B68D40',
     },
     secondary: {
-      main: '#FFFFFF',
+      main: '#F4EBD0',
+    },
+    background: {
+      paper: '#181818',
+      default: '#181818',
     },
   },
+  shadows,
 })

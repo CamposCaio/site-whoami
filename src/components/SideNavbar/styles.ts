@@ -4,25 +4,24 @@ export const Container = styled.div`
   position: fixed;
   top: 50%;
   transform: translateY(-50%) !important;
-  height: 30vh;
+  height: 35vh;
   right: 2rem;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   a {
     font-weight: 400;
-    font-size: 75%;
+    font-size: 81.25%;
     text-transform: uppercase;
     text-align: right;
-
-    filter: opacity(100%);
     transition: filter 0.2s;
   }
 
   a:hover,
   .link-active {
-    filter: opacity(50%);
+    filter: opacity(40%);
   }
 
   @media (max-width: 960px) {

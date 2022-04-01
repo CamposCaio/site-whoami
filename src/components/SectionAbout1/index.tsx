@@ -8,9 +8,7 @@ export function SectionAbout1() {
 
   return (
     <Container id="about">
-      <Content>
-        <div>{t.aboutContent1}</div>
-      </Content>
+      <Content>{t.aboutContent1}</Content>
     </Container>
   )
 }

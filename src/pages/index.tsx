@@ -15,7 +15,7 @@ import { ThemeContext } from '../providers/theme';
 import { ContainerSections } from '../styles/pages/home';
 
 const hoverScroll = () => {
-  const pageHeight = document.body.clientHeight
+  const pageHeight = window.innerHeight
   const scrollPosition = document.getElementById('container-sections').scrollTop
   const section = Math.round(scrollPosition / pageHeight)
   document
@@ -50,16 +50,16 @@ const Home: NextPage = () => {
         <title>Caio Campos</title>
       </Head>
       <SettingsTopBar />
+      <SideNavbar />
       <ContainerSections
         onScroll={hoverScroll}
         id="container-sections"
         color={activeTheme.palette.background.default}
       >
-        <SideNavbar />
+        <SectionHome />
         <div className="about__title-sticky-limiter">
           <h2>{t.aboutTitle}</h2>
         </div>
-        <SectionHome />
         <SectionAbout1 />
         <SectionAbout2 />
         <SectionAbout2 />

@@ -7,7 +7,7 @@ export function SideNavbar() {
   const { t } = useContext(LocaleContext)
 
   return (
-    <Container>
+    <Container className="global--color-secondary">
       <a href="#home" id="side-navbar__home" className="link-active">
         {t.sideNavbarHome}
       </a>

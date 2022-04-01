@@ -54,10 +54,10 @@ export function SectionHome() {
         <h1 className="js-title">{t.homeTitleLarge.normal[0]}</h1>
         <h1 className="js-title-variant">{t.homeTitleLarge.variant[0]}</h1>
         <br />
-        <h1 className="home__title--blue js-title">
+        <h1 className="global--color-primary js-title">
           {t.homeTitleLarge.normal[1]}
         </h1>
-        <h1 className="home__title--blue js-title-variant">
+        <h1 className="global--color-primary js-title-variant">
           {t.homeTitleLarge.variant[1]}
         </h1>
         <div className="home__div-buttons">

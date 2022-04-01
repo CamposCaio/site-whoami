@@ -3,17 +3,14 @@ import { Theme } from '@mui/material/styles/createTheme';
 
 export const getGlobalStyleTheme = (activeTheme: Theme) => {
   const globalStyle = css`
-    :root {
-      --primary-color: #3f51b3;
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       white-space: pre-line;
-      letter-spacing: 0.8px;
+      letter-spacing: 1px;
       scroll-behavior: smooth;
+      line-height: 1.5rem;
       word-spacing: 4px;
       text-align: justify;
     }
@@ -50,9 +47,15 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     strong {
       font-weight: 800;
       font-family: 'Kanit', sans-serif;
+      color: ${activeTheme.palette.secondary.main};
       display: inline;
       text-align: left;
       letter-spacing: 0px;
+    }
+
+    b {
+      color: ${activeTheme.palette.primary.main};
+      font-weight: 500;
     }
 
     h1 {
@@ -91,6 +94,14 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    .global--color-primary {
+      color: ${activeTheme.palette.primary.main};
+    }
+
+    .global--color-secondary {
+      color: ${activeTheme.palette.secondary.main};
     }
   `
   return globalStyle

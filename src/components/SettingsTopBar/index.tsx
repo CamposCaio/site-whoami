@@ -17,9 +17,9 @@ export function SettingsTopBar() {
     <Container>
       <Button onClick={toggleTheme} className="btnToggleTheme">
         {activeTheme === lightTheme ? (
-          <DarkModeOutlinedIcon fontSize="inherit" color="secondary" />
+          <DarkModeOutlinedIcon fontSize="small" color="secondary" />
         ) : (
-          <LightModeOutlinedIcon fontSize="inherit" color="secondary" />
+          <LightModeOutlinedIcon fontSize="small" color="secondary" />
         )}
       </Button>
       <Select

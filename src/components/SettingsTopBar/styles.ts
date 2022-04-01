@@ -14,6 +14,5 @@ export const Container = styled.div`
   .btnToggleTheme {
     height: 2rem;
     margin-right: 0.5rem;
-    font-size: 106.25%;
   }
 `

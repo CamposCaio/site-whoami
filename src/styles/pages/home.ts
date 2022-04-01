@@ -9,7 +9,7 @@ export const ContainerSections = styled.div`
   .about__title-sticky-limiter {
     position: absolute;
     top: 100vh;
-    height: calc(114vh + 2rem);
+    height: calc(140vh + 1rem);
     width: 100%;
     max-width: 516px;
     left: 50%;
@@ -19,7 +19,7 @@ export const ContainerSections = styled.div`
     h2 {
       display: inline-block;
       width: 100%;
-      padding: 12vh 0 2vh 0;
+      padding: calc(40vh - 2rem) 0 2vh 0;
       line-height: 2rem;
       position: -webkit-sticky; /* Safari */
       position: sticky;

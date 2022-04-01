@@ -160,6 +160,7 @@ export const darkTheme = createTheme({
     },
     secondary: {
       main: '#F4EBD0',
+      contrastText: 'rgba(0,0,0,0.87)',
     },
     background: {
       paper: '#181818',

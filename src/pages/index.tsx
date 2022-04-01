@@ -7,7 +7,9 @@ import en from '../../public/locales/en-us';
 import pt from '../../public/locales/pt-br';
 import { SectionAbout1 } from '../components/SectionAbout1';
 import { SectionAbout2 } from '../components/SectionAbout2';
+import { SectionContact } from '../components/SectionContact';
 import { SectionHome } from '../components/SectionHome';
+import { SectionPortfolio } from '../components/SectionPortfolio';
 import { SectionTecnologies } from '../components/SectionTecnologies';
 import { SideNavbar } from '../components/SideNavbar';
 import { TopBar } from '../components/TopBar';
@@ -79,6 +81,8 @@ const Home: NextPage = () => {
         <SectionAbout1 />
         <SectionAbout2 />
         <SectionTecnologies />
+        <SectionPortfolio />
+        <SectionContact />
       </ContainerSections>
     </LocaleContext.Provider>
   )

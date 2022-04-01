@@ -28,4 +28,9 @@ export default {
   ],
   tecnologiesTitle: 'Tecnologias',
   tecnologiesContent: 'Principais tecnologias que estou utilizando:',
+  portfolioTitle: 'Portfólio',
+  portfolioContent: 'Página em manutenção. Por favor, volte mais tarde :)',
+  contactTitle: 'Contato',
+  contactContent: 'Vamos trabalhar juntos? Envie-me um:',
+  contactFindMe: 'Encontre-me em:',
 }

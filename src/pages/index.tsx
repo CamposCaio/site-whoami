@@ -8,6 +8,7 @@ import pt from '../../public/locales/pt-br';
 import { SectionAbout1 } from '../components/SectionAbout1';
 import { SectionAbout2 } from '../components/SectionAbout2';
 import { SectionHome } from '../components/SectionHome';
+import { SectionTecnologies } from '../components/SectionTecnologies';
 import { SideNavbar } from '../components/SideNavbar';
 import { TopBar } from '../components/TopBar';
 import { LocaleContext } from '../providers/locale';
@@ -29,6 +30,21 @@ const hoverScroll = () => {
     case 1: //About
     case 2:
       document.getElementById('side-navbar__about').classList.add('link-active')
+      break
+    case 3: //Tecnologies
+      document
+        .getElementById('side-navbar__tecnologies')
+        .classList.add('link-active')
+      break
+    case 4: //Portfolio
+      document
+        .getElementById('side-navbar__portfolio')
+        .classList.add('link-active')
+      break
+    case 5: //Contact
+      document
+        .getElementById('side-navbar__contact')
+        .classList.add('link-active')
   }
 }
 
@@ -62,7 +78,7 @@ const Home: NextPage = () => {
         </div>
         <SectionAbout1 />
         <SectionAbout2 />
-        <SectionAbout2 />
+        <SectionTecnologies />
       </ContainerSections>
     </LocaleContext.Provider>
   )

@@ -26,4 +26,6 @@ export default {
     <b key="2">HVEX</b>,
     '.',
   ],
+  tecnologiesTitle: 'Tecnologias',
+  tecnologiesContent: 'Principais tecnologias que estou utilizando:',
 }

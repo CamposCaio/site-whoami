@@ -14,9 +14,15 @@ export function SideNavbar() {
       <a href="#about" id="side-navbar__about">
         {t.sideNavbarAbout}
       </a>
-      <a>{t.sideNavbarTecnologies}</a>
-      <a>{t.sideNavbarPortfolio}</a>
-      <a>{t.sideNavbarContact}</a>
+      <a href="#tecnologies" id="side-navbar__tecnologies">
+        {t.sideNavbarTecnologies}
+      </a>
+      <a href="#portfolio" id="side-navbar__portfolio">
+        {t.sideNavbarPortfolio}
+      </a>
+      <a href="#contact" id="side-navbar__contact">
+        {t.sideNavbarContact}
+      </a>
     </Container>
   )
 }

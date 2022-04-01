@@ -5,10 +5,10 @@ export const Container = styled.section`
   scroll-snap-align: start;
   display: flex;
   justify-content: center;
-  align-items: center;
 `
 
 export const Content = styled.div`
+  margin-top: calc(30vh + 3rem);
   max-width: 516px;
   padding: 0 2rem;
 `

@@ -1,6 +1,6 @@
 import { createTheme, Theme } from '@mui/material/styles';
 
-const components: Theme['components'] = {
+const baseComponents: Theme['components'] = {
   MuiButton: {
     variants: [
       {
@@ -101,8 +101,40 @@ const shadows: Theme['shadows'] = [
   'none',
 ]
 
+const lightComponents: Theme['components'] = {
+  ...baseComponents,
+  MuiOutlinedInput: {
+    variants: [
+      {
+        props: {},
+        style: [
+          {
+            color: '#13293D',
+          },
+        ],
+      },
+    ],
+  },
+}
+
+const darkComponents: Theme['components'] = {
+  ...baseComponents,
+  MuiOutlinedInput: {
+    variants: [
+      {
+        props: {},
+        style: [
+          {
+            color: '#F4EBD0',
+          },
+        ],
+      },
+    ],
+  },
+}
+
 export const lightTheme = createTheme({
-  components,
+  components: lightComponents,
   palette: {
     mode: 'light',
     primary: {
@@ -120,7 +152,7 @@ export const lightTheme = createTheme({
 })
 
 export const darkTheme = createTheme({
-  components,
+  components: darkComponents,
   palette: {
     mode: 'dark',
     primary: {

@@ -8,8 +8,8 @@ import pt from '../../public/locales/pt-br';
 import { SectionAbout1 } from '../components/SectionAbout1';
 import { SectionAbout2 } from '../components/SectionAbout2';
 import { SectionHome } from '../components/SectionHome';
-import { SettingsTopBar } from '../components/SettingsTopBar';
 import { SideNavbar } from '../components/SideNavbar';
+import { TopBar } from '../components/TopBar';
 import { LocaleContext } from '../providers/locale';
 import { ThemeContext } from '../providers/theme';
 import { ContainerSections } from '../styles/pages/home';
@@ -49,7 +49,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Caio Campos</title>
       </Head>
-      <SettingsTopBar />
+      <TopBar />
       <SideNavbar />
       <ContainerSections
         onScroll={hoverScroll}

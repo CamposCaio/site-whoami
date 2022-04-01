@@ -10,9 +10,4 @@ export const Container = styled.div`
   @media (max-width: 1080px) {
     right: 0;
   }
-
-  .btnToggleTheme {
-    height: 2rem;
-    margin-right: 0.5rem;
-  }
 `

@@ -14,7 +14,6 @@ import { SectionTecnologies } from '../components/SectionTecnologies';
 import { SideNavbar } from '../components/SideNavbar';
 import { TopBar } from '../components/TopBar';
 import { LocaleContext } from '../providers/locale';
-import { ThemeContext } from '../providers/theme';
 import { ContainerSections } from '../styles/pages/home';
 
 const hoverScroll = () => {
@@ -54,7 +53,6 @@ const Home: NextPage = () => {
   const router = useRouter()
   const [locale, setLocale] = React.useState(router.locale)
   const [t, setT] = React.useState(router.locale === 'pt-br' ? pt : en)
-  const { activeTheme } = React.useContext(ThemeContext)
 
   React.useEffect(() => {
     locale === 'pt-br' ? setT(pt) : setT(en)
@@ -69,11 +67,7 @@ const Home: NextPage = () => {
       </Head>
       <TopBar />
       <SideNavbar />
-      <ContainerSections
-        onScroll={hoverScroll}
-        id="container-sections"
-        color={activeTheme.palette.background.default}
-      >
+      <ContainerSections onScroll={hoverScroll} id="container-sections">
         <SectionHome />
         <div className="about__title-sticky-limiter">
           <h2>{t.aboutTitle}</h2>

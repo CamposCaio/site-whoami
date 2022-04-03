@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.canvas`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;

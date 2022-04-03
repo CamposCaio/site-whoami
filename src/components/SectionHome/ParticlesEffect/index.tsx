@@ -13,6 +13,8 @@ let hexColor: string
 let rgbColor: string //"r,g,b"
 let mousePosition = [null, null]
 let ctx: CanvasRenderingContext2D
+let intervalCreateParticle: NodeJS.Timer
+let isAnimationActive = false
 let particles = new Array<Particle>()
 
 function createParticle() {
@@ -89,7 +91,11 @@ export function ParticlesEffect() {
       mousePosition = [event.x, event.y]
     })
 
-    setInterval(createParticle, 1000 / PARTICLES_PER_SECOND)
+    intervalCreateParticle = setInterval(
+      createParticle,
+      1000 / PARTICLES_PER_SECOND
+    )
+    isAnimationActive = true
 
     window.addEventListener('resize', function () {
       canvas.height = window.innerHeight
@@ -100,6 +106,27 @@ export function ParticlesEffect() {
       mousePosition = [undefined, undefined]
     })
 
+    document
+      .getElementById('container-sections')
+      .addEventListener('scroll', function () {
+        console.log('scroll!')
+
+        const scrollPosition =
+          document.getElementById('container-sections').scrollTop
+        if (scrollPosition == 0 && !isAnimationActive) {
+          intervalCreateParticle = setInterval(
+            createParticle,
+            1000 / PARTICLES_PER_SECOND
+          )
+          isAnimationActive = true
+        } else if (scrollPosition != 0 && isAnimationActive) {
+          clearInterval(intervalCreateParticle)
+          console.log('ok')
+
+          isAnimationActive = false
+        }
+      })
+
     animate()
   }, [])
 
@@ -109,6 +136,8 @@ export function ParticlesEffect() {
       hexColor.substring(3, 5),
       16
     )},${parseInt(hexColor.substring(5, 7), 16)}`
+
+    particles.forEach((particle) => (particle.particleColor = hexColor))
   }, [activeTheme])
 
   return <Container id="home__canvas" />

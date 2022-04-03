@@ -20,14 +20,9 @@ export const ContainerSections = styled.div`
       display: inline-block;
       width: 100%;
       padding: 30vh 0 1rem 0;
-      /* line-height: 2rem; */
       position: -webkit-sticky; /* Safari */
       position: sticky;
       top: 0;
-      background-image: linear-gradient(
-        ${(props) => props.color} 85%,
-        rgba(0, 0, 0, 0)
-      );
     }
   }
 `

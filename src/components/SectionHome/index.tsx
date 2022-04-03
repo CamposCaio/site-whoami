@@ -50,9 +50,9 @@ export function SectionHome() {
       <Container>
         <ParticlesEffect />
 
-        <h3>{t.homeTitleSmall[0]}</h3>
+        <h4>{t.homeTitleSmall[0]}</h4>
         <br />
-        <h3>{t.homeTitleSmall[1]}</h3>
+        <h4>{t.homeTitleSmall[1]}</h4>
         <br />
         <h1 className="js-title">{t.homeTitleLarge.normal[0]}</h1>
         <h1 className="js-title-variant">{t.homeTitleLarge.variant[0]}</h1>

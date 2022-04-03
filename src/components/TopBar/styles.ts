@@ -7,6 +7,11 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
+  fieldset {
+    outline: 0 !important;
+    border: none !important;
+  }
+
   @media (max-width: 1080px) {
     right: 0;
   }

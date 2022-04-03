@@ -8,6 +8,7 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       --secondary: ${activeTheme.palette.secondary.main};
       --background: ${activeTheme.palette.background.default};
       --text: ${activeTheme.palette.text.primary};
+      --text-secondary: ${activeTheme.palette.text.secondary};
     }
 
     * {
@@ -68,18 +69,33 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
 
     h2 {
       text-transform: uppercase;
-      font-size: 2rem;
+      font-size: 2.25rem;
       line-height: 2rem;
       color: var(--primary);
     }
 
     h3 {
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      line-height: 1.25rem;
+      font-weight: 400;
+      color: var(--primary);
+    }
+
+    h4 {
       font-weight: 400;
       font-size: 1.25rem;
       line-height: 120%;
       @media (max-width: 516px) {
         font-size: 1rem;
       }
+    }
+
+    h6 {
+      font-size: 1rem;
+      line-height: 1rem;
+      font-weight: 400;
+      color: var(--text-secondary);
     }
 
     button {
@@ -90,14 +106,13 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       cursor: not-allowed;
     }
 
-    fieldset {
-      outline: 0 !important;
-      border: none !important;
-    }
-
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    p {
+      padding-top: 1rem;
     }
   `
   return globalStyle

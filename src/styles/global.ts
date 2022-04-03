@@ -3,15 +3,22 @@ import { Theme } from '@mui/material/styles/createTheme';
 
 export const getGlobalStyleTheme = (activeTheme: Theme) => {
   const globalStyle = css`
+    :root {
+      --primary: ${activeTheme.palette.primary.main};
+      --secondary: ${activeTheme.palette.secondary.main};
+      --background: ${activeTheme.palette.background.default};
+      --text: ${activeTheme.palette.text.primary};
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       white-space: pre-line;
-      letter-spacing: 1px;
+      letter-spacing: 0.75px;
       scroll-behavior: smooth;
-      line-height: 1.5rem;
-      word-spacing: 4px;
+      line-height: 1.25rem;
+      word-spacing: 3px;
       text-align: justify;
     }
 
@@ -26,7 +33,7 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
 
     body {
       -webkit-font-smoothing: antialiased;
-      background-color: ${activeTheme.palette.background.default};
+      background-color: var(--background);
     }
 
     body,
@@ -35,7 +42,7 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     button {
       font-family: Roboto;
       font-weight: 400;
-      color: ${activeTheme.palette.text.primary};
+      color: var(--text);
     }
 
     h1,
@@ -45,32 +52,29 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     h5,
     h6,
     strong {
-      font-weight: 800;
-      font-family: 'Kanit', sans-serif;
-      color: ${activeTheme.palette.secondary.main};
+      font-weight: 700;
+      font-family: 'Lato', sans-serif;
       display: inline;
       text-align: left;
       letter-spacing: 0px;
     }
 
-    b {
-      color: ${activeTheme.palette.primary.main};
-      font-weight: 500;
-    }
-
     h1 {
       text-transform: uppercase;
-      font-size: 56px;
-      line-height: 75%;
+      font-size: 3rem;
+      line-height: 100%;
+      color: var(--primary);
     }
 
     h2 {
       text-transform: uppercase;
       font-size: 2rem;
+      line-height: 2rem;
+      color: var(--primary);
     }
 
     h3 {
-      font-weight: 300;
+      font-weight: 400;
       font-size: 1.25rem;
       line-height: 120%;
       @media (max-width: 516px) {
@@ -94,14 +98,6 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     a {
       text-decoration: none;
       color: inherit;
-    }
-
-    .global--color-primary {
-      color: ${activeTheme.palette.primary.main};
-    }
-
-    .global--color-secondary {
-      color: ${activeTheme.palette.secondary.main};
     }
   `
   return globalStyle

@@ -7,9 +7,8 @@ const baseComponents: Theme['components'] = {
         props: { variant: 'contained' },
         style: [
           {
-            borderRadius: '2px',
+            borderRadius: '4px',
             boxShadow: 'none',
-            height: '36px',
           },
         ],
       },
@@ -29,7 +28,7 @@ const baseComponents: Theme['components'] = {
         props: { variant: 'outlined' },
         style: [
           {
-            fontSize: '81.25%',
+            fontSize: '87.5%',
           },
         ],
       },
@@ -41,7 +40,7 @@ const baseComponents: Theme['components'] = {
         props: {},
         style: [
           {
-            borderRadius: '2px',
+            borderRadius: '4px',
           },
         ],
       },
@@ -65,7 +64,7 @@ const baseComponents: Theme['components'] = {
         props: {},
         style: [
           {
-            fontSize: '81.25%',
+            fontSize: '87.5%',
           },
         ],
       },
@@ -109,7 +108,7 @@ const lightComponents: Theme['components'] = {
         props: {},
         style: [
           {
-            color: '#13293D',
+            color: 'rgba(0, 0, 0, 0.7)',
           },
         ],
       },
@@ -125,7 +124,7 @@ const darkComponents: Theme['components'] = {
         props: {},
         style: [
           {
-            color: '#F4EBD0',
+            color: 'rgba(255, 255, 255, 0.87)',
           },
         ],
       },
@@ -138,10 +137,10 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#247BA0',
+      main: '#009688',
     },
     secondary: {
-      main: '#13293D',
+      main: '#616161',
     },
     text: {
       primary: 'rgba(0, 0, 0, 0.7)',
@@ -156,11 +155,10 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#B68D40',
+      main: '#3F51B5',
     },
     secondary: {
-      main: '#F4EBD0',
-      contrastText: 'rgba(0,0,0,0.87)',
+      main: '#616161',
     },
     background: {
       paper: '#181818',

@@ -22,7 +22,7 @@ export function ButtonToggleTheme() {
     toggleTheme()
   }
   return (
-    <Container color={activeTheme.palette.secondary.main}>
+    <Container color={activeTheme.palette.text.primary}>
       <Button onClick={handleToggleTheme} id="top-bar__btn-theme">
         <div id="top-bar__icon-theme"></div>
       </Button>

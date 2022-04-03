@@ -5,6 +5,7 @@ import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import { Button } from '@mui/material';
 
 import { LocaleContext } from '../../providers/locale';
+import { ParticlesEffect } from './ParticlesEffect';
 import { Container, Section } from './styles';
 
 function getElementsByClassName(className: string) {
@@ -47,6 +48,8 @@ export function SectionHome() {
   return (
     <Section id="home">
       <Container>
+        <ParticlesEffect />
+
         <h3>{t.homeTitleSmall[0]}</h3>
         <br />
         <h3>{t.homeTitleSmall[1]}</h3>

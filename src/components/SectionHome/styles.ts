@@ -20,7 +20,7 @@ export const Container = styled.div`
     padding-top: 3rem;
     display: flex;
     flex-direction: column;
-    row-gap: 0.5rem;
+    row-gap: 0.75rem;
 
     @media (min-width: 516px) {
       align-items: flex-start;

@@ -18,8 +18,8 @@ export function TopBar() {
         displayEmpty
         inputProps={{ 'aria-label': 'Without label' }}
       >
-        <MenuItem value="en-us">EN US</MenuItem>
-        <MenuItem value="pt-br">PT BR</MenuItem>
+        <MenuItem value="en-us">En us</MenuItem>
+        <MenuItem value="pt-br">Pt br</MenuItem>
       </Select>
     </Container>
   )

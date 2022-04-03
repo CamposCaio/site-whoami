@@ -13,8 +13,7 @@ export const Container = styled.div`
 
   a {
     font-weight: 400;
-    font-size: 81.25%;
-    text-transform: uppercase;
+    font-size: 87.5%;
     text-align: right;
     transition: filter 0.2s;
   }

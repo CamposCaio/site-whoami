@@ -19,7 +19,7 @@ export const ContainerSections = styled.div`
     h2 {
       display: inline-block;
       width: 100%;
-      padding: 30vh 0 1rem 0;
+      padding: 20vh 0 1rem 0;
       position: -webkit-sticky; /* Safari */
       position: sticky;
       top: 0;

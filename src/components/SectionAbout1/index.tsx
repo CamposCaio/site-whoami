@@ -10,7 +10,7 @@ export function SectionAbout1() {
   return (
     <Container id="about">
       <Content>
-        <h6>Conheça o meu trabalho</h6>
+        <h6>{t.aboutSubtitle1}</h6>
         <EntireTabPanel />
       </Content>
     </Container>

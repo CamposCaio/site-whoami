@@ -38,6 +38,12 @@ export function SectionHome() {
       changeElementsDisplay(elementsTitleVariant, 'none')
       changeElementsDisplay(elementsTitle, 'inline-block')
     }
+
+    // window.onload = reorder
+
+    // function reorder() {
+    document.getElementById('container-sections').scrollTop += 1
+    // }
   }
 
   useEffect(() => {

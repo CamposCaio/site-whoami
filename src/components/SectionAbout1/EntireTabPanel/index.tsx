@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext, useState } from 'react';
 
 import DesktopWindowsOutlinedIcon from '@mui/icons-material/DesktopWindowsOutlined';
 import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
@@ -6,6 +6,9 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
+
+import { LocaleContext } from '../../../providers/locale';
+import { Container } from './styles';
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -75,65 +78,61 @@ interface StyledTabProps {
 }
 
 export function EntireTabPanel() {
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = useState(0)
+
+  const { t } = useContext(LocaleContext)
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
 
   return (
-    <Box sx={{ pt: '2rem' }}>
-      <Box
-        sx={{
-          width: '100%',
-          display: 'flex',
-          gap: '1rem',
-        }}
-      >
-        <DesktopWindowsOutlinedIcon
-          fontSize="large"
-          color={value === 0 ? 'primary' : 'disabled'}
-        />
-        <CustomTabs
-          value={value}
-          onChange={handleChange}
-          // variant="scrollable"
-          // scrollButtons="auto"
-          aria-label="ant example"
+    <Container>
+      <Box sx={{ pt: '2rem' }}>
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            gap: '1rem',
+          }}
         >
-          <CustomTab label="Front-End" sx={{ alignItems: 'flex-start' }} />
-          <CustomTab label="Back-End" />
-          <CustomTab label="DevOps" sx={{ alignItems: 'flex-end' }} />
-        </CustomTabs>
-        <DnsOutlinedIcon
-          fontSize="large"
-          color={value === 1 || value === 2 ? 'primary' : 'disabled'}
-        />
+          <DesktopWindowsOutlinedIcon
+            className="tab-panel__icons"
+            fontSize="large"
+            color={value === 0 ? 'primary' : 'disabled'}
+          />
+          <CustomTabs
+            value={value}
+            onChange={handleChange}
+            // variant="scrollable"
+            // scrollButtons="auto"
+            aria-label="ant example"
+          >
+            <CustomTab label="Front-End" sx={{ alignItems: 'flex-start' }} />
+            <CustomTab label="Back-End" />
+            <CustomTab label="DevOps" sx={{ alignItems: 'flex-end' }} />
+          </CustomTabs>
+          <DnsOutlinedIcon
+            className="tab-panel__icons"
+            fontSize="large"
+            color={value === 1 || value === 2 ? 'primary' : 'disabled'}
+          />
+        </Box>
+        <Box sx={{ position: 'relative' }}>
+          <TabPanel value={value} index={0}>
+            <h3>FRONT-END</h3>
+            <p>{t.aboutContent1FrontEnd}</p>
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <h3>BACK-END</h3>
+            <p>{t.aboutContent1BackEnd}</p>
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            <h3>DevOps</h3>
+            <p>{t.aboutContent1DevOps}</p>
+          </TabPanel>
+        </Box>
       </Box>
-      <Box sx={{ position: 'relative' }}>
-        <TabPanel value={value} index={0}>
-          <h3>FRONT-END</h3>
-          <p>
-            Trabalho com UI e UX, desde o design de páginas utilizando o Figma,
-            até o desenvolvimento do seu código fonte em JS.
-          </p>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <h3>BACK-END</h3>
-          <p>
-            Utilizo POO com os princípios do Clean Code e SOLID. Tenho
-            experiência com DBs relacionais e não-relacionais, como MySQL,
-            Postgres, MongoDB e Redis.
-          </p>
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <h3>DevOps</h3>
-          <p>
-            Possuo experiência configurando automação com pipelines e CI/CD e
-            gerenciando clusters Kubernetes, hospedados na Digital Ocean.
-          </p>
-        </TabPanel>
-      </Box>
-    </Box>
+    </Container>
   )
 }

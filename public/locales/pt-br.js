@@ -12,13 +12,13 @@ export default {
   homeButtonOpenCV: 'Abrir CV',
   homeButtonDownloadCV: 'Download CV',
   aboutTitle: 'Sobre mim',
-  aboutContent1: [
-    'Sou ',
-    <b key="1">Desenvolvedor Full Stack</b>,
-    ' e ',
-    <b key="2">DevOps</b>,
-    '. Sempre estou buscando novos conhecimentos na área. Gosto de praticar o que aprendi desenvolvendo pequenos projetos (como é o caso deste site).',
-  ],
+  aboutSubtitle1: 'Conheça o meu trabalho',
+  aboutContent1FrontEnd:
+    'Trabalho com UI e UX, desde o design de páginas utilizando o Figma, até o desenvolvimento do seu código fonte em JS.',
+  aboutContent1BackEnd:
+    'Utilizo POO com os princípios do Clean Code e SOLID. Tenho experiência com DBs relacionais e não-relacionais, como MySQL, Postgres, MongoDB e Redis.',
+  aboutContent1DevOps:
+    'Possuo experiência configurando automação com pipelines e CI/CD e gerenciando cluster Kubernetes, hospedados na Digital Ocean.',
   aboutContent2: [
     'Possuo quatro anos de experiência atuando como ',
     <b key="1">Freelancer</b>,

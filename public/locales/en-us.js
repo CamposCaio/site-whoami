@@ -12,13 +12,13 @@ export default {
   homeButtonOpenCV: 'Open CV',
   homeButtonDownloadCV: 'Download CV',
   aboutTitle: 'About me',
-  aboutContent1: [
-    "I'm a ",
-    <b key="1">Full Stack Developer</b>,
-    ' and ',
-    <b key="2">DevOps</b>,
-    ". I'm always looking for new knowledge in the area. I like to practice what I learned by developing small projects (as is the case with this site).",
-  ],
+  aboutSubtitle1: 'My work',
+  aboutContent1FrontEnd:
+    'I work with UI and UX, from designing pages using Figma, to developing the source code in JS.',
+  aboutContent1BackEnd:
+    'I use OOP with the principles of Clean Code and SOLID. I have experience with relational and non-relational DBs such as MySQL, Postgres, MongoDB and Redis.',
+  aboutContent1DevOps:
+    'I have experience configuring automation with pipelines and CI/CD and managing Kubernetes cluster, hosted at Digital Ocean.',
   aboutContent2: [
     'I have four years of experience working as ',
     <b key="1">Freelancer</b>,

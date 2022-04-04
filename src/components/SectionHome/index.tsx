@@ -1,12 +1,14 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react'
 
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
-import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
-import { Button } from '@mui/material';
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
+import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined'
+import { Button } from '@mui/material'
 
-import { LocaleContext } from '../../providers/locale';
-import { ParticlesEffect } from './ParticlesEffect';
-import { Container, Section } from './styles';
+import { LocaleContext } from '../../providers/locale'
+import { ParticlesEffect } from './ParticlesEffect'
+import { Container, Section } from './styles'
+
+let lastHeight: number
 
 function getElementsByClassName(className: string) {
   return Array.from(
@@ -39,15 +41,15 @@ export function SectionHome() {
       changeElementsDisplay(elementsTitle, 'inline-block')
     }
 
-    // window.onload = reorder
-
-    // function reorder() {
-    document.getElementById('container-sections').scrollTop += 1
-    // }
+    if (lastHeight > window.innerHeight)
+      document.getElementById('container-sections').scrollTop += 1
+    else document.getElementById('container-sections').scrollTop -= 1
+    lastHeight = window.innerHeight
   }
 
   useEffect(() => {
     handleResize()
+    lastHeight = window.innerHeight
     window.addEventListener('resize', handleResize)
   }, [])
 

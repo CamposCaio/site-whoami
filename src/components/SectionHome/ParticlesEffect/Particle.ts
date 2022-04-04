@@ -4,7 +4,7 @@ export class Particle {
   y: number
   directionX: number
   directionY: number
-  particleColor: string
+  color: string
   ctx: CanvasRenderingContext2D
 
   constructor(
@@ -19,14 +19,14 @@ export class Particle {
     this.y = y
     this.directionX = directionX
     this.directionY = directionY
-    this.particleColor = particleColor
+    this.color = particleColor
     this.ctx = ctx
   }
 
   draw() {
     this.ctx.beginPath()
     this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false)
-    this.ctx.fillStyle = this.particleColor
+    this.ctx.fillStyle = this.color
     this.ctx.fill()
   }
 

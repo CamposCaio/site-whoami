@@ -31,8 +31,8 @@ function TabPanel(props: TabPanelProps) {
             pt: '2rem',
             transition:
               value === index
-                ? 'opacity 0.2s ease-in'
-                : 'opacity 0.2s ease-out',
+                ? 'opacity 0.3s ease-in'
+                : 'opacity 0.3s ease-out',
             opacity: value === index ? 1 : 0,
           }}
         >

@@ -1,23 +1,31 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { ThemeContext } from '../../../providers/theme';
 import { Particle } from './Particle';
 import { Container } from './styles';
 
 // Decrease PARTICLES_MAX_NUMBER for better performance
-const PARTICLES_MAX_NUMBER = 45
-const PARTICLES_PER_SECOND = 30
-const PARTICLES_MAX_VELOCITY = 2
-const PARTICLES_CONNECT_DISTANCE = 20000
+const PARTICLES_MAX_NUMBER = 200
+const PARTICLES_PER_SECOND = 100
+const PARTICLES_MAX_VELOCITY = 0.8
+const PARTICLES_CONNECT_MAX_DISTANCE = 20000
 let hexColor: string
 let rgbColor: string //"r,g,b"
-let mousePosition = [null, null]
+let lastParticlePosition = [null, null]
+let currentMousePosition = [null, null]
 let ctx: CanvasRenderingContext2D
-let intervalCreateParticle: NodeJS.Timer
-let isAnimationActive = false
-let particles = new Array<Particle>()
+let userAtHomeSection = true
 
-function createParticle() {
+let particles = Array<Particle>(PARTICLES_MAX_NUMBER).fill(undefined)
+
+function updateParticles() {
+  particles.shift()
+  if (userAtHomeSection && currentMousePosition != lastParticlePosition)
+    createParticle()
+  else particles.push(undefined)
+}
+
+const createParticle = () => {
   let directionX =
     Math.random() * PARTICLES_MAX_VELOCITY * 2 - PARTICLES_MAX_VELOCITY
   let directionY =
@@ -25,38 +33,40 @@ function createParticle() {
 
   particles.push(
     new Particle(
-      mousePosition[0],
-      mousePosition[1],
+      currentMousePosition[0],
+      currentMousePosition[1],
       directionX,
       directionY,
       hexColor,
       ctx
     )
   )
-  particles.shift()
+
+  lastParticlePosition = currentMousePosition
 }
 
 function animate() {
   requestAnimationFrame(animate)
   ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-  for (let i = 0; i < particles.length; i++) {
-    particles[i].update()
+  for (let i = 0; i < PARTICLES_MAX_NUMBER; i++) {
+    if (particles[i]) particles[i].update()
   }
   connect()
 }
 
 function connect() {
-  for (let a = 0; a < particles.length; a++) {
-    for (let b = a; b < particles.length; b++) {
+  for (let a = 0; a < PARTICLES_MAX_NUMBER; a++) {
+    if (!particles[a]) continue
+    for (let b = a + 1; b < PARTICLES_MAX_NUMBER; b++) {
+      if (!particles[b]) continue
       const distance =
         (particles[a].x - particles[b].x) * (particles[a].x - particles[b].x) +
         (particles[a].y - particles[b].y) * (particles[a].y - particles[b].y)
 
-      if (distance > PARTICLES_CONNECT_DISTANCE) continue
+      if (distance > PARTICLES_CONNECT_MAX_DISTANCE) continue
 
-      let opacity = 1 - distance / PARTICLES_CONNECT_DISTANCE
+      let opacity = 1 - distance / PARTICLES_CONNECT_MAX_DISTANCE
 
-      ctx.lineWidth = 1
       ctx.strokeStyle = `rgba(${rgbColor},${opacity})`
 
       ctx.beginPath()
@@ -67,14 +77,24 @@ function connect() {
   }
 }
 
+function updateColor(newHexColor: string) {
+  hexColor = newHexColor
+  rgbColor = getRgbFromHex(hexColor)
+
+  particles.forEach((particle) => {
+    if (particle) particle.color = hexColor
+  })
+}
+
+function getRgbFromHex(hex: string) {
+  return `${parseInt(hex.substring(1, 3), 16)},${parseInt(
+    hex.substring(3, 5),
+    16
+  )},${parseInt(hex.substring(5, 7), 16)}`
+}
+
 export function ParticlesEffect() {
   const { activeTheme } = useContext(ThemeContext)
-
-  hexColor = activeTheme.palette.primary.main
-  rgbColor = `${parseInt(hexColor.substring(1, 3), 16)},${parseInt(
-    hexColor.substring(3, 5),
-    16
-  )},${parseInt(hexColor.substring(5, 7), 16)}`
 
   useEffect(() => {
     const canvas = document.getElementById('home__canvas') as HTMLCanvasElement
@@ -83,61 +103,29 @@ export function ParticlesEffect() {
     canvas.height = window.innerHeight
     canvas.width = window.innerWidth
 
-    for (let i = 0; i < PARTICLES_MAX_NUMBER; i++) {
-      particles.push(new Particle(null, null, null, null, null, ctx))
-    }
+    updateColor(activeTheme.palette.primary.main)
 
-    window.addEventListener('mousemove', function (event) {
-      mousePosition = [event.x, event.y]
+    window.addEventListener('mousemove', (event) => {
+      if (userAtHomeSection) currentMousePosition = [event.x, event.y]
     })
 
-    intervalCreateParticle = setInterval(
-      createParticle,
-      1000 / PARTICLES_PER_SECOND
-    )
-    isAnimationActive = true
-
-    window.addEventListener('resize', function () {
+    window.addEventListener('resize', () => {
       canvas.height = window.innerHeight
       canvas.width = window.innerWidth
     })
 
-    window.addEventListener('mouseout', function () {
-      mousePosition = [undefined, undefined]
+    const containerSections = document.getElementById('container-sections')
+
+    containerSections.addEventListener('scroll', () => {
+      userAtHomeSection = containerSections.scrollTop == 0 ? true : false
     })
 
-    document
-      .getElementById('container-sections')
-      .addEventListener('scroll', function () {
-        console.log('scroll!')
-
-        const scrollPosition =
-          document.getElementById('container-sections').scrollTop
-        if (scrollPosition == 0 && !isAnimationActive) {
-          intervalCreateParticle = setInterval(
-            createParticle,
-            1000 / PARTICLES_PER_SECOND
-          )
-          isAnimationActive = true
-        } else if (scrollPosition != 0 && isAnimationActive) {
-          clearInterval(intervalCreateParticle)
-          console.log('ok')
-
-          isAnimationActive = false
-        }
-      })
-
+    setInterval(updateParticles, 1000 / PARTICLES_PER_SECOND)
     animate()
   }, [])
 
   useEffect(() => {
-    hexColor = activeTheme.palette.primary.main
-    rgbColor = `${parseInt(hexColor.substring(1, 3), 16)},${parseInt(
-      hexColor.substring(3, 5),
-      16
-    )},${parseInt(hexColor.substring(5, 7), 16)}`
-
-    particles.forEach((particle) => (particle.particleColor = hexColor))
+    updateColor(activeTheme.palette.primary.main)
   }, [activeTheme])
 
   return <Container id="home__canvas" />

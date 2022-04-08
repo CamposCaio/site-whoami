@@ -104,8 +104,6 @@ export function EntireTabPanel() {
           <CustomTabs
             value={value}
             onChange={handleChange}
-            // variant="scrollable"
-            // scrollButtons="auto"
             aria-label="ant example"
           >
             <CustomTab label="Front-End" sx={{ alignItems: 'flex-start' }} />

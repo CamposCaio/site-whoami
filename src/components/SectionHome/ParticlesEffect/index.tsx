@@ -114,10 +114,8 @@ export function ParticlesEffect() {
       canvas.width = window.innerWidth
     })
 
-    const containerSections = document.getElementById('container-sections')
-
-    containerSections.addEventListener('scroll', () => {
-      userAtHomeSection = containerSections.scrollTop == 0 ? true : false
+    window.addEventListener('scroll', () => {
+      userAtHomeSection = window.scrollY == 0 ? true : false
     })
 
     setInterval(updateParticles, 1000 / PARTICLES_PER_SECOND)

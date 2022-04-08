@@ -1,14 +1,12 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react';
 
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
-import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined'
-import { Button } from '@mui/material'
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
+import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
+import { Button } from '@mui/material';
 
-import { LocaleContext } from '../../providers/locale'
-import { ParticlesEffect } from './ParticlesEffect'
-import { Container, Section } from './styles'
-
-let lastHeight: number
+import { LocaleContext } from '../../providers/locale';
+import { ParticlesEffect } from './ParticlesEffect';
+import { Container, Section } from './styles';
 
 function getElementsByClassName(className: string) {
   return Array.from(
@@ -27,6 +25,10 @@ function changeElementsDisplay(
 
 export function SectionHome() {
   const { t } = useContext(LocaleContext)
+  useEffect(() => {
+    handleResize()
+    window.addEventListener('resize', handleResize)
+  }, [])
 
   function handleResize() {
     const viewportWidth = window.innerWidth
@@ -40,18 +42,7 @@ export function SectionHome() {
       changeElementsDisplay(elementsTitleVariant, 'none')
       changeElementsDisplay(elementsTitle, 'inline-block')
     }
-
-    if (lastHeight > window.innerHeight)
-      document.getElementById('container-sections').scrollTop += 1
-    else document.getElementById('container-sections').scrollTop -= 1
-    lastHeight = window.innerHeight
   }
-
-  useEffect(() => {
-    handleResize()
-    lastHeight = window.innerHeight
-    window.addEventListener('resize', handleResize)
-  }, [])
 
   return (
     <Section id="home">

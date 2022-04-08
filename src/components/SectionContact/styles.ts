@@ -2,11 +2,9 @@ import styled from '@emotion/styled';
 
 export const Container = styled.section`
   height: 100vh;
-  scroll-snap-align: start;
   display: flex;
   justify-content: center;
   position: relative;
-  overflow: hidden;
 
   .contact__div-footer {
     position: absolute;

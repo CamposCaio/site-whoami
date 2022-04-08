@@ -17,13 +17,21 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       box-sizing: border-box;
       white-space: pre-line;
       letter-spacing: 0.75px;
-      scroll-behavior: smooth;
+      /* scroll-behavior: smooth; */
       line-height: 1.25rem;
       word-spacing: 3px;
       text-align: justify;
     }
 
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    html::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
     html {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
       @media (max-width: 1080px) {
         font-size: 93.75%;
       }
@@ -33,6 +41,7 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     }
 
     body {
+      /* position: relative; */
       -webkit-font-smoothing: antialiased;
       background-color: var(--background);
     }

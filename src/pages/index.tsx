@@ -5,6 +5,7 @@ import * as React from 'react';
 
 import en from '../../public/locales/en-us';
 import pt from '../../public/locales/pt-br';
+import AboutTitleSticky from '../components/AboutTitleSticky';
 import { SectionAbout1 } from '../components/SectionAbout1';
 import { SectionAbout2 } from '../components/SectionAbout2';
 import { SectionContact } from '../components/SectionContact';
@@ -12,42 +13,9 @@ import { SectionHome } from '../components/SectionHome';
 import { SectionPortfolio } from '../components/SectionPortfolio';
 import { SectionTecnologies } from '../components/SectionTecnologies';
 import { SideNavbar } from '../components/SideNavbar';
+import { SnapScroll } from '../components/SnapScroll';
 import { TopBar } from '../components/TopBar';
 import { LocaleContext } from '../providers/locale';
-import { ContainerSections } from '../styles/pages/home';
-
-const hoverScroll = () => {
-  const pageHeight = window.innerHeight
-  const scrollPosition = document.getElementById('container-sections').scrollTop
-  const section = Math.round(scrollPosition / pageHeight)
-  document
-    .getElementsByClassName('link-active')[0]
-    ?.classList.remove('link-active')
-
-  switch (section) {
-    case 0: //Home
-      document.getElementById('side-navbar__home').classList.add('link-active')
-      break
-    case 1: //About
-    case 2:
-      document.getElementById('side-navbar__about').classList.add('link-active')
-      break
-    case 3: //Tecnologies
-      document
-        .getElementById('side-navbar__tecnologies')
-        .classList.add('link-active')
-      break
-    case 4: //Portfolio
-      document
-        .getElementById('side-navbar__portfolio')
-        .classList.add('link-active')
-      break
-    case 5: //Contact
-      document
-        .getElementById('side-navbar__contact')
-        .classList.add('link-active')
-  }
-}
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -66,18 +34,17 @@ const Home: NextPage = () => {
         <title>Caio Campos</title>
       </Head>
       <TopBar />
+      <SnapScroll />
       <SideNavbar />
-      <ContainerSections onScroll={hoverScroll} id="container-sections">
-        <SectionHome />
-        <div className="about__title-sticky-limiter">
-          <h2>{t.aboutTitle}</h2>
-        </div>
-        <SectionAbout1 />
-        <SectionAbout2 />
-        <SectionTecnologies />
-        <SectionPortfolio />
-        <SectionContact />
-      </ContainerSections>
+      <AboutTitleSticky />
+      {/* <ContainerSections onScroll={hoverScroll} id="container-sections"> */}
+      <SectionHome />
+      <SectionAbout1 />
+      <SectionAbout2 />
+      <SectionTecnologies />
+      <SectionPortfolio />
+      {/* <SectionContact /> */}
+      {/* </ContainerSections> */}
     </LocaleContext.Provider>
   )
 }

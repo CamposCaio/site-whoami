@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 export const Container = styled.div`
   position: fixed;
@@ -65,8 +65,8 @@ export const Container = styled.div`
       border: none !important;
     }
 
-    @media (max-width: 1080px) {
+    /* @media (max-width: 1080px) {
       right: 0;
-    }
+    } */
   }
 `

@@ -5,25 +5,31 @@ let animationFrameID = 0
 let targetY = 0
 let previousScrollY = 0
 let disableScrollAnimation = false
+let pageHeight = 0
+
+function handleResize() {
+  listenForPageScroll = false
+  enableHandleScroll(false)
+  const previousPageHeight = pageHeight
+  pageHeight = window.innerHeight
+
+  const currentSection = Math.round(window.scrollY / previousPageHeight)
+  previousScrollY = 0
+  disableScrollAnimation = true
+  cancelAnimationFrame(animationFrameID)
+  window.scrollTo(0, currentSection * pageHeight)
+
+  setTimeout(() => {
+    listenForPageScroll = true
+    disableScrollAnimation = false
+    enableHandleScroll(true)
+  }, 50)
+}
 
 function onPageLoaded() {
-  let pageHeight = window.innerHeight
+  pageHeight = window.innerHeight
 
-  window.addEventListener('resize', () => {
-    listenForPageScroll = false
-    enableHandleScroll(false)
-    pageHeight = window.innerHeight
-    previousScrollY = 0
-    disableScrollAnimation = true
-    cancelAnimationFrame(animationFrameID)
-    window.scrollTo(0, 0)
-
-    setTimeout(() => {
-      listenForPageScroll = true
-      disableScrollAnimation = false
-      enableHandleScroll(true)
-    }, 50)
-  })
+  window.addEventListener('resize', handleResize)
 
   window.addEventListener('scroll', () => {
     enableHandleScroll(false)

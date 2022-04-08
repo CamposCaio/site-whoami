@@ -52,7 +52,11 @@ export function SideNavbar() {
 
   return (
     <Container className="global--color-secondary">
-      <a href="#home" id="side-navbar__home" className="link-active">
+      <a
+        onClick={() => handleNavigation(0)}
+        id="side-navbar__home"
+        className="link-active"
+      >
         {t.sideNavbarHome}
       </a>
       <a onClick={() => handleNavigation(1)} id="side-navbar__about">

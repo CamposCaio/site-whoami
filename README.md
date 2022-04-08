@@ -6,6 +6,7 @@
 - [ ] Decrease particles on small screens
 - [ ] Stop animationFrame and interval when you don't need it
 - [x] Fix scroll snap on Chrome
-- [ ] Alert about music on site
+- [x] Alert about music on site
 - [ ] Add control panel for particles quantity
 - [ ] Change Language text to Flag image
+- [x] Use cookies to save the theme and language

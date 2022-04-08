@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import { route } from 'next/dist/server/router';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import * as React from 'react';
@@ -14,18 +15,29 @@ import { SectionPortfolio } from '../components/SectionPortfolio';
 import { SectionTecnologies } from '../components/SectionTecnologies';
 import { SideNavbar } from '../components/SideNavbar';
 import { SnapScroll } from '../components/SnapScroll';
+import SoundDialog from '../components/SoundDialog';
 import { TopBar } from '../components/TopBar';
 import { LocaleContext } from '../providers/locale';
+import { getCookie } from './_app';
 
 const Home: NextPage = () => {
   const router = useRouter()
+  const { pathname, query, asPath } = router
   const [locale, setLocale] = React.useState(router.locale)
+
+  React.useEffect(() => {
+    if (getCookie('savedLocale')) {
+      setLocale(getCookie('savedLocale'))
+      router.push({ pathname, query }, asPath, { locale: '' })
+    }
+  }, [])
+
   const [t, setT] = React.useState(router.locale === 'pt-br' ? pt : en)
 
   React.useEffect(() => {
+    document.cookie = `savedLocale=${locale}`
     locale === 'pt-br' ? setT(pt) : setT(en)
-    const { pathname, query, asPath } = router
-    router.push({ pathname, query }, asPath, { locale })
+    // router.push({ pathname, query }, asPath, { locale })
   }, [locale])
 
   return (
@@ -33,6 +45,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Caio Campos</title>
       </Head>
+      <SoundDialog />
       <TopBar />
       <SnapScroll />
       <SideNavbar />

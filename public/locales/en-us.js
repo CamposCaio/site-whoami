@@ -4,6 +4,12 @@ export default {
   sideNavbarTecnologies: 'Tecnologies',
   sideNavbarPortfolio: 'Portfolio',
   sideNavbarContact: 'Contact',
+  soundDialogTitle: 'Sound preference',
+  soundDialogContent:
+    'This site contains background music. Do you want to enable it for a better experience?',
+  soundDialogEnable: 'Turn on the sound',
+  soundDialogDisable: 'Continue without sound',
+
   homeTitleSmall: ['Hello!', "My name is Caio Campos and I'm a"],
   homeTitleLarge: {
     normal: ['Full Stack', 'Web Developer.'],

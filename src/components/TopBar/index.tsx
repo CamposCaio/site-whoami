@@ -1,15 +1,15 @@
-import { useContext } from 'react'
+import { useContext } from 'react';
 
-import { Button, MenuItem, Select } from '@mui/material'
+import { Button, MenuItem, Select } from '@mui/material';
 
-import { LocaleContext } from '../../providers/locale'
-import { ThemeContext } from '../../providers/theme'
-import { ButtonToggleTheme } from './ButtonToggleTheme'
-import { Container } from './styles'
+import { LocaleContext } from '../../providers/locale';
+import { ThemeContext } from '../../providers/theme';
+import { ButtonToggleTheme } from './ButtonToggleTheme';
+import { Container } from './styles';
 
 let isPlayingMusic = false
 
-function toggleMusic() {
+export function toggleMusic() {
   const elementAudio = document.getElementById('bg-music') as HTMLAudioElement
 
   const divSvgAudioControl = document.getElementById('icon-audio-control')

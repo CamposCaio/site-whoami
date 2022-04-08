@@ -21,6 +21,7 @@ export const Container = styled.div`
   a:hover,
   .link-active {
     filter: opacity(40%);
+    cursor: pointer;
   }
 
   @media (max-width: 960px) {

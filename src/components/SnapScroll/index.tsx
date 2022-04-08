@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+const NUM_OF_PAGES = 5
+
 let listenForPageScroll = true
 let animationFrameID = 0
 let targetY = 0
@@ -64,6 +66,14 @@ export function scrollTo(_targetY: number) {
 }
 
 function animateScroll() {
+  if (targetY < 0 || targetY > (NUM_OF_PAGES - 1) * window.innerHeight) {
+    disableScrollAnimation = true
+    listenForPageScroll = true
+    disableScrollAnimation = false
+    enableHandleScroll(true)
+    return
+  }
+
   animationFrameID = requestAnimationFrame(animateScroll)
 
   const offsetYToAlignment = targetY - window.scrollY

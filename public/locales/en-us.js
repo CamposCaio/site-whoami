@@ -25,13 +25,19 @@ export default {
     'I use OOP with the principles of Clean Code and SOLID. I have experience with relational and non-relational DBs such as MySQL, Postgres, MongoDB and Redis.',
   aboutContent1DevOps:
     'I have experience configuring automation with pipelines and CI/CD and managing Kubernetes cluster, hosted at Digital Ocean.',
-  aboutContent2: [
-    'I have four years of experience working as ',
-    <b key="1">Freelancer</b>,
-    ' and Full Stack Developer on ',
-    <b key="2">HVEX</b>,
-    '.',
-  ],
+  aboutSubtitle2: 'My professional experience',
+  aboutAccordionTitle1: 'Professional experience',
+  aboutAccordionContent1:
+    '4 years working as a professional Freelancer and Full Stack Developer.',
+  aboutAccordionTitle2: 'Team work',
+  aboutAccordionContent2:
+    'Communication and interaction with the entire work team.',
+  aboutAccordionTitle3: 'Customer interaction',
+  aboutAccordionContent3:
+    'I consider clarity of ideas and respect for others to be very important points.',
+  aboutAccordionTitle4: 'Agile methodologies',
+  aboutAccordionContent4:
+    'Knowledge about SCRUM, having already acted as Product Owner.',
   tecnologiesTitle: 'Tecnologies',
   tecnologiesContent: "The main technologies I'm using:",
   portfolioTitle: 'Portfolio',

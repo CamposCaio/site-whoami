@@ -8,7 +8,5 @@ export const Container = styled.section`
 
 export const Content = styled.div`
   margin-top: calc(20vh + 2rem);
-  max-width: 516px;
-  width: 100%;
-  padding: 0 2rem;
+  width: min(100% - 4rem, 720px);
 `

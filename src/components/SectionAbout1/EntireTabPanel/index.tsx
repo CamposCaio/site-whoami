@@ -31,7 +31,11 @@ function TabPanel(props: TabPanelProps) {
       {
         <Box
           sx={{
-            pt: '2rem',
+            p: '2rem 1rem 0 1rem',
+            '@media (min-width: 397px)': {
+              pl: '4rem',
+            },
+            maxWidth: '618px',
             transition:
               value === index
                 ? 'opacity 0.3s ease-in'
@@ -68,6 +72,7 @@ const CustomTab = styled((props: StyledTabProps) => (
   flexGrow: '1',
   minHeight: '0',
   height: '2rem',
+  transition: 'opacity 0.2s',
   '&:hover': {
     opacity: 0.6,
   },

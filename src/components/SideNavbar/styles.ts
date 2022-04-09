@@ -24,7 +24,7 @@ export const Container = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 `

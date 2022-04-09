@@ -24,13 +24,19 @@ export default {
     'Utilizo POO com os princípios do Clean Code e SOLID. Tenho experiência com DBs relacionais e não-relacionais, como MySQL, Postgres, MongoDB e Redis.',
   aboutContent1DevOps:
     'Possuo experiência configurando automação com pipelines e CI/CD e gerenciando cluster Kubernetes, hospedados na Digital Ocean.',
-  aboutContent2: [
-    'Possuo quatro anos de experiência atuando como ',
-    <b key="1">Freelancer</b>,
-    ' e Desenvolvedor Full Stack na ',
-    <b key="2">HVEX</b>,
-    '.',
-  ],
+  aboutSubtitle2: 'Minha experiência profissional',
+  aboutAccordionTitle1: 'Experiência profissional',
+  aboutAccordionContent1:
+    '4 anos atuando como Freelancer e Desenvolvedor Full Stack profissional.',
+  aboutAccordionTitle2: 'Trabalho em equipe',
+  aboutAccordionContent2:
+    'Comunicação e interação com toda a equipe de trabalho.',
+  aboutAccordionTitle3: 'Interação com o cliente',
+  aboutAccordionContent3:
+    'Considero a clareza das ideias e o respeito com o outro como pontos muito importantes.',
+  aboutAccordionTitle4: 'Metodologias ágeis',
+  aboutAccordionContent4:
+    'Conhecimento sobre SCRUM, já tendo atuado como Product Owner.',
   tecnologiesTitle: 'Tecnologias',
   tecnologiesContent: 'Principais tecnologias que estou utilizando:',
   portfolioTitle: 'Portfólio',

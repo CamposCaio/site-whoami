@@ -6,4 +6,10 @@ export const Container = styled.div`
       display: none;
     }
   }
+
+  p {
+    @media (min-width: 720px) {
+      text-align: left;
+    }
+  }
 `

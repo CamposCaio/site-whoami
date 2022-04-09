@@ -9,7 +9,6 @@ export const Section = styled.section`
 
 export const Container = styled.div`
   display: inline-block;
-  padding: 0 2rem;
 
   .home__title--blue {
     color: var(--primary-color);

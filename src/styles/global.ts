@@ -100,6 +100,11 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       }
     }
 
+    h5 {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
     h6 {
       font-size: 1rem;
       line-height: 1rem;

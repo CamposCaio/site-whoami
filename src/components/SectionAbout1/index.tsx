@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import Fade from 'react-reveal/Fade';
 
 import { LocaleContext } from '../../providers/locale';
 import { EntireTabPanel } from './EntireTabPanel';
@@ -10,8 +11,10 @@ export function SectionAbout1() {
   return (
     <Container id="about">
       <Content>
-        <h6>{t.aboutSubtitle1}</h6>
-        <EntireTabPanel />
+        <Fade bottom>
+          <h6>{t.aboutSubtitle1}</h6>
+          <EntireTabPanel />
+        </Fade>
       </Content>
     </Container>
   )

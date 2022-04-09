@@ -22,10 +22,11 @@ export const Container = styled.div`
   }
 
   .MuiAccordionSummary-root {
+    opacity: 0.6;
     transition: opacity 0.2s;
   }
 
   .MuiAccordionSummary-root:hover {
-    opacity: 0.6;
+    opacity: 1;
   }
 `

@@ -147,7 +147,7 @@ export const lightTheme = createTheme({
       secondary: 'rgba(0, 0, 0, 0.5)',
     },
   },
-  shadows,
+  // shadows,
 })
 
 export const darkTheme = createTheme({
@@ -166,5 +166,5 @@ export const darkTheme = createTheme({
       default: '#181818',
     },
   },
-  shadows,
+  // shadows,
 })

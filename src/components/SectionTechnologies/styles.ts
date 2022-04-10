@@ -12,13 +12,19 @@ export const Container = styled.section`
 export const Content = styled.div`
   width: min(100vw - 4rem, 720px);
 
+  .MuiPaper-root {
+    margin-top: 3rem;
+    padding: 1rem;
+  }
+
   .technologies__container-cards {
-    margin-top: 2rem;
     width: 100%;
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 3rem;
 
     @media (max-width: 480px) {
+      gap: 2rem;
       flex-direction: column;
     }
   }
@@ -37,8 +43,9 @@ export const Content = styled.div`
   }
 
   .technologies__card {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem;
     border-radius: 4px;
     background-size: cover;
     transition: all 0.4s;
@@ -46,8 +53,9 @@ export const Content = styled.div`
     filter: blur(1px);
 
     @media (max-width: 480px) {
-      width: 3rem;
-      height: 3rem;
+      width: 2rem;
+      height: 2rem;
+      margin: 0.5rem;
     }
   }
 
@@ -60,10 +68,19 @@ export const Content = styled.div`
   .card-active {
     filter: blur(0);
     opacity: 1;
+    margin: 0;
+    width: 4rem;
+    height: 4rem;
+    @media (max-width: 480px) {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 
   .technologies__card-description {
-    height: 6rem;
+    @media (max-width: 480px) {
+      height: 7rem;
+    }
   }
 
   #card-1 {

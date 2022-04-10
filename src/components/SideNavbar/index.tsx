@@ -32,9 +32,9 @@ export function SideNavbar() {
             .getElementById('side-navbar__about')
             .classList.add('link-active')
           break
-        case 3: //Tecnologies
+        case 3: //Technologies
           document
-            .getElementById('side-navbar__tecnologies')
+            .getElementById('side-navbar__technologies')
             .classList.add('link-active')
           break
         case 4: //Portfolio
@@ -62,8 +62,8 @@ export function SideNavbar() {
       <a onClick={() => handleNavigation(1)} id="side-navbar__about">
         {t.sideNavbarAbout}
       </a>
-      <a onClick={() => handleNavigation(3)} id="side-navbar__tecnologies">
-        {t.sideNavbarTecnologies}
+      <a onClick={() => handleNavigation(3)} id="side-navbar__technologies">
+        {t.sideNavbarTechnologies}
       </a>
       <a onClick={() => handleNavigation(4)} id="side-navbar__portfolio">
         {t.sideNavbarPortfolio}

@@ -23,7 +23,11 @@ export function ButtonToggleTheme() {
   }
   return (
     <Container color={activeTheme.palette.text.primary}>
-      <Button onClick={handleToggleTheme} id="top-bar__btn-theme">
+      <Button
+        onClick={handleToggleTheme}
+        id="top-bar__btn-theme"
+        title="Toggle theme"
+      >
         <div id="top-bar__icon-theme"></div>
       </Button>
     </Container>

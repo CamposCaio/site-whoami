@@ -23,19 +23,19 @@ export const Container = styled.div`
 
   @keyframes play-light-to-dark {
     0% {
-      mask-position: 0px 0px;
+      mask-position: calc(-17px * 9) 0px;
     }
     100% {
-      mask-position: calc(-17px * 9) 0px;
+      mask-position: 0px 0px;
     }
   }
 
   @keyframes play-dark-to-light {
     0% {
-      mask-position: calc(-17px * 9) 0px;
+      mask-position: 0px 0px;
     }
     100% {
-      mask-position: 0px 0px;
+      mask-position: calc(-17px * 9) 0px;
     }
   }
 

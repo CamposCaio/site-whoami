@@ -1,17 +1,12 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  padding-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
 
   .card {
     font-size: 93.75%;
-    /* letter-spacing: 1px; */
-    /* word-spacing: 0px; */
-    /* text-align: left; */
-    /* line-height: 1.25rem; */
     width: calc(50% - 2.5rem);
   }
 
@@ -19,10 +14,6 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-  }
-
-  h5 {
-    display: block;
   }
 
   .accordion__icon-div {

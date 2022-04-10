@@ -35,7 +35,7 @@ export function TopBar() {
     <Container color={activeTheme.palette.text.primary}>
       <div id="container-top-left">
         <audio id="bg-music" src="/audio/inspire-me-more-atm.mp3" loop />
-        <Button onClick={toggleMusic} variant="text">
+        <Button onClick={toggleMusic} variant="text" title="Toggle music">
           <div id="icon-audio-control"></div>
         </Button>
       </div>

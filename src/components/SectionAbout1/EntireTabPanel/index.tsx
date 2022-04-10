@@ -93,48 +93,46 @@ export function EntireTabPanel() {
 
   return (
     <Container>
-      <Box sx={{ pt: '2rem' }}>
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            gap: '1rem',
-          }}
+      <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          gap: '1rem',
+        }}
+      >
+        <DesktopWindowsOutlinedIcon
+          className="tab-panel__icons"
+          fontSize="large"
+          color={value === 0 ? 'primary' : 'disabled'}
+        />
+        <CustomTabs
+          value={value}
+          onChange={handleChange}
+          aria-label="ant example"
         >
-          <DesktopWindowsOutlinedIcon
-            className="tab-panel__icons"
-            fontSize="large"
-            color={value === 0 ? 'primary' : 'disabled'}
-          />
-          <CustomTabs
-            value={value}
-            onChange={handleChange}
-            aria-label="ant example"
-          >
-            <CustomTab label="Front-End" sx={{ alignItems: 'flex-start' }} />
-            <CustomTab label="Back-End" />
-            <CustomTab label="DevOps" sx={{ alignItems: 'flex-end' }} />
-          </CustomTabs>
-          <DnsOutlinedIcon
-            className="tab-panel__icons"
-            fontSize="large"
-            color={value === 1 || value === 2 ? 'primary' : 'disabled'}
-          />
-        </Box>
-        <Box sx={{ position: 'relative' }}>
-          <TabPanel value={value} index={0}>
-            <h3>FRONT-END</h3>
-            <p>{t.aboutContent1FrontEnd}</p>
-          </TabPanel>
-          <TabPanel value={value} index={1}>
-            <h3>BACK-END</h3>
-            <p>{t.aboutContent1BackEnd}</p>
-          </TabPanel>
-          <TabPanel value={value} index={2}>
-            <h3>DevOps</h3>
-            <p>{t.aboutContent1DevOps}</p>
-          </TabPanel>
-        </Box>
+          <CustomTab label="Front-End" sx={{ alignItems: 'flex-start' }} />
+          <CustomTab label="Back-End" />
+          <CustomTab label="DevOps" sx={{ alignItems: 'flex-end' }} />
+        </CustomTabs>
+        <DnsOutlinedIcon
+          className="tab-panel__icons"
+          fontSize="large"
+          color={value === 1 || value === 2 ? 'primary' : 'disabled'}
+        />
+      </Box>
+      <Box sx={{ position: 'relative' }}>
+        <TabPanel value={value} index={0}>
+          <h3>FRONT-END</h3>
+          <p>{t.aboutContent1FrontEnd}</p>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <h3>BACK-END</h3>
+          <p>{t.aboutContent1BackEnd}</p>
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <h3>DevOps</h3>
+          <p>{t.aboutContent1DevOps}</p>
+        </TabPanel>
       </Box>
     </Container>
   )

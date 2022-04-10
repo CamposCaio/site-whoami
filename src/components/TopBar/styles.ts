@@ -15,18 +15,18 @@ export const Container = styled.div`
     mask-image: url(svg/icon-audio-control.svg);
     mask-size: cover;
     mask-repeat: no-repeat;
-    mask-position: calc(-24px * 9) 0px;
+    mask-position: calc(-22px * 18) 0px;
     padding-bottom: 100%;
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     animation-duration: 300ms;
-    animation-timing-function: steps(9);
+    animation-timing-function: steps(18);
     animation-fill-mode: forwards;
   }
 
   @keyframes play-button {
     0% {
-      mask-position: calc(-24px * 9) 0px;
+      mask-position: calc(-22px * 18) 0px;
     }
     100% {
       mask-position: 0px 0px;
@@ -38,7 +38,7 @@ export const Container = styled.div`
       mask-position: 0px 0px;
     }
     100% {
-      mask-position: calc(-24px * 9) 0px;
+      mask-position: calc(-22px * 18) 0px;
     }
   }
 

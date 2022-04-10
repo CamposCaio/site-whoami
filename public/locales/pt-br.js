@@ -1,7 +1,7 @@
 export default {
   sideNavbarHome: 'Início',
   sideNavbarAbout: 'Sobre mim',
-  sideNavbarTecnologies: 'Tecnologias',
+  sideNavbarTechnologies: 'Tecnologias',
   sideNavbarPortfolio: 'Portfólio',
   sideNavbarContact: 'Contato',
   soundDialogTitle: 'Preferência de som',
@@ -16,6 +16,7 @@ export default {
   },
   homeButtonOpenCV: 'Abrir CV',
   homeButtonDownloadCV: 'Download CV',
+  homeScrollDown: 'Saiba mais sobre mim',
   aboutTitle: 'Sobre mim',
   aboutSubtitle1: 'Conheça o meu trabalho',
   aboutContent1FrontEnd:
@@ -37,8 +38,36 @@ export default {
   aboutAccordionTitle4: 'Metodologias ágeis',
   aboutAccordionContent4:
     'Conhecimento sobre SCRUM, já tendo atuado como Product Owner.',
-  tecnologiesTitle: 'Tecnologias',
-  tecnologiesContent: 'Principais tecnologias que estou utilizando:',
+  technologiesTitle: 'Tecnologias',
+  technologiesSubtitle: 'Linguagem, frameworks, bibliotecas...',
+  technologiesContent: 'Algumas das tecnologias que venho utilizando:',
+  technologiesCard1: 'TypeScript',
+  technologiesCard1Content:
+    'TypeScript é uma linguagem de programação fortemente tipada que se baseia no JavaScript.',
+  technologiesCard2: 'React',
+  technologiesCard2Content:
+    'React.js é um framework JavaScript para construir interfaces de usuário (UI).',
+  technologiesCard3: 'Next',
+  technologiesCard3Content:
+    'Next.js é um framework React para produção que permite o uso de SSG e SSR.',
+  technologiesCard4: 'Styled Components',
+  technologiesCard4Content:
+    'Styled-components é uma biblioteca que permite você utilizar sintáxe CSS dentro do componente.',
+  technologiesCard5: 'Material UI',
+  technologiesCard5Content:
+    'MUI é uma biblioteca de componentes UI totalmente personalizados para agilizar o desenvolvimento front-end.',
+  technologiesCard6: 'Node',
+  technologiesCard6Content:
+    'Node.js é um runtime JavaScript construído no V8 JavaScript engine do Chrome.',
+  technologiesCard7: 'Nest',
+  technologiesCard7Content:
+    'Nest JS é um framework Node.js para criar aplicativos do lado do servidor eficientes, confiáveis e escaláveis.',
+  technologiesCard8: 'Docker',
+  technologiesCard8Content:
+    'Docker é um conjunto de produtos de PaaS que usam a virtualização no nível do SO para entregar software em contêineres.',
+  technologiesCard9: 'Kubernetes',
+  technologiesCard9Content:
+    'K8s é um sistema para automatizar a implantação, dimensionamento e gerenciamento de aplicativos em contêiner.',
   portfolioTitle: 'Portfólio',
   portfolioContent: 'Página em manutenção. Por favor, volte mais tarde :)',
   contactTitle: 'Contato',

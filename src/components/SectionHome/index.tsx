@@ -1,10 +1,12 @@
 import { useContext, useEffect } from 'react';
 
+import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import { Button } from '@mui/material';
 
 import { LocaleContext } from '../../providers/locale';
+import { enableHandleScroll, scrollTo } from '../SnapScroll';
 import { ParticlesEffect } from './ParticlesEffect';
 import { Container, Section } from './styles';
 
@@ -23,11 +25,20 @@ function changeElementsDisplay(
   })
 }
 
+function handleNavigation(page: number) {
+  enableHandleScroll(false)
+  scrollTo(page * window.innerHeight)
+}
+
 export function SectionHome() {
   const { t } = useContext(LocaleContext)
   useEffect(() => {
     handleResize()
     window.addEventListener('resize', handleResize)
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('home__scroll-down').style.display = 'none'
+    })
   }, [])
 
   function handleResize() {
@@ -78,6 +89,10 @@ export function SectionHome() {
           </Button>
         </div>
       </Container>
+      <div id="home__scroll-down" onClick={() => handleNavigation(1)}>
+        {t.homeScrollDown}
+        <ArrowDropDownOutlinedIcon />
+      </div>
     </Section>
   )
 }

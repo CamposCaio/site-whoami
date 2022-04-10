@@ -64,7 +64,7 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     strong {
       font-weight: 700;
       font-family: 'Lato', sans-serif;
-      display: inline;
+      /* display: inline; */
       text-align: left;
       letter-spacing: 0px;
     }
@@ -108,6 +108,7 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     h6 {
       font-size: 1rem;
       line-height: 1rem;
+      padding-bottom: 2rem;
       font-weight: 400;
       color: var(--text-secondary);
     }

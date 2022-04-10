@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import Fade from 'react-reveal/Fade';
 
 import { LocaleContext } from '../../providers/locale';
+import MobileArrowDown from '../MobileArrowDown';
 import { EntireTabPanel } from './EntireTabPanel';
 import { Container, Content } from './styles';
 
@@ -16,6 +17,7 @@ export function SectionAbout1() {
           <EntireTabPanel />
         </Fade>
       </Content>
+      <MobileArrowDown />
     </Container>
   )
 }

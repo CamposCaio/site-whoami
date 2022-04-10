@@ -1,7 +1,7 @@
 export default {
   sideNavbarHome: 'Home',
   sideNavbarAbout: 'About me',
-  sideNavbarTecnologies: 'Tecnologies',
+  sideNavbarTechnologies: 'Technologies',
   sideNavbarPortfolio: 'Portfolio',
   sideNavbarContact: 'Contact',
   soundDialogTitle: 'Sound preference',
@@ -17,6 +17,7 @@ export default {
   },
   homeButtonOpenCV: 'Open CV',
   homeButtonDownloadCV: 'Download CV',
+  homeScrollDown: 'Learn more about me',
   aboutTitle: 'About me',
   aboutSubtitle1: 'My work',
   aboutContent1FrontEnd:
@@ -38,8 +39,38 @@ export default {
   aboutAccordionTitle4: 'Agile methodologies',
   aboutAccordionContent4:
     'Knowledge about SCRUM, having already acted as Product Owner.',
-  tecnologiesTitle: 'Tecnologies',
-  tecnologiesContent: "The main technologies I'm using:",
+
+  technologiesTitle: 'Technologies',
+  technologiesSubtitle: 'Languages, frameworks, libraries...',
+  technologiesContent: "Some technologies I've been using:",
+  technologiesCard1: 'TypeScript',
+  technologiesCard1Content:
+    'TypeScript is a strongly typed programming language that is based on JavaScript.',
+  technologiesCard2: 'React',
+  technologiesCard2Content:
+    'React.js is a JavaScript framework for building user interfaces (UI).',
+  technologiesCard3: 'Next',
+  technologiesCard3Content:
+    'Next.js is a React framework for production that allows the use of SSG and SSR.',
+  technologiesCard4: 'Styled Components',
+  technologiesCard4Content:
+    'Styled-components is a library that allows you to use CSS syntax inside the component.',
+  technologiesCard5: 'Material UI',
+  technologiesCard5Content:
+    'MUI is a library of fully customized UI components to streamline front-end development.',
+  technologiesCard6: 'Node',
+  technologiesCard6Content:
+    "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+  technologiesCard7: 'Nest',
+  technologiesCard7Content:
+    'Nest JS is a Node.js framework for building efficient, reliable and scalable server-side applications.',
+  technologiesCard8: 'Docker',
+  technologiesCard8Content:
+    'Docker is a set of PaaS products that use OS-level virtualization to deliver containerized software.',
+  technologiesCard9: 'Kubernetes',
+  technologiesCard9Content:
+    'K8s is a system for automating the deployment, scaling and management of containerized applications.',
+
   portfolioTitle: 'Portfolio',
   portfolioContent: 'Page under maintenance. Please, come back later :)',
   contactTitle: 'Contact',

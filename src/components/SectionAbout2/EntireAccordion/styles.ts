@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  padding-top: 2rem;
-
   .accordion__icon-div {
     background-color: ${(props) => {
       return `rgba(${parseInt(props.color.substring(1, 3), 16)},${parseInt(
@@ -19,14 +17,5 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .MuiAccordionSummary-root {
-    opacity: 0.6;
-    transition: opacity 0.2s;
-  }
-
-  .MuiAccordionSummary-root:hover {
-    opacity: 1;
   }
 `

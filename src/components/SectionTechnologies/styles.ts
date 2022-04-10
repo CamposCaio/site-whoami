@@ -30,7 +30,8 @@ export const Content = styled.div`
     gap: 1.5rem;
 
     @media (max-width: 480px) {
-      grid-template-columns: repeat(5, 1fr);
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, 3rem);
       gap: 1rem;
     }
   }
@@ -41,8 +42,8 @@ export const Content = styled.div`
     border-radius: 4px;
     background-size: cover;
     transition: all 0.4s;
-    opacity: ${(props) => (props.color === 'dark' ? 0.38 : 0.2)};
-    filter: brightness(0%);
+    opacity: 0.38;
+    filter: blur(1px);
 
     @media (max-width: 480px) {
       width: 3rem;
@@ -51,14 +52,18 @@ export const Content = styled.div`
   }
 
   .technologies__card:hover {
-    filter: brightness(100%);
+    filter: blur(0);
     opacity: 1;
     cursor: pointer;
   }
 
   .card-active {
-    filter: brightness(100%);
+    filter: blur(0);
     opacity: 1;
+  }
+
+  .technologies__card-description {
+    height: 6rem;
   }
 
   #card-1 {

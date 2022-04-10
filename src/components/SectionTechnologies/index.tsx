@@ -2,14 +2,12 @@ import { useContext, useEffect, useState } from 'react';
 import Fade from 'react-reveal/Fade';
 
 import { LocaleContext } from '../../providers/locale';
-import { ThemeContext } from '../../providers/theme';
 import { Container, Content } from './styles';
 
 let card = 1
 
 export function SectionTechnologies() {
   const { t } = useContext(LocaleContext)
-  const { activeTheme } = useContext(ThemeContext)
   const [cardsTitle, setCardsTitle] = useState(t.technologiesCard1)
   const [cardsContent, setCardsContent] = useState(t.technologiesCard1Content)
 
@@ -35,7 +33,7 @@ export function SectionTechnologies() {
   return (
     <Container id="technologies">
       <Fade bottom>
-        <Content color={activeTheme.palette.mode}>
+        <Content>
           <h2>{t.technologiesTitle}</h2>
           <h6>{t.technologiesSubtitle}</h6>
           {t.technologiesContent}
@@ -87,7 +85,7 @@ export function SectionTechnologies() {
                 id="card-9"
               ></div>
             </div>
-            <div>
+            <div className="technologies__card-description">
               <h3>{cardsTitle}</h3>
               <p>{cardsContent}</p>
             </div>

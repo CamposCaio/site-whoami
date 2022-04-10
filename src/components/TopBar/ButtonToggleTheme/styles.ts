@@ -12,18 +12,18 @@ export const Container = styled.div`
     mask-image: url(svg/icon-theme.svg);
     mask-size: cover;
     mask-repeat: no-repeat;
-    mask-position: calc(-17px * 9) 0px;
+    mask-position: calc(-17px * 18) 0px;
     padding-bottom: 100%;
     width: 17px;
     height: 17px;
     animation-duration: 300ms;
-    animation-timing-function: steps(9);
+    animation-timing-function: steps(18);
     animation-fill-mode: forwards;
   }
 
   @keyframes play-light-to-dark {
     0% {
-      mask-position: calc(-17px * 9) 0px;
+      mask-position: calc(-17px * 18) 0px;
     }
     100% {
       mask-position: 0px 0px;
@@ -35,7 +35,7 @@ export const Container = styled.div`
       mask-position: 0px 0px;
     }
     100% {
-      mask-position: calc(-17px * 9) 0px;
+      mask-position: calc(-17px * 18) 0px;
     }
   }
 

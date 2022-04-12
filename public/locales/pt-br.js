@@ -1,4 +1,12 @@
 export default {
+  theme: {
+    translation: 'Tema',
+    dark: 'Escuro',
+    light: 'Claro',
+  },
+  language: {
+    translation: 'linguagem',
+  },
   sideNavbarHome: 'Início',
   sideNavbarAbout: 'Sobre mim',
   sideNavbarTechnologies: 'Tecnologias',
@@ -31,7 +39,7 @@ export default {
     '4 anos atuando como Freelancer e Desenvolvedor Full Stack profissional.',
   aboutAccordionTitle2: 'Trabalho em equipe',
   aboutAccordionContent2:
-    'Comunicação e interação com toda a equipe de trabalho.',
+    'Comunicação eficiente e interação com toda a equipe de trabalho.',
   aboutAccordionTitle3: 'Interação com o cliente',
   aboutAccordionContent3:
     'Considero a clareza das ideias e o respeito com o outro como pontos muito importantes.',
@@ -39,8 +47,7 @@ export default {
   aboutAccordionContent4:
     'Conhecimento sobre SCRUM, já tendo atuado como Product Owner.',
   technologiesTitle: 'Tecnologias',
-  technologiesSubtitle: 'Linguagem, frameworks, bibliotecas...',
-  technologiesContent: 'Algumas das tecnologias que venho utilizando:',
+  technologiesSubtitle: 'Tecnologias que venho utilizando',
   technologiesCard1: 'TypeScript',
   technologiesCard1Content:
     'TypeScript é uma linguagem de programação fortemente tipada que se baseia no JavaScript.',

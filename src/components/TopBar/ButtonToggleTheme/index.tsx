@@ -3,11 +3,11 @@ import React, { useContext } from 'react';
 import Button from '@mui/material/Button';
 
 import { ThemeContext } from '../../../providers/theme';
-import { lightTheme } from '../../../theme';
+import { darkTheme, lightTheme } from '../../../theme';
 import { Container } from './styles';
 
 export function ButtonToggleTheme() {
-  const { activeTheme, toggleTheme } = useContext(ThemeContext)
+  const { activeTheme, setActiveTheme } = useContext(ThemeContext)
   function handleToggleTheme() {
     const divSvgTheme = document.getElementById('top-bar__icon-theme')
 
@@ -19,7 +19,7 @@ export function ButtonToggleTheme() {
       divSvgTheme.classList.remove('play-dark-to-light')
     }
 
-    toggleTheme()
+    setActiveTheme(activeTheme === lightTheme ? darkTheme : lightTheme)
   }
   return (
     <Container color={activeTheme.palette.text.primary}>

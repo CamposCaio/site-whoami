@@ -1,4 +1,12 @@
 export default {
+  theme: {
+    translation: 'Theme',
+    dark: 'Dark',
+    light: 'Light',
+  },
+  language: {
+    translation: 'Language',
+  },
   sideNavbarHome: 'Home',
   sideNavbarAbout: 'About me',
   sideNavbarTechnologies: 'Technologies',
@@ -32,7 +40,7 @@ export default {
     '4 years working as a professional Freelancer and Full Stack Developer.',
   aboutAccordionTitle2: 'Team work',
   aboutAccordionContent2:
-    'Communication and interaction with the entire work team.',
+    'Efficient communication and interaction with the entire work team.',
   aboutAccordionTitle3: 'Customer interaction',
   aboutAccordionContent3:
     'I consider clarity of ideas and respect for others to be very important points.',
@@ -41,8 +49,7 @@ export default {
     'Knowledge about SCRUM, having already acted as Product Owner.',
 
   technologiesTitle: 'Technologies',
-  technologiesSubtitle: 'Languages, frameworks, libraries...',
-  technologiesContent: "Some technologies I've been using:",
+  technologiesSubtitle: "Technologies I've been using",
   technologiesCard1: 'TypeScript',
   technologiesCard1Content:
     'TypeScript is a strongly typed programming language that is based on JavaScript.',

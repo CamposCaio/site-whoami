@@ -49,6 +49,7 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     body,
     input,
     textarea,
+    select,
     button {
       font-family: Roboto;
       font-weight: 400;

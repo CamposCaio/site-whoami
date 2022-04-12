@@ -13,7 +13,6 @@ export const Content = styled.div`
   width: min(100vw - 4rem, 720px);
 
   .MuiPaper-root {
-    margin-top: 3rem;
     padding: 1rem;
   }
 
@@ -24,7 +23,7 @@ export const Content = styled.div`
     gap: 3rem;
 
     @media (max-width: 480px) {
-      gap: 2rem;
+      gap: 1rem;
       flex-direction: column;
     }
   }
@@ -33,29 +32,31 @@ export const Content = styled.div`
     display: grid;
     width: fit-content;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 0.5rem;
 
     @media (max-width: 480px) {
       width: 100%;
-      grid-template-columns: repeat(auto-fit, 3rem);
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, 4rem);
+      gap: 0.25rem;
     }
   }
 
   .technologies__card {
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     margin: 0.5rem;
     border-radius: 4px;
-    background-size: cover;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center center;
     transition: all 0.4s;
-    opacity: 0.38;
+    opacity: 0.6;
     filter: blur(1px);
 
     @media (max-width: 480px) {
-      width: 2rem;
-      height: 2rem;
-      margin: 0.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      margin: 0.25rem;
     }
   }
 
@@ -68,18 +69,20 @@ export const Content = styled.div`
   .card-active {
     filter: blur(0);
     opacity: 1;
+    box-shadow: 0 0 0 1px ${(props) => props.color};
+    /* border: 1px solid ${(props) => props.color}; */
     margin: 0;
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
     @media (max-width: 480px) {
-      width: 3rem;
-      height: 3rem;
+      width: 4rem;
+      height: 4rem;
     }
   }
 
   .technologies__card-description {
     @media (max-width: 480px) {
-      height: 7rem;
+      height: 8rem;
     }
   }
 
@@ -88,15 +91,9 @@ export const Content = styled.div`
   }
   #card-2 {
     background-image: url(technologies/react.png);
-    background-position: center center;
-    background-size: 100%;
-    background-repeat: no-repeat;
   }
   #card-3 {
     background-image: url(technologies/next.png);
-    background-position: center center;
-    background-size: 100%;
-    background-repeat: no-repeat;
   }
   #card-4 {
     background-image: url(technologies/styled-components.png);
@@ -106,18 +103,12 @@ export const Content = styled.div`
   }
   #card-6 {
     background-image: url(technologies/node.png);
-    background-position: center center;
-    background-size: 100%;
-    background-repeat: no-repeat;
   }
   #card-7 {
     background-image: url(technologies/nest.svg);
   }
   #card-8 {
     background-image: url(technologies/docker.png);
-    background-position: center center;
-    background-size: 100%;
-    background-repeat: no-repeat;
   }
   #card-9 {
     background-image: url(technologies/kubernetes.png);

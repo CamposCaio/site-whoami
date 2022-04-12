@@ -4,12 +4,14 @@ import Fade from 'react-reveal/Fade';
 import Paper from '@mui/material/Paper';
 
 import { LocaleContext } from '../../providers/locale';
+import { ThemeContext } from '../../providers/theme';
 import { Container, Content } from './styles';
 
 let card = 1
 
 export function SectionTechnologies() {
   const { t } = useContext(LocaleContext)
+  const { activeTheme } = useContext(ThemeContext)
   const [cardsTitle, setCardsTitle] = useState(t.technologiesCard1)
   const [cardsContent, setCardsContent] = useState(t.technologiesCard1Content)
 
@@ -35,10 +37,9 @@ export function SectionTechnologies() {
   return (
     <Container id="technologies">
       <Fade bottom>
-        <Content>
+        <Content color={activeTheme.palette.text.disabled}>
           <h2>{t.technologiesTitle}</h2>
           <h6>{t.technologiesSubtitle}</h6>
-          {t.technologiesContent}
           <Paper elevation={4}>
             <div className="technologies__container-cards">
               <div className="technologies__container-grid">

@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, Dispatch, SetStateAction } from 'react';
 
 import { Theme } from '@mui/material';
 
@@ -6,12 +6,12 @@ import { lightTheme } from '../theme';
 
 type PropsThemeContext = {
   activeTheme: Theme
-  toggleTheme: () => void
+  setActiveTheme: Dispatch<SetStateAction<Theme>>
 }
 
 const DEFAULT_VALUE = {
   activeTheme: lightTheme,
-  toggleTheme: () => {},
+  setActiveTheme: () => {},
 }
 
 export const ThemeContext = createContext<PropsThemeContext>(DEFAULT_VALUE)

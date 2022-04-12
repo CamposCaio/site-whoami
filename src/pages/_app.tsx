@@ -40,12 +40,9 @@ export default function MyApp(props) {
       )
   }, [])
 
-  const toggleTheme = () => {
-    document.cookie = `savedTheme=${
-      activeTheme === lightTheme ? 'dark' : 'light'
-    }`
-    setActiveTheme(activeTheme === lightTheme ? darkTheme : lightTheme)
-  }
+  React.useEffect(() => {
+    document.cookie = `savedTheme=${activeTheme.palette.mode}`
+  }, [activeTheme])
 
   const globalStyle = getGlobalStyleTheme(activeTheme)
 
@@ -57,7 +54,7 @@ export default function MyApp(props) {
           <meta name="viewport" content="initial-scale=1, width=device-width" />
         </Head>
         <ThemeProvider theme={activeTheme}>
-          <ThemeContext.Provider value={{ activeTheme, toggleTheme }}>
+          <ThemeContext.Provider value={{ activeTheme, setActiveTheme }}>
             <Component {...pageProps} />
           </ThemeContext.Provider>
         </ThemeProvider>

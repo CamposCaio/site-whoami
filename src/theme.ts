@@ -72,34 +72,6 @@ const baseComponents: Theme['components'] = {
   },
 }
 
-const shadows: Theme['shadows'] = [
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-  'none',
-]
-
 const lightComponents: Theme['components'] = {
   ...baseComponents,
   MuiOutlinedInput: {
@@ -147,7 +119,6 @@ export const lightTheme = createTheme({
       secondary: 'rgba(0, 0, 0, 0.5)',
     },
   },
-  // shadows,
 })
 
 export const darkTheme = createTheme({
@@ -155,7 +126,6 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      // main: '#3F51B5',
       main: '#2196F3',
     },
     secondary: {
@@ -166,5 +136,4 @@ export const darkTheme = createTheme({
       default: '#181818',
     },
   },
-  // shadows,
 })

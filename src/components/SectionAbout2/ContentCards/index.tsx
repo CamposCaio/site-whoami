@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import Fade from 'react-reveal/Fade';
 
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
@@ -6,13 +5,13 @@ import SentimentVerySatisfiedOutlinedIcon from '@mui/icons-material/SentimentVer
 import TrendingUpOutlinedIcon from '@mui/icons-material/TrendingUpOutlined';
 import Paper from '@mui/material/Paper';
 
-import { LocaleContext } from '../../../providers/locale';
-import { ThemeContext } from '../../../providers/theme';
+import { useLocale } from '../../../providers/locale';
+import { useTheme } from '../../../providers/theme';
 import { Container } from './styles';
 
 export function ContentCards() {
-  const { t } = useContext(LocaleContext)
-  const { activeTheme } = useContext(ThemeContext)
+  const { t } = useLocale()
+  const { activeTheme } = useTheme()
 
   return (
     <Container color={activeTheme.palette.primary.main}>

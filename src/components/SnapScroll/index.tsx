@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const NUM_OF_PAGES = 5
+const NUM_OF_PAGES = 6
 
 let listenForPageScroll = true
 let animationFrameID = 0

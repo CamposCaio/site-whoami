@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import DesktopWindowsOutlinedIcon from '@mui/icons-material/DesktopWindowsOutlined';
 import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
@@ -7,7 +7,7 @@ import { styled } from '@mui/material/styles';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 
-import { LocaleContext } from '../../../providers/locale';
+import { useLocale } from '../../../providers/locale';
 import { Container } from './styles';
 
 interface TabPanelProps {
@@ -85,7 +85,7 @@ interface StyledTabProps {
 export function EntireTabPanel() {
   const [value, setValue] = useState(0)
 
-  const { t } = useContext(LocaleContext)
+  const { t } = useLocale()
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)

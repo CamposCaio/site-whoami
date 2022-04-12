@@ -1,11 +1,11 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import { Button } from '@mui/material';
 
-import { LocaleContext } from '../../providers/locale';
+import { useLocale } from '../../providers/locale';
 import { enableHandleScroll, scrollTo } from '../SnapScroll';
 import { ParticlesEffect } from './ParticlesEffect';
 import { Container, Section } from './styles';
@@ -31,7 +31,7 @@ function handleNavigation(page: number) {
 }
 
 export function SectionHome() {
-  const { t } = useContext(LocaleContext)
+  const { t } = useLocale()
   useEffect(() => {
     handleResize()
     window.addEventListener('resize', handleResize)
@@ -67,12 +67,8 @@ export function SectionHome() {
         <h1 className="js-title">{t.homeTitleLarge.normal[0]}</h1>
         <h1 className="js-title-variant">{t.homeTitleLarge.variant[0]}</h1>
         <br />
-        <h1 className="global--color-primary js-title">
-          {t.homeTitleLarge.normal[1]}
-        </h1>
-        <h1 className="global--color-primary js-title-variant">
-          {t.homeTitleLarge.variant[1]}
-        </h1>
+        <h1 className="js-title">{t.homeTitleLarge.normal[1]}</h1>
+        <h1 className="js-title-variant">{t.homeTitleLarge.variant[1]}</h1>
         <div className="home__div-buttons">
           <Button variant="contained" color="secondary">
             <FileDownloadOutlinedIcon sx={{ mr: '0.5rem' }} />

@@ -80,7 +80,16 @@ export default {
 
   portfolioTitle: 'Portfolio',
   portfolioContent: 'Page under maintenance. Please, come back later :)',
-  contactTitle: 'Contact',
-  contactContent: "Let's work together? Send me a:",
-  contactFindMe: 'Find me on:',
+  contactTitle: 'Contato',
+  contactSubtitle: 'Informações de contato',
+  contactTitle2: 'Vamos trabalhar juntos',
+  contactContent:
+    'Sinta-se à vontade para falar comigo via qualquer um destes meios:',
+  contactEmail: 'E-mail',
+  contactWhatsapp: 'Whatsapp',
+  contactPhone: 'Celular',
+  contactFormName: 'Seu nome',
+  contactFormEmail: 'E-mail',
+  contactFormMessage: 'Mensagem',
+  contactFormSend: 'Enviar',
 }

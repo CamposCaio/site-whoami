@@ -12,15 +12,19 @@ export const Container = styled.section`
 export const Content = styled.div`
   width: min(100vw - 4rem, 720px);
 
+  @media (max-width: 1200px) {
+    padding-top: 3rem;
+  }
+
   .MuiPaper-root {
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .technologies__container-cards {
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
 
     @media (max-width: 480px) {
       gap: 1rem;

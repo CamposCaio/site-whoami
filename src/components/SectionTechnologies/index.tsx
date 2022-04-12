@@ -1,17 +1,17 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Fade from 'react-reveal/Fade';
 
 import Paper from '@mui/material/Paper';
 
-import { LocaleContext } from '../../providers/locale';
-import { ThemeContext } from '../../providers/theme';
+import { useLocale } from '../../providers/locale';
+import { useTheme } from '../../providers/theme';
 import { Container, Content } from './styles';
 
 let card = 1
 
 export function SectionTechnologies() {
-  const { t } = useContext(LocaleContext)
-  const { activeTheme } = useContext(ThemeContext)
+  const { t } = useLocale()
+  const { activeTheme } = useTheme()
   const [cardsTitle, setCardsTitle] = useState(t.technologiesCard1)
   const [cardsContent, setCardsContent] = useState(t.technologiesCard1Content)
 

@@ -1,12 +1,11 @@
-import { useContext } from 'react';
 import Fade from 'react-reveal/Fade';
 
-import { LocaleContext } from '../../providers/locale';
+import { useLocale } from '../../providers/locale';
 import { EntireTabPanel } from './EntireTabPanel';
 import { Container, Content } from './styles';
 
 export function SectionAbout1() {
-  const { t } = useContext(LocaleContext)
+  const { t } = useLocale()
 
   return (
     <Container id="about">

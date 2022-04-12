@@ -40,13 +40,13 @@ export const Section = styled.section`
 export const Container = styled.div`
   display: inline-block;
 
+  @media (max-width: 1200px) {
+    padding-top: 3rem;
+  }
+
   h1,
   h4 {
     display: inline-block;
-  }
-
-  .home__title--blue {
-    color: var(--primary-color);
   }
 
   .home__div-buttons {

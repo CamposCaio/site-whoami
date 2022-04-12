@@ -1,23 +1,14 @@
 import { css } from '@emotion/react';
-import { Theme } from '@mui/material/styles/createTheme';
+import { Theme } from '@mui/material';
 
-export const getGlobalStyleTheme = (activeTheme: Theme) => {
-  const globalStyle = css`
-    :root {
-      --primary: ${activeTheme.palette.primary.main};
-      --secondary: ${activeTheme.palette.secondary.main};
-      --background: ${activeTheme.palette.background.default};
-      --text: ${activeTheme.palette.text.primary};
-      --text-secondary: ${activeTheme.palette.text.secondary};
-    }
-
+export function getGlobalStyle({ palette }: Theme) {
+  return css`
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       white-space: pre-line;
       letter-spacing: 0.75px;
-      /* scroll-behavior: smooth; */
       line-height: 1.25rem;
       word-spacing: 3px;
       text-align: justify;
@@ -32,6 +23,7 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     html {
       -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
+
       @media (max-width: 1080px) {
         font-size: 93.75%;
       }
@@ -41,9 +33,8 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     }
 
     body {
-      /* position: relative; */
       -webkit-font-smoothing: antialiased;
-      background-color: var(--background);
+      background-color: ${palette.background.default};
     }
 
     body,
@@ -53,7 +44,7 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     button {
       font-family: Roboto;
       font-weight: 400;
-      color: var(--text);
+      color: ${palette.text.primary};
     }
 
     h1,
@@ -65,31 +56,31 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     strong {
       font-weight: 700;
       font-family: 'Lato', sans-serif;
-      /* display: inline; */
       text-align: left;
       letter-spacing: 0px;
     }
 
-    h1 {
+    h1,
+    h2,
+    h3 {
       text-transform: uppercase;
+      color: ${palette.primary.main};
+    }
+
+    h1 {
       font-size: 3rem;
       line-height: 100%;
-      color: var(--primary);
     }
 
     h2 {
-      text-transform: uppercase;
       font-size: 2.25rem;
       line-height: 2rem;
-      color: var(--primary);
     }
 
     h3 {
-      text-transform: uppercase;
       font-size: 1.25rem;
       line-height: 1.25rem;
       font-weight: 400;
-      color: var(--primary);
     }
 
     h4 {
@@ -102,7 +93,6 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
     }
 
     h5 {
-      font-weight: 700;
       font-size: 1.1rem;
     }
 
@@ -111,7 +101,7 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       line-height: 1rem;
       padding-bottom: 2rem;
       font-weight: 400;
-      color: var(--text-secondary);
+      color: ${palette.secondary.main};
     }
 
     button {
@@ -131,5 +121,4 @@ export const getGlobalStyleTheme = (activeTheme: Theme) => {
       padding-top: 1rem;
     }
   `
-  return globalStyle
 }

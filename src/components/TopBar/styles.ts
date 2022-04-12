@@ -13,26 +13,6 @@ export const Container = styled.div`
     background-color: ${(props: any) => props.theme.palette.primary.main};
   }
 
-  #icon-audio-control {
-    background-color: ${(props: any) => props.theme.palette.text.primary};
-
-    @media (max-width: 1200px) {
-      background-color: #fff;
-    }
-
-    -webkit-mask-image: url(svg/icon-audio-control.svg);
-    mask-image: url(svg/icon-audio-control.svg);
-    mask-size: cover;
-    mask-repeat: no-repeat;
-    mask-position: calc(-22px * 18) 0px;
-    padding-bottom: 100%;
-    width: 22px;
-    height: 22px;
-    animation-duration: 300ms;
-    animation-timing-function: steps(18);
-    animation-fill-mode: forwards;
-  }
-
   #icon-menu {
     background-color: #fff;
     -webkit-mask-image: url(svg/icon-menu.svg);
@@ -70,38 +50,12 @@ export const Container = styled.div`
     }
   }
 
-  @keyframes play-button {
-    0% {
-      mask-position: calc(-22px * 18) 0px;
-    }
-    100% {
-      mask-position: 0px 0px;
-    }
-  }
-
-  @keyframes pause-button {
-    0% {
-      mask-position: 0px 0px;
-    }
-    100% {
-      mask-position: calc(-22px * 18) 0px;
-    }
-  }
-
   .menu-close-button {
     animation-name: menu-close-button;
   }
 
   .menu-open-button {
     animation-name: menu-open-button;
-  }
-
-  .play-button {
-    animation-name: play-button;
-  }
-
-  .pause-button {
-    animation-name: pause-button;
   }
 
   #container-top-left {

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-import { ThemeContext } from '../../../providers/theme';
+import { useTheme } from '../../../providers/theme';
 import { Particle } from './Particle';
 import { Container } from './styles';
 
@@ -94,7 +94,7 @@ function getRgbFromHex(hex: string) {
 }
 
 export function ParticlesEffect() {
-  const { activeTheme } = useContext(ThemeContext)
+  const { activeTheme } = useTheme()
 
   useEffect(() => {
     const canvas = document.getElementById('home__canvas') as HTMLCanvasElement

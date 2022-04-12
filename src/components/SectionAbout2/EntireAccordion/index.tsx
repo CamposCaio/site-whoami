@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
@@ -9,8 +9,8 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import MuiAccordionSummary, { AccordionSummaryProps } from '@mui/material/AccordionSummary';
 import { styled } from '@mui/material/styles';
 
-import { LocaleContext } from '../../../providers/locale';
-import { ThemeContext } from '../../../providers/theme';
+import { useLocale } from '../../../providers/locale';
+import { useTheme } from '../../../providers/theme';
 import { Container } from './styles';
 
 const Accordion = styled((props: AccordionProps) => (
@@ -48,14 +48,14 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 export function EntireAccordion() {
   const [expanded, setExpanded] = useState<string | false>('panel1')
 
-  const { t } = useContext(LocaleContext)
+  const { t } = useLocale()
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
       setExpanded(newExpanded ? panel : false)
     }
 
-  const { activeTheme } = useContext(ThemeContext)
+  const { activeTheme } = useTheme()
 
   return (
     <Container color={activeTheme.palette.primary.main}>

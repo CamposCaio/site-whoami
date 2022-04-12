@@ -1,6 +1,6 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 
-import { LocaleContext } from '../../providers/locale';
+import { useLocale } from '../../providers/locale';
 import { enableHandleScroll, scrollTo } from '../SnapScroll';
 import { Container } from './styles';
 
@@ -10,7 +10,7 @@ function handleNavigation(page: number) {
 }
 
 export function SideNavbar() {
-  const { t } = useContext(LocaleContext)
+  const { t } = useLocale()
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -68,7 +68,7 @@ export function SideNavbar() {
       <a onClick={() => handleNavigation(4)} id="side-navbar__portfolio">
         {t.sideNavbarPortfolio}
       </a>
-      <a onClick={() => handleNavigation(0)} id="side-navbar__contact">
+      <a onClick={() => handleNavigation(5)} id="side-navbar__contact">
         {t.sideNavbarContact}
       </a>
     </Container>

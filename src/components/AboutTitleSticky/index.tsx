@@ -1,10 +1,8 @@
-import { useContext } from 'react';
-
-import { LocaleContext } from '../../providers/locale';
+import { useLocale } from '../../providers/locale';
 import { Container } from './styles';
 
-export default function AboutTitleSticky() {
-  const { t } = useContext(LocaleContext)
+export function AboutTitleSticky() {
+  const { t } = useLocale()
 
   return (
     <Container>

@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 
 import Button from '@mui/material/Button';
 
-import { ThemeContext } from '../../../providers/theme';
+import { useTheme } from '../../../providers/theme';
 import { darkTheme, lightTheme } from '../../../theme';
 import { Container } from './styles';
 
 export function ButtonToggleTheme() {
-  const { activeTheme, setActiveTheme } = useContext(ThemeContext)
+  const { activeTheme, setActiveTheme } = useTheme()
   function handleToggleTheme() {
     const divSvgTheme = document.getElementById('top-bar__icon-theme')
 

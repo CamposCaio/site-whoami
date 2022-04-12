@@ -1,22 +1,26 @@
-import { useContext, useState } from 'react';
-
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
-import NativeSelect from '@mui/material/NativeSelect';
 import Select from '@mui/material/Select';
 
-import { LocaleContext } from '../../../providers/locale';
-import { ThemeContext } from '../../../providers/theme';
+import { useLocale } from '../../../providers/locale';
+import { useTheme } from '../../../providers/theme';
 import { darkTheme, lightTheme } from '../../../theme';
+import { enableHandleScroll, scrollTo } from '../../SnapScroll';
 import { Container } from './styles';
 
-export function MobileMenuOverlay({ isOpen }) {
-  const { t, locale, setLocale } = useContext(LocaleContext)
-  const { activeTheme, setActiveTheme } = useContext(ThemeContext)
+export function MobileMenuOverlay({ isOpen, toggleMenu }) {
+  const { t, locale, setLocale } = useLocale()
+  const { activeTheme, setActiveTheme } = useTheme()
 
   function handleSelectTheme(value: string) {
     setActiveTheme(value === 'light' ? lightTheme : darkTheme)
+  }
+
+  function handleNavigation(page: number) {
+    toggleMenu()
+    enableHandleScroll(false)
+    scrollTo(page * window.innerHeight)
   }
 
   return (
@@ -51,19 +55,39 @@ export function MobileMenuOverlay({ isOpen }) {
           </FormControl>
         </div>
         <div className="div-navigation">
-          <Button variant="text" color="inherit">
+          <Button
+            variant="text"
+            color="inherit"
+            onClick={() => handleNavigation(0)}
+          >
             {t.sideNavbarHome}
           </Button>
-          <Button variant="text" color="inherit">
+          <Button
+            variant="text"
+            color="inherit"
+            onClick={() => handleNavigation(1)}
+          >
             {t.sideNavbarAbout}
           </Button>
-          <Button variant="text" color="inherit">
+          <Button
+            variant="text"
+            color="inherit"
+            onClick={() => handleNavigation(3)}
+          >
             {t.sideNavbarTechnologies}
           </Button>
-          <Button variant="text" color="inherit">
+          <Button
+            variant="text"
+            color="inherit"
+            onClick={() => handleNavigation(4)}
+          >
             {t.sideNavbarPortfolio}
           </Button>
-          <Button variant="text" color="inherit">
+          <Button
+            variant="text"
+            color="inherit"
+            onClick={() => handleNavigation(5)}
+          >
             {t.sideNavbarContact}
           </Button>
         </div>

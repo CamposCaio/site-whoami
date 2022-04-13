@@ -10,11 +10,15 @@ import { SectionContact } from '@sections/Contact';
 import { SectionHome } from '@sections/Home';
 import { SectionPortfolio } from '@sections/Portfolio';
 import { SectionTechnologies } from '@sections/Technologies';
-import { snapScroll } from '@src/snapScroll';
+import { ScrollController } from '@src/snapScroll';
+
+export const scrollController = new ScrollController(5)
 
 const Home: NextPage = () => {
   useEffect(() => {
-    snapScroll()
+    scrollController.initialize()
+    window.addEventListener('scroll', () => scrollController.handleScroll())
+    window.addEventListener('resize', () => scrollController.handleResize())
   }, [])
 
   return (

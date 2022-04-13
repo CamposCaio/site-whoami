@@ -5,7 +5,7 @@ import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import { Button } from '@mui/material';
 import { useLocale } from '@providers/locale';
-import { scrollTo } from '@src/snapScroll';
+import { scrollController } from '@src/pages';
 
 import { ParticlesEffect } from './ParticlesEffect';
 import { Container, Section } from './styles';
@@ -23,10 +23,6 @@ function changeElementsDisplay(
   elements.forEach((element) => {
     element.style.display = displayType
   })
-}
-
-function handleNavigation(page: number) {
-  scrollTo(page * window.innerHeight)
 }
 
 export function SectionHome() {
@@ -84,7 +80,7 @@ export function SectionHome() {
           </Button>
         </div>
       </Container>
-      <div id="home__scroll-down" onClick={() => handleNavigation(1)}>
+      <div id="home__scroll-down" onClick={() => scrollController.scrollTo(1)}>
         {t.homeScrollDown}
         <ArrowDropDownOutlinedIcon />
       </div>

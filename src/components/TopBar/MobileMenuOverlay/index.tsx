@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { useLocale } from '@providers/locale';
 import { useTheme } from '@providers/theme';
-import { scrollTo } from '@src/snapScroll';
+import { scrollController } from '@src/pages';
 import { darkTheme, lightTheme } from '@src/theme';
 
 import { Container } from './styles';
@@ -19,7 +19,7 @@ export function MobileMenuOverlay({ isOpen, toggleMenu }) {
 
   function handleNavigation(page: number) {
     toggleMenu()
-    scrollTo(page * window.innerHeight)
+    scrollController.scrollTo(page)
   }
 
   return (

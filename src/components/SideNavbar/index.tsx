@@ -1,13 +1,9 @@
 import { useEffect } from 'react';
 
 import { useLocale } from '@providers/locale';
-import { scrollTo } from '@src/snapScroll';
+import { scrollController } from '@src/pages';
 
 import { Container } from './styles';
-
-function handleNavigation(page: number) {
-  scrollTo(page * window.innerHeight)
-}
 
 export function SideNavbar() {
   const { t } = useLocale()
@@ -53,22 +49,28 @@ export function SideNavbar() {
   return (
     <Container className="global--color-secondary">
       <a
-        onClick={() => handleNavigation(0)}
+        onClick={() => scrollController.scrollTo(0)}
         id="side-navbar__home"
         className="link-active"
       >
         {t.sideNavbarHome}
       </a>
-      <a onClick={() => handleNavigation(1)} id="side-navbar__about">
+      <a onClick={() => scrollController.scrollTo(1)} id="side-navbar__about">
         {t.sideNavbarAbout}
       </a>
-      <a onClick={() => handleNavigation(3)} id="side-navbar__technologies">
+      <a
+        onClick={() => scrollController.scrollTo(3)}
+        id="side-navbar__technologies"
+      >
         {t.sideNavbarTechnologies}
       </a>
-      <a onClick={() => handleNavigation(4)} id="side-navbar__portfolio">
+      <a
+        onClick={() => scrollController.scrollTo(4)}
+        id="side-navbar__portfolio"
+      >
         {t.sideNavbarPortfolio}
       </a>
-      <a onClick={() => handleNavigation(5)} id="side-navbar__contact">
+      <a onClick={() => scrollController.scrollTo(5)} id="side-navbar__contact">
         {t.sideNavbarContact}
       </a>
     </Container>

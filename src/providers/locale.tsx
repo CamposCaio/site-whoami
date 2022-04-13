@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router';
 import { createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
 
-import en from '../../public/locales/en-us';
-import pt from '../../public/locales/pt-br';
+import en from '@public/locales/en-us';
+import pt from '@public/locales/pt-br';
+
 import { getCookie } from '../pages/_app';
 
 type PropsLocaleContext = {

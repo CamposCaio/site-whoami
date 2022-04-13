@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
-import { useLocale } from '../../providers/locale';
-import { enableHandleScroll, scrollTo } from '../SnapScroll';
+import { useLocale } from '@providers/locale';
+import { scrollTo } from '@src/snapScroll';
+
 import { Container } from './styles';
 
 function handleNavigation(page: number) {
-  enableHandleScroll(false)
   scrollTo(page * window.innerHeight)
 }
 

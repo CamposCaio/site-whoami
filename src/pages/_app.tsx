@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import * as React from 'react';
 
 import { CacheProvider, EmotionCache } from '@emotion/react';
+import { LocaleProvider } from '@providers/locale';
+import { ThemeProvider } from '@providers/theme';
 
 import createEmotionCache from '../createEmotionCache';
-import { LocaleProvider } from '../providers/locale';
-import { ThemeProvider } from '../providers/theme';
 
 const clientSideEmotionCache = createEmotionCache()
 

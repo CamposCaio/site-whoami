@@ -2,11 +2,11 @@ import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import { useLocale } from '@providers/locale';
+import { useTheme } from '@providers/theme';
+import { scrollTo } from '@src/snapScroll';
+import { darkTheme, lightTheme } from '@src/theme';
 
-import { useLocale } from '../../../providers/locale';
-import { useTheme } from '../../../providers/theme';
-import { darkTheme, lightTheme } from '../../../theme';
-import { enableHandleScroll, scrollTo } from '../../SnapScroll';
 import { Container } from './styles';
 
 export function MobileMenuOverlay({ isOpen, toggleMenu }) {
@@ -19,7 +19,6 @@ export function MobileMenuOverlay({ isOpen, toggleMenu }) {
 
   function handleNavigation(page: number) {
     toggleMenu()
-    enableHandleScroll(false)
     scrollTo(page * window.innerHeight)
   }
 

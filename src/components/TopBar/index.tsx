@@ -3,10 +3,10 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import { useLocale } from '@providers/locale';
+import { useTheme } from '@providers/theme';
 
-import { useLocale } from '../../providers/locale';
-import { useTheme } from '../../providers/theme';
-import { BgMusic } from '../BgMusic';
+import { BackgroundMusic } from '../BackgroundMusic';
 import { ButtonToggleTheme } from './ButtonToggleTheme';
 import { MobileMenuOverlay } from './MobileMenuOverlay';
 import { Container } from './styles';
@@ -27,7 +27,7 @@ export function TopBar() {
     <Container theme={activeTheme}>
       <MobileMenuOverlay isOpen={isOpenMenuOverlay} toggleMenu={toggleMenu} />
       <div id="container-top-left">
-        <BgMusic />
+        <BackgroundMusic />
       </div>
 
       <Button onClick={toggleMenu} variant="text" title="Menu">

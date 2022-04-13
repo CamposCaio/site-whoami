@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
 import Button from '@mui/material/Button';
+import { useTheme } from '@providers/theme';
+import { darkTheme, lightTheme } from '@src/theme';
 
-import { useTheme } from '../../../providers/theme';
-import { darkTheme, lightTheme } from '../../../theme';
 import { Container } from './styles';
 
 export function ButtonToggleTheme() {

@@ -1,3 +1,5 @@
+import { updateNavbarLink } from './components/TopBar';
+
 export class ScrollController {
   private numOfPages: number
   private animationFrameID = 0
@@ -66,6 +68,11 @@ export class ScrollController {
     this.lockClientScroll(true)
     cancelAnimationFrame(this.animationFrameID)
     this.animationTargetPage = page as number
+
+    this.scrollDirection = page < this.currentPage ? 'top' : 'bottom'
+    /* Update Navbar Link */
+    this.updateNavbarLink()
+
     this.isScriptScrolling = true
     this.animateScroll()
   }
@@ -84,6 +91,15 @@ export class ScrollController {
     }, 50)
   }
 
+  private updateNavbarLink() {
+    for (const [key, value] of Object.entries(this.pages)) {
+      if (value === this.animationTargetPage) {
+        updateNavbarLink(key)
+        return
+      }
+    }
+  }
+
   private animateScroll() {
     this.animationFrameID = requestAnimationFrame(() => {
       this.animateScroll()
@@ -100,10 +116,3 @@ export class ScrollController {
     else window.scrollBy({ top: Math.floor(distanceToTargetY / 20) - 4 })
   }
 }
-
-// export const scrollController = new ScrollController(5)
-
-// function snapScroll() {
-//   window.addEventListener('scroll', () => scrollController.handleScroll())
-//   window.addEventListener('resize', () => scrollController.handleResize())
-// }

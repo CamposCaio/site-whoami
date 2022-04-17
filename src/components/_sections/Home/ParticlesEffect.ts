@@ -64,7 +64,7 @@ export class ParticlesEffect {
       window.requestAnimationFrame(this.animationStep)
       return
     }
-    this.removeParticle()
+    // this.removeParticle()
     this.removeParticle()
 
     if (this.particles.length) window.requestAnimationFrame(this.animationStep)

@@ -21,6 +21,20 @@ export const ContainerSection = styled.section`
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    padding-inline: 2rem;
+  }
+
+  .heading__title {
+    text-align: justify;
+    @media (max-width: 610px) {
+      width: min-content;
+    }
+  }
+
+  .cv__container span svg {
+    @media (max-width: 330px) {
+      display: none;
+    }
   }
 
   .cv__container span {
@@ -33,6 +47,10 @@ export const ContainerSection = styled.section`
   .cv__buttons-container {
     display: flex;
     gap: 1rem;
+
+    @media (max-width: 610px) {
+      flex-direction: column;
+    }
   }
 
   #scroll-down {

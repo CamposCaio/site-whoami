@@ -64,16 +64,7 @@ export const DesktopMenu = styled.div`
 
     a.active {
       color: ${({ theme }: any) => theme.palette.text.disabled};
-    }
-
-    .marker {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background-color: ${({ theme }: any) => theme.palette.text.disabled};
-      transition: all 0.4s;
+      cursor: default;
     }
   }
 

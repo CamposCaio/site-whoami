@@ -37,7 +37,7 @@ export function ThemeProvider({ children }) {
   }, [])
 
   useEffect(() => {
-    document.cookie = `savedTheme=${activeTheme.palette.mode}`
+    document.cookie = `savedTheme=${activeTheme.palette.mode}; SameSite=Lax; Secure`
   }, [activeTheme])
 
   return (

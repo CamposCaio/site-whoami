@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import IconMenu from '@mui/icons-material/MenuOutlined';
 import MenuItem from '@mui/material/MenuItem';
@@ -10,43 +10,16 @@ import { IconAudio } from './IconAudio';
 import { IconTheme } from './IconTheme';
 import { AuthorStamp, DesktopMenu, ToggleMenu } from './styles';
 
+export function updateNavbarLink(currentPage: string) {
+  const navbar = document.getElementById('navbar')
+  const activeLink = navbar.querySelector('a.active')
+  activeLink.classList.remove('active')
+  const newActiveLink = navbar.querySelector(`.${currentPage}`)
+  newActiveLink.classList.add('active')
+}
+
 export function TopBar() {
   const { t, locale, setLocale } = useLocale()
-
-  useEffect(() => {
-    const navbar = document.getElementById('navbar')
-    const marker = navbar.querySelector('.marker') as HTMLDivElement
-    const links = navbar.querySelectorAll('a')
-
-    function indicatorIn(target) {
-      marker.style.left = target.offsetLeft + 'px'
-      marker.style.width = target.offsetWidth + 'px'
-      marker.style.transition = 'all 0.4s ease-in'
-      marker.style.opacity = '1'
-    }
-
-    function indicatorOut() {
-      const activeLink = navbar.querySelector('a.active') as HTMLLinkElement
-      marker.style.left = activeLink.offsetLeft + 'px'
-      marker.style.width = activeLink.offsetWidth + 'px'
-      marker.style.transition = 'all 0.4s ease-out, opacity 0.4s ease-out 0.4s'
-      marker.style.opacity = '0'
-    }
-
-    links.forEach((link) => {
-      link.addEventListener('mouseenter', (e) => {
-        indicatorIn(e.target)
-      })
-
-      link.addEventListener('mouseleave', indicatorOut)
-      link.addEventListener('click', ({ target }: any) => {
-        scrollController.scrollTo(target.classList.value.split(' ')[0])
-
-        navbar.querySelector('a.active').classList.remove('active')
-        target.classList.add('active')
-      })
-    })
-  }, [])
 
   return (
     <>
@@ -54,12 +27,36 @@ export function TopBar() {
 
       <DesktopMenu id="topbar__desktop-menu">
         <nav id="navbar">
-          <div className="marker"></div>
-          <a className="home active">{t.navbarHome}</a>
-          <a className="about">{t.navbarAbout}</a>
-          <a className="technologies">{t.navbarTechnologies}</a>
-          <a className="portfolio">{t.navbarPortfolio}</a>
-          <a className="contact">{t.navbarContact}</a>
+          <a
+            onClick={() => scrollController.scrollTo('home')}
+            className="home active"
+          >
+            {t.navbarHome}
+          </a>
+          <a
+            onClick={() => scrollController.scrollTo('about')}
+            className="about"
+          >
+            {t.navbarAbout}
+          </a>
+          <a
+            onClick={() => scrollController.scrollTo('technologies')}
+            className="technologies"
+          >
+            {t.navbarTechnologies}
+          </a>
+          <a
+            onClick={() => scrollController.scrollTo('portfolio')}
+            className="portfolio"
+          >
+            {t.navbarPortfolio}
+          </a>
+          <a
+            onClick={() => scrollController.scrollTo('contact')}
+            className="contact"
+          >
+            {t.navbarContact}
+          </a>
         </nav>
 
         <div id="settings">

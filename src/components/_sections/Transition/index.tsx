@@ -4,18 +4,19 @@ import styled from '@emotion/styled';
 import { scrollController } from '@src/pages';
 
 const Container = styled.div`
+  z-index: -2;
   position: relative;
   height: 100vh;
   overflow: hidden;
   background-color: ${({ theme }: any) =>
-    theme.palette.mode === 'light' ? '#000' : '#222'};
+    theme.palette.mode === 'light' ? '#EFEFEF' : '#020202'};
 
   .scroll-parallax {
     font-size: 5rem;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%) !important;
-    color: #fff;
+    /* color: #fff; */
   }
 `
 

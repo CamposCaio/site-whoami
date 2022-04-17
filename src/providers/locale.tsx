@@ -40,7 +40,7 @@ export function LocaleProvider({ children }) {
   }, [])
 
   useEffect(() => {
-    document.cookie = `savedLocale=${locale}`
+    document.cookie = `savedLocale=${locale}; SameSite=Lax; Secure`
     locale === 'pt-br' ? setT(pt) : setT(en)
   }, [locale])
 

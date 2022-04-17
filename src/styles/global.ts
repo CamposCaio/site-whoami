@@ -60,6 +60,7 @@ export function getGlobalStyle({ palette }: Theme) {
       font-weight: 200;
       font-family: 'Poppins', sans-serif;
       line-height: 125%;
+      text-align: left;
     }
 
     h1 {

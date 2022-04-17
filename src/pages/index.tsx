@@ -15,7 +15,7 @@ import { BackgroundMusic } from '@src/components/BackgroundMusic';
 import { useLocale } from '@src/providers/locale';
 import { ScrollController } from '@src/snapScroll';
 
-export const scrollController = new ScrollController(5)
+export const scrollController = new ScrollController(4)
 
 const Home: NextPage = () => {
   const { t } = useLocale()

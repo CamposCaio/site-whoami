@@ -7,6 +7,13 @@ export class ScrollController {
   private previousScrollY = 0
   private isScriptScrolling = false
   private pageHeight: number
+  private pages = {
+    home: 0,
+    about: 1,
+    technologies: 3,
+    portfolio: 4,
+    contact: 5,
+  }
 
   constructor(numOfPages: number) {
     this.numOfPages = numOfPages
@@ -37,20 +44,20 @@ export class ScrollController {
     this.currentScrollY = window.scrollY
     const scrollDirection =
       this.currentScrollY < this.previousScrollY ? 'top' : 'bottom'
-    console.log(scrollDirection)
 
     this.previousScrollY = this.currentScrollY
     if (scrollDirection === 'top') this.scrollTo(this.currentPage - 1)
     else if (scrollDirection === 'bottom') this.scrollTo(this.currentPage + 1)
   }
 
-  public scrollTo(page: number) {
+  public scrollTo(page: string | number) {
+    if (typeof page === 'string') page = this.pages[page]
+
     if (page < 0 || page > this.numOfPages) return
-    console.log(page)
 
     this.lockClientScroll(true)
     cancelAnimationFrame(this.animationFrameID)
-    this.animationTargetPage = page
+    this.animationTargetPage = page as number
     this.isScriptScrolling = true
     this.animateScroll()
   }

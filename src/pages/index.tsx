@@ -3,13 +3,13 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 
 import { DialogMusicPreference } from '@components/DialogMusicPreference';
-import { SideNavbar } from '@components/SideNavbar';
 import { TopBar } from '@components/TopBar';
 import { About } from '@sections/About';
 import { SectionContact } from '@sections/Contact';
 import { SectionHome } from '@sections/Home';
 import { SectionPortfolio } from '@sections/Portfolio';
 import { SectionTechnologies } from '@sections/Technologies';
+import { BackgroundMusic } from '@src/components/BackgroundMusic';
 import { ScrollController } from '@src/snapScroll';
 
 export const scrollController = new ScrollController(5)
@@ -26,9 +26,9 @@ const Home: NextPage = () => {
       <Head>
         <title>Caio Campos</title>
       </Head>
+      <BackgroundMusic />
       <DialogMusicPreference />
       <TopBar />
-      <SideNavbar />
       {/* Page sections: */}
       <SectionHome />
       <About />

@@ -8,7 +8,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useLocale } from '@providers/locale';
 
-import { setMusic } from '../BackgroundMusic';
+import { playBackgroundMusic } from '../BackgroundMusic';
 import { Container } from './styles';
 
 export function DialogMusicPreference() {
@@ -16,7 +16,7 @@ export function DialogMusicPreference() {
   const { t } = useLocale()
 
   function handleDialogButton(enableMusic: boolean) {
-    setMusic(enableMusic)
+    playBackgroundMusic(enableMusic)
     setOpen(false)
   }
 

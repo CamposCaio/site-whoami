@@ -1,62 +1,72 @@
 import styled from '@emotion/styled';
 
-export const Section = styled.section`
+export const ContainerSection = styled.section`
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
-  #home__scroll-down {
+  #canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .cv__container span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-block: 0.5rem;
+  }
+
+  .cv__buttons-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  #scroll-down {
     position: absolute;
-    bottom: 1.5rem;
+    left: 50%;
+    bottom: 1rem;
+    color: ${({ theme }: any) => theme.palette.text.secondary};
+    transform: translateX(-50%) !important;
     display: flex;
     flex-direction: column;
     align-items: center;
-    word-spacing: 1px;
-    transition: all 0.2s;
-    animation: scroll-down-move 2s infinite;
-    animation-timing-function: ease-in-out;
-  }
-
-  @keyframes scroll-down-move {
-    0% {
-      bottom: 1.5rem;
-    }
-    20% {
-      bottom: 2rem;
-    }
-    40% {
-      bottom: 1.5rem;
-    }
-  }
-
-  #home__scroll-down:hover {
-    animation: none;
-    opacity: 0.6;
     cursor: pointer;
-  }
-`
+    transition: all 0.2s ease;
 
-export const Container = styled.div`
-  display: inline-block;
+    &:hover {
+      color: ${({ theme }: any) => theme.palette.text.primary};
+    }
 
-  @media (max-width: 1200px) {
-    padding-top: 3rem;
-  }
+    svg {
+      position: relative;
+      animation: arrow-scroll-animation 2s infinite;
+    }
 
-  h1,
-  h4 {
-    display: inline-block;
-  }
-
-  .home__div-buttons {
-    padding-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.75rem;
-
-    @media (min-width: 516px) {
-      align-items: flex-start;
+    @keyframes arrow-scroll-animation {
+      0% {
+        top: 0;
+      }
+      20% {
+        top: 0.5rem;
+      }
+      40% {
+        top: 0;
+      }
     }
   }
 `

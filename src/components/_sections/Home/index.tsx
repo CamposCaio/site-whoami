@@ -1,89 +1,91 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
-import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
-import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
+import IconArrowForward from '@mui/icons-material/ArrowForwardOutlined';
+import IconFileDownload from '@mui/icons-material/FileDownloadOutlined';
+import IconKeyboardArrowDown from '@mui/icons-material/KeyboardArrowDownOutlined';
+import IconOpenInNew from '@mui/icons-material/OpenInNewOutlined';
 import { Button } from '@mui/material';
 import { useLocale } from '@providers/locale';
 import { scrollController } from '@src/pages';
+import { useTheme } from '@src/providers/theme';
 
 import { ParticlesEffect } from './ParticlesEffect';
-import { Container, Section } from './styles';
-
-function getElementsByClassName(className: string) {
-  return Array.from(
-    document.getElementsByClassName(className) as HTMLCollectionOf<HTMLElement>
-  )
-}
-
-function changeElementsDisplay(
-  elements: HTMLElement[],
-  displayType: 'inline-block' | 'none'
-) {
-  elements.forEach((element) => {
-    element.style.display = displayType
-  })
-}
+import { ContainerSection } from './styles';
 
 export function SectionHome() {
   const { t } = useLocale()
+  const { activeTheme } = useTheme()
+  const particlesEffect = useMemo(() => new ParticlesEffect(), [])
+
   useEffect(() => {
-    handleResize()
-    window.addEventListener('resize', handleResize)
+    const canvas = document.getElementById('canvas') as HTMLCanvasElement
+    const ctx = canvas.getContext('2d')
+    canvas.height = window.innerHeight
+    canvas.width = window.innerWidth
+    particlesEffect.start(ctx)
+
+    window.addEventListener('resize', () => {
+      canvas.height = window.innerHeight
+      canvas.width = window.innerWidth
+    })
+
+    window.addEventListener('mousemove', particlesEffect.handleMouseMove)
 
     window.addEventListener('scroll', () => {
-      document.getElementById('home__scroll-down').style.display = 'none'
+      if (window.scrollY === 0) particlesEffect.start(ctx)
+      else {
+        particlesEffect.stop()
+        document.getElementById('scroll-down').style.display = 'none'
+      }
     })
   }, [])
 
-  function handleResize() {
-    const viewportWidth = window.innerWidth
-    const elementsTitleVariant = getElementsByClassName('js-title-variant')
-    const elementsTitle = getElementsByClassName('js-title')
-
-    if (viewportWidth < 516) {
-      changeElementsDisplay(elementsTitleVariant, 'inline-block')
-      changeElementsDisplay(elementsTitle, 'none')
-    } else {
-      changeElementsDisplay(elementsTitleVariant, 'none')
-      changeElementsDisplay(elementsTitle, 'inline-block')
-    }
-  }
+  useEffect(
+    () =>
+      particlesEffect.setColor(
+        activeTheme.palette.mode === 'light' ? '#1565c0' : '#90caf9'
+      ),
+    [activeTheme]
+  )
 
   return (
-    <Section id="home">
-      <Container>
-        <ParticlesEffect />
-
-        <h4>{t.homeTitleSmall[0]}</h4>
-        <br />
-        <h4>{t.homeTitleSmall[1]}</h4>
-        <br />
-        <h1 className="js-title">{t.homeTitleLarge.normal[0]}</h1>
-        <h1 className="js-title-variant">{t.homeTitleLarge.variant[0]}</h1>
-        <br />
-        <h1 className="js-title">{t.homeTitleLarge.normal[1]}</h1>
-        <h1 className="js-title-variant">{t.homeTitleLarge.variant[1]}</h1>
-        <div className="home__div-buttons">
-          <Button variant="contained" color="secondary">
-            <FileDownloadOutlinedIcon sx={{ mr: '0.5rem' }} />
-            {t.homeButtonDownloadCV}
-          </Button>
-          <Button
-            variant="contained"
-            href="https://drive.google.com/file/d/1p6rGQDahJ8CTOpQJqX5APrSnQfDnKXUF/view?usp=sharing"
-            target="_blank"
-          >
-            <OpenInNewOutlinedIcon sx={{ mr: '0.5rem' }} />
-
-            {t.homeButtonOpenCV}
-          </Button>
+    <ContainerSection theme={activeTheme}>
+      <canvas id="canvas" />
+      <div className="content">
+        <div className="heading__container">
+          <h1 className="heading__title">{t.homeTitle}</h1>
+          <h4 className="heading__subtitle">{t.homeSubtitle}</h4>
         </div>
-      </Container>
-      <div id="home__scroll-down" onClick={() => scrollController.scrollTo(1)}>
-        {t.homeScrollDown}
-        <ArrowDropDownOutlinedIcon />
+
+        <div className="cv__container">
+          <span>
+            <IconArrowForward fontSize="small" />
+            {t.homeCvText}
+          </span>
+
+          <div className="cv__buttons-container">
+            <Button
+              variant="outlined"
+              href="https://drive.google.com/file/d/1p6rGQDahJ8CTOpQJqX5APrSnQfDnKXUF/view?usp=sharing"
+              target="_blank"
+            >
+              <IconOpenInNew sx={{ mr: '0.5rem' }} />
+
+              {t.homeButtonOpenCV}
+            </Button>
+            <Button variant="text">
+              <div>
+                <IconFileDownload sx={{ mr: '0.5rem' }} />
+                {t.homeButtonDownloadCV}
+              </div>
+            </Button>
+          </div>
+        </div>
       </div>
-    </Section>
+      <div id="scroll-down" onClick={() => scrollController.scrollTo('about')}>
+        {t.homeScrollDown}
+        <IconKeyboardArrowDown fontSize="small" />
+      </div>
+    </ContainerSection>
   )
 }

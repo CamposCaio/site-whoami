@@ -7,11 +7,6 @@ export function getGlobalStyle({ palette }: Theme) {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      white-space: pre-line;
-      letter-spacing: 0.75px;
-      line-height: 1.25rem;
-      word-spacing: 3px;
-      text-align: justify;
     }
 
     /* Hide scrollbar for Chrome, Safari and Opera */
@@ -42,9 +37,16 @@ export function getGlobalStyle({ palette }: Theme) {
     textarea,
     select,
     button {
-      font-family: Roboto;
-      font-weight: 400;
-      color: ${palette.text.primary};
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      white-space: pre-line;
+      letter-spacing: 107.5%;
+      line-height: 150%;
+      color: ${palette.mode === 'light' ? 'black' : 'white'};
+      /* letter-spacing: 0.75px;
+      line-height: 1.25rem; */
+      /* word-spacing: 107.5%; */
+      text-align: justify;
     }
 
     h1,
@@ -54,59 +56,35 @@ export function getGlobalStyle({ palette }: Theme) {
     h5,
     h6,
     strong {
-      font-weight: 700;
-      font-family: 'Lato', sans-serif;
-      text-align: left;
-      letter-spacing: 0px;
-    }
-
-    h1,
-    h2,
-    h3 {
-      text-transform: uppercase;
-      color: ${palette.primary.main};
+      font-weight: 200;
+      font-family: 'Poppins', sans-serif;
+      line-height: 125%;
     }
 
     h1 {
       font-size: 3rem;
-      line-height: 100%;
     }
 
     h2 {
       font-size: 2.25rem;
-      line-height: 2rem;
     }
 
     h3 {
       font-size: 1.25rem;
-      line-height: 1.25rem;
-      font-weight: 400;
     }
 
     h4 {
-      font-weight: 400;
-      font-size: 1.25rem;
-      line-height: 120%;
-      @media (max-width: 516px) {
-        font-size: 1rem;
-      }
-    }
-
-    h5 {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
 
     h6 {
       font-size: 1rem;
-      line-height: 1rem;
-      padding-bottom: 2rem;
-      font-weight: 400;
-      color: ${palette.secondary.main};
     }
 
     button {
       cursor: pointer;
     }
+
     [disabled] {
       opacity: 0.6;
       cursor: not-allowed;
@@ -115,10 +93,7 @@ export function getGlobalStyle({ palette }: Theme) {
     a {
       text-decoration: none;
       color: inherit;
-    }
-
-    p {
-      padding-top: 1rem;
+      cursor: pointer;
     }
   `
 }

@@ -1,139 +1,144 @@
+import { sliderClasses } from '@mui/material/Slider';
 import { createTheme, Theme } from '@mui/material/styles';
 
-const baseComponents: Theme['components'] = {
+const components: Theme['components'] = {
   MuiButton: {
-    variants: [
-      {
-        props: { variant: 'contained' },
-        style: [
-          {
-            borderRadius: '4px',
-            boxShadow: 'none',
+    styleOverrides: {
+      root: ({ ownerState, theme }) => ({
+        ...(ownerState.variant === 'outlined' && {
+          borderColor: theme.palette.primary.main,
+          borderRadius: '2px',
+          '&:after': {
+            content: '""',
+            position: 'absolute',
+            zIndex: '-1',
+            right: 0,
+            width: 0,
+            height: '100%',
+            backgroundColor: theme.palette.primary.main,
+            transition: 'width 0.4s ease',
           },
-        ],
-      },
-      {
-        props: { variant: 'text' },
-        style: [
-          {
-            minWidth: '2rem',
+
+          '&:hover': {
+            color: theme.palette.primary.contrastText,
+
+            '&:after': {
+              left: 0,
+              width: '100%',
+            },
           },
-        ],
-      },
-    ],
+        }),
+
+        ...(ownerState.variant === 'text' && {
+          overflow: 'hidden',
+          div: {
+            position: 'relative',
+            display: 'flex',
+            width: 'max-content',
+          },
+          '&:hover': {
+            div: {
+              animation:
+                'text-out 0.2s ease-out forwards, 0.4s text-in 0.2s ease-in forwards',
+            },
+          },
+
+          '@keyframes text-out': {
+            to: {
+              transform: 'translateY(-112%)',
+            },
+          },
+          '@keyframes text-in': {
+            '0%': {
+              transform: 'translateY(100%)',
+            },
+            '40%': {
+              transform: 'translateY(-12%)',
+            },
+            '100%': {
+              transform: 'translateY(0%)',
+            },
+          },
+        }),
+      }),
+    },
   },
   MuiSelect: {
-    variants: [
-      {
-        props: { variant: 'outlined' },
-        style: [
-          {
-            fontSize: '87.5%',
-          },
-        ],
-      },
-    ],
+    styleOverrides: {
+      select: ({ theme }) => ({
+        fontSize: '81.25%',
+        // wordSpacing: '4px',
+        padding: 0,
+        paddingRight: '2.5rem',
+        color: theme.palette.text.secondary,
+      }),
+    },
   },
   MuiPaper: {
-    variants: [
-      {
-        props: {},
-        style: [
-          {
-            borderRadius: '4px',
-          },
-        ],
+    styleOverrides: {
+      root: {
+        borderRadius: '2px',
+        // backgroundColor: 'transparent',
+        backgroundImage: 'none',
       },
-    ],
+    },
   },
   MuiList: {
-    variants: [
-      {
-        props: {},
-        style: [
-          {
-            padding: 0,
-          },
-        ],
+    styleOverrides: {
+      root: {
+        padding: 0,
       },
-    ],
+    },
   },
   MuiMenuItem: {
-    variants: [
-      {
-        props: {},
-        style: [
-          {
-            fontSize: '87.5%',
-          },
-        ],
+    styleOverrides: {
+      root: {
+        fontSize: '81.25%',
+        backgroundColor: 'transparent',
       },
-    ],
+    },
   },
 }
 
-const lightComponents: Theme['components'] = {
-  ...baseComponents,
-  MuiOutlinedInput: {
-    variants: [
-      {
-        props: {},
-        style: [
-          {
-            color: 'rgba(0, 0, 0, 0.7)',
-          },
-        ],
-      },
-    ],
-  },
-}
-
-const darkComponents: Theme['components'] = {
-  ...baseComponents,
-  MuiOutlinedInput: {
-    variants: [
-      {
-        props: {},
-        style: [
-          {
-            color: 'rgba(255, 255, 255, 0.87)',
-          },
-        ],
-      },
-    ],
-  },
-}
+const shadows = new Array(25).fill('')
 
 export const lightTheme = createTheme({
-  components: lightComponents,
+  components,
+  // @ts-ignore
+  shadows,
   palette: {
     mode: 'light',
-    primary: {
-      main: '#009688',
-    },
-    secondary: {
-      main: '#616161',
-    },
+    // primary: {
+    // main: '#2196F3',
+    // light: '#D9DDF2',
+    // },
+    // secondary: {
+    //   main: '#616161',
+    // },
     text: {
-      primary: 'rgba(0, 0, 0, 0.7)',
-      secondary: 'rgba(0, 0, 0, 0.5)',
+      primary: '#000000',
     },
   },
 })
 
 export const darkTheme = createTheme({
-  components: darkComponents,
+  components,
+  // @ts-ignore
+  shadows,
   palette: {
     mode: 'dark',
-    primary: {
-      main: '#2196F3',
+    text: {
+      primary: '#FFFFFF',
     },
-    secondary: {
-      main: '#616161',
-    },
-    background: {
-      paper: '#181818',
-      default: '#181818',
-    },
+    // primary: {
+    //   main: '#2196F3',
+    // },
+    // secondary: {
+    //   main: '#616161',
+    // },
+    // background: {
+    //   paper: '#181818',
+    //   default: '#181818',
+    // },
   },
 })

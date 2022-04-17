@@ -11,13 +11,9 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="shortcut icon" href="/favicon.svg" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
 
           <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@300;400&display=swap"
             rel="stylesheet"
           />
 

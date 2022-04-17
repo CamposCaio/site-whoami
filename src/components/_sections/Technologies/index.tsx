@@ -37,7 +37,7 @@ export function SectionTechnologies() {
   return (
     <Container id="technologies">
       <Fade bottom>
-        <Content color={activeTheme.palette.text.disabled}>
+        <Content color={activeTheme.palette.text.divider}>
           <h2>{t.technologiesTitle}</h2>
           <h6>{t.technologiesSubtitle}</h6>
           <Paper elevation={4}>

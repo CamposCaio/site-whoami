@@ -11,11 +11,8 @@ export function About() {
 
   return (
     <Container>
-      <div id="sticky-container">
-        <h2>{t.aboutTitle}</h2>
-      </div>
+      {/* <AboutPage2 /> */}
       <AboutPage1 />
-      <AboutPage2 />
     </Container>
   )
 }

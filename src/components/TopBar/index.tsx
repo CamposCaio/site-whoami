@@ -1,15 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
+import IconMenu from '@mui/icons-material/MenuOutlined';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { useLocale } from '@providers/locale';
 import { scrollController } from '@src/pages';
 
-import { BackgroundMusic } from '../BackgroundMusic';
 import { IconAudio } from './IconAudio';
 import { IconTheme } from './IconTheme';
-import { MobileMenuOverlay } from './MobileMenuOverlay';
-import { AuthorStamp, Navbar, Settings } from './styles';
+import { AuthorStamp, DesktopMenu, ToggleMenu } from './styles';
 
 export function TopBar() {
   const { t, locale, setLocale } = useLocale()
@@ -53,28 +52,33 @@ export function TopBar() {
     <>
       <AuthorStamp>Caio Campos</AuthorStamp>
 
-      <Navbar id="navbar">
-        <div className="marker"></div>
-        <a className="home active">{t.navbarHome}</a>
-        <a className="about">{t.navbarAbout}</a>
-        <a className="technologies">{t.navbarTechnologies}</a>
-        <a className="portfolio">{t.navbarPortfolio}</a>
-        <a className="contact">{t.navbarContact}</a>
-      </Navbar>
+      <DesktopMenu id="topbar__desktop-menu">
+        <nav id="navbar">
+          <div className="marker"></div>
+          <a className="home active">{t.navbarHome}</a>
+          <a className="about">{t.navbarAbout}</a>
+          <a className="technologies">{t.navbarTechnologies}</a>
+          <a className="portfolio">{t.navbarPortfolio}</a>
+          <a className="contact">{t.navbarContact}</a>
+        </nav>
 
-      <Settings>
-        <IconAudio />
-        <IconTheme />
-        <Select
-          value={locale}
-          onChange={(e) => setLocale(e.target.value)}
-          displayEmpty
-          inputProps={{ 'aria-label': 'Without label' }}
-        >
-          <MenuItem value="en-us">EN - US</MenuItem>
-          <MenuItem value="pt-br">PT - BR</MenuItem>
-        </Select>
-      </Settings>
+        <div id="settings">
+          <IconAudio />
+          <IconTheme />
+          <Select
+            value={locale}
+            onChange={(e) => setLocale(e.target.value)}
+            displayEmpty
+            inputProps={{ 'aria-label': 'Without label' }}
+          >
+            <MenuItem value="en-us">EN - US</MenuItem>
+            <MenuItem value="pt-br">PT - BR</MenuItem>
+          </Select>
+        </div>
+      </DesktopMenu>
+      <ToggleMenu>
+        <IconMenu />
+      </ToggleMenu>
     </>
   )
 }

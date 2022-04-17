@@ -23,14 +23,12 @@ export default {
   homeButtonOpenCV: 'Abrir CV',
   homeButtonDownloadCV: 'Download CV',
   homeScrollDown: 'Rolar para baixo',
-  aboutTitle: 'Sobre mim',
-  aboutSubtitle1: 'Conheça o meu trabalho',
-  aboutContent1FrontEnd:
-    'Trabalho com UI e UX, desde o design de páginas utilizando o Figma, até o desenvolvimento do seu código fonte em JS.',
-  aboutContent1BackEnd:
-    'Utilizo POO com os princípios do Clean Code e SOLID. Tenho experiência com DBs relacionais e não-relacionais, como MySQL, Postgres, MongoDB e Redis.',
-  aboutContent1DevOps:
-    'Possuo experiência configurando automação com pipelines e CI/CD e gerenciando cluster Kubernetes, hospedados na Digital Ocean.',
+  about1Title: 'Experiência profissional',
+  about1Content: [
+    'Tenho 4 anos de experiência trabalhando como Freelancer e desenvolvedor Full Stack. Durante minha trajetória já utilizei metodologias ágeis como o SCRUM, e inclusive fui Product Owner de um projeto.',
+    'Em geral, sempre busco me comunicar de forma eficiente e interagir com toda a equipe. Acredito que o respeito seja essencial para isso.',
+  ],
+  about1Button: 'Continuar',
   aboutSubtitle2: 'Minha experiência profissional',
   aboutAccordionTitle1: 'Experiência profissional',
   aboutAccordionContent1:

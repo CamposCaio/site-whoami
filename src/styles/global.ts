@@ -40,12 +40,12 @@ export function getGlobalStyle({ palette }: Theme) {
       font-family: 'Roboto', sans-serif;
       font-weight: 300;
       white-space: pre-line;
-      letter-spacing: 107.5%;
+      letter-spacing: 1.5px;
       line-height: 150%;
-      color: ${palette.mode === 'light' ? 'black' : 'white'};
       /* letter-spacing: 0.75px;
       line-height: 1.25rem; */
       /* word-spacing: 107.5%; */
+      color: ${palette.text.primary};
       text-align: justify;
     }
 
@@ -56,6 +56,7 @@ export function getGlobalStyle({ palette }: Theme) {
     h5,
     h6,
     strong {
+      letter-spacing: 0px;
       font-weight: 200;
       font-family: 'Poppins', sans-serif;
       line-height: 125%;
@@ -67,6 +68,7 @@ export function getGlobalStyle({ palette }: Theme) {
 
     h2 {
       font-size: 2.25rem;
+      padding-bottom: 2rem;
     }
 
     h3 {

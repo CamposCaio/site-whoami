@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Fade from 'react-reveal/Fade';
 
 import Paper from '@mui/material/Paper';
 import { useLocale } from '@providers/locale';
@@ -36,67 +35,65 @@ export function SectionTechnologies() {
 
   return (
     <Container id="technologies">
-      <Fade bottom>
-        <Content color={activeTheme.palette.text.secondary}>
-          <h2>{t.technologiesTitle}</h2>
-          <h6>{t.technologiesSubtitle}</h6>
-          <Paper elevation={4}>
-            <div className="technologies__container-cards">
-              <div className="technologies__container-grid">
-                <div
-                  className="technologies__card card-active"
-                  onClick={() => handleCardClick(1)}
-                  id="card-1"
-                ></div>
-                <div
-                  className="technologies__card"
-                  onClick={() => handleCardClick(2)}
-                  id="card-2"
-                ></div>
-                <div
-                  className="technologies__card"
-                  onClick={() => handleCardClick(3)}
-                  id="card-3"
-                ></div>
-                <div
-                  className="technologies__card"
-                  onClick={() => handleCardClick(4)}
-                  id="card-4"
-                ></div>
-                <div
-                  className="technologies__card"
-                  onClick={() => handleCardClick(5)}
-                  id="card-5"
-                ></div>
-                <div
-                  className="technologies__card"
-                  onClick={() => handleCardClick(6)}
-                  id="card-6"
-                ></div>
-                <div
-                  className="technologies__card"
-                  onClick={() => handleCardClick(7)}
-                  id="card-7"
-                ></div>
-                <div
-                  className="technologies__card"
-                  onClick={() => handleCardClick(8)}
-                  id="card-8"
-                ></div>
-                <div
-                  className="technologies__card"
-                  onClick={() => handleCardClick(9)}
-                  id="card-9"
-                ></div>
-              </div>
-              <div className="technologies__card-description">
-                <h3>{cardsTitle}</h3>
-                <p>{cardsContent}</p>
-              </div>
+      <Content color={activeTheme.palette.text.secondary}>
+        <h2>{t.technologiesTitle}</h2>
+        <h6>{t.technologiesSubtitle}</h6>
+        <Paper elevation={4}>
+          <div className="technologies__container-cards">
+            <div className="technologies__container-grid">
+              <div
+                className="technologies__card card-active"
+                onClick={() => handleCardClick(1)}
+                id="card-1"
+              ></div>
+              <div
+                className="technologies__card"
+                onClick={() => handleCardClick(2)}
+                id="card-2"
+              ></div>
+              <div
+                className="technologies__card"
+                onClick={() => handleCardClick(3)}
+                id="card-3"
+              ></div>
+              <div
+                className="technologies__card"
+                onClick={() => handleCardClick(4)}
+                id="card-4"
+              ></div>
+              <div
+                className="technologies__card"
+                onClick={() => handleCardClick(5)}
+                id="card-5"
+              ></div>
+              <div
+                className="technologies__card"
+                onClick={() => handleCardClick(6)}
+                id="card-6"
+              ></div>
+              <div
+                className="technologies__card"
+                onClick={() => handleCardClick(7)}
+                id="card-7"
+              ></div>
+              <div
+                className="technologies__card"
+                onClick={() => handleCardClick(8)}
+                id="card-8"
+              ></div>
+              <div
+                className="technologies__card"
+                onClick={() => handleCardClick(9)}
+                id="card-9"
+              ></div>
             </div>
-          </Paper>
-        </Content>
-      </Fade>
+            <div className="technologies__card-description">
+              <h3>{cardsTitle}</h3>
+              <p>{cardsContent}</p>
+            </div>
+          </div>
+        </Paper>
+      </Content>
     </Container>
   )
 }

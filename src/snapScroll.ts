@@ -7,12 +7,13 @@ export class ScrollController {
   private previousScrollY = 0
   private isScriptScrolling = false
   private pageHeight: number
+  private scrollDirection: 'top' | 'bottom'
   private pages = {
     home: 0,
     about: 1,
-    technologies: 3,
-    portfolio: 4,
-    contact: 5,
+    technologies: 2,
+    portfolio: 3,
+    contact: 4,
   }
 
   constructor(numOfPages: number) {
@@ -23,8 +24,10 @@ export class ScrollController {
   public initialize() {
     this.currentScrollY = window.scrollY
     this.previousScrollY = this.currentScrollY
-    this.pageHeight = window.innerHeight
-    this.finishScrollTo(Math.round(this.currentScrollY / window.innerHeight))
+    this.pageHeight = window.innerHeight * 2
+    this.finishScrollTo(
+      Math.round(this.currentScrollY / (window.innerHeight * 2))
+    )
   }
 
   private lockClientScroll(lock: boolean) {
@@ -35,19 +38,24 @@ export class ScrollController {
 
   public handleResize() {
     if (this.isScriptScrolling) return
-    this.pageHeight = window.innerHeight
+    this.pageHeight = window.innerHeight * 2
     this.scrollTo(this.animationTargetPage)
   }
 
   public handleScroll() {
     if (this.isScriptScrolling) return
     this.currentScrollY = window.scrollY
-    const scrollDirection =
+    this.scrollDirection =
       this.currentScrollY < this.previousScrollY ? 'top' : 'bottom'
 
     this.previousScrollY = this.currentScrollY
-    if (scrollDirection === 'top') this.scrollTo(this.currentPage - 1)
-    else if (scrollDirection === 'bottom') this.scrollTo(this.currentPage + 1)
+    if (this.scrollDirection === 'top') this.scrollTo(this.currentPage - 1)
+    else if (this.scrollDirection === 'bottom')
+      this.scrollTo(this.currentPage + 1)
+  }
+
+  public getScrollDirection(): 'top' | 'bottom' {
+    return this.scrollDirection
   }
 
   public scrollTo(page: string | number) {
@@ -72,7 +80,7 @@ export class ScrollController {
     setTimeout(() => {
       this.lockClientScroll(false)
       this.isScriptScrolling = false
-      if (this.pageHeight !== window.innerHeight) this.handleResize()
+      if (this.pageHeight !== window.innerHeight * 2) this.handleResize()
     }, 50)
   }
 
@@ -88,8 +96,8 @@ export class ScrollController {
     if (distanceToTargetY * distanceToTargetY < 25)
       this.finishScrollTo(this.animationTargetPage)
     else if (distanceToTargetY > 0)
-      window.scrollBy({ top: Math.ceil(distanceToTargetY / 10) + 4 })
-    else window.scrollBy({ top: Math.floor(distanceToTargetY / 10) - 4 })
+      window.scrollBy({ top: Math.ceil(distanceToTargetY / 20) + 4 })
+    else window.scrollBy({ top: Math.floor(distanceToTargetY / 20) - 4 })
   }
 }
 

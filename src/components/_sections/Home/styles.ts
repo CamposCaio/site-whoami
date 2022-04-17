@@ -6,7 +6,6 @@ export const ContainerSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 
   #canvas {
     position: fixed;

@@ -69,7 +69,7 @@ export function SectionHome() {
               href="https://drive.google.com/file/d/1p6rGQDahJ8CTOpQJqX5APrSnQfDnKXUF/view?usp=sharing"
               target="_blank"
             >
-              <IconOpenInNew sx={{ mr: '0.5rem' }} />
+              <IconOpenInNew sx={{ mr: '0.5rem' }} fontSize="small" />
 
               {t.homeButtonOpenCV}
             </Button>

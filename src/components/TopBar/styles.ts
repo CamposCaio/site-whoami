@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const AuthorStamp = styled.div`
   /* background-color: red; */
   position: fixed;
+  z-index: 10;
   top: 50vh;
   height: clamp(26px, calc(50vw - 1200px / 2), 326px);
   transform: translate(-50%, -50%) rotate(-90deg) translateY(50%);
@@ -30,86 +31,74 @@ export const AuthorStamp = styled.div`
   }
 `
 
-/* #icon-menu {
-    background-color: #fff;
-    -webkit-mask-image: url(svg/icon-menu.svg);
-    mask-image: url(svg/icon-menu.svg);
-    mask-size: cover;
-    mask-repeat: no-repeat;
-    padding-bottom: 100%;
-    width: 20px;
-    height: 20px;
-    animation-duration: 300ms;
-    animation-timing-function: steps(18);
-    animation-fill-mode: forwards;
-
-    @media (min-width: 1201px) {
-      display: none;
-    }
-  }
-
-  @keyframes menu-close-button {
-    0% {
-      mask-position: 0px 0px;
-    }
-    100% {
-      mask-position: calc(-20px * 18) 0px;
-    }
-  }
-
-  @keyframes menu-open-button {
-    0% {
-      mask-position: calc(-20px * 18) 0px;
-    }
-    100% {
-      mask-position: 0px 0px;
-    }
-  } */
-
-export const Navbar = styled.nav`
+export const DesktopMenu = styled.div`
   position: fixed;
   z-index: 10;
-  left: 50%;
-  top: 1rem;
-  transform: translateX(-50%);
-  display: flex;
-  align-content: center;
-  gap: 1.5rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  font-size: 87.5%;
-  text-transform: uppercase;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  overflow: hidden;
 
-  a:hover {
-    color: ${({ theme }: any) => theme.palette.text.secondary};
+  @media (max-width: 1080px) {
+    display: none;
   }
 
-  a.active {
-    color: ${({ theme }: any) => theme.palette.text.disabled};
-  }
-
-  .marker {
+  #navbar {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: ${({ theme }: any) => theme.palette.text.disabled};
-    transition: all 0.4s;
+    right: 50vw;
+    top: 1rem;
+    width: max-content;
+    transform: translateX(50%) !important;
+    display: flex;
+    align-content: center;
+    gap: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 87.5%;
+    text-transform: uppercase;
+
+    a:hover {
+      color: ${({ theme }: any) => theme.palette.text.secondary};
+    }
+
+    a.active {
+      color: ${({ theme }: any) => theme.palette.text.disabled};
+    }
+
+    .marker {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: ${({ theme }: any) => theme.palette.text.disabled};
+      transition: all 0.4s;
+    }
+  }
+
+  #settings {
+    position: absolute;
+    right: 3rem;
+    top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    fieldset {
+      outline: 0 !important;
+      border: none !important;
+    }
   }
 `
-
-export const Settings = styled.div`
+export const ToggleMenu = styled.div`
   position: fixed;
   z-index: 10;
-  top: 1rem;
   right: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  top: 1rem;
+  cursor: pointer;
 
-  fieldset {
-    outline: 0 !important;
-    border: none !important;
+  @media (min-width: 1081px) {
+    display: none;
   }
 `

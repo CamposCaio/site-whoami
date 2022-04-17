@@ -25,6 +25,12 @@ export default {
   homeScrollDown: 'Scroll down',
   aboutTitle: 'About me',
   aboutSubtitle1: 'My work',
+  about1Title: 'Professional experience',
+  about1Content: [
+    'I have 4 years of experience working as a Freelancer and Full Stack developer. During my career I have used agile methodologies such as SCRUM, and I was even Product Owner of a project.',
+    'In general, I always seek to communicate efficiently and interact with the entire team. I believe that respect is essential for this.',
+  ],
+  about1Button: 'Continue',
   aboutContent1FrontEnd:
     'I work with UI and UX, from designing pages using Figma, to developing the source code in JS.',
   aboutContent1BackEnd:

@@ -19,10 +19,11 @@ export function AboutPage2() {
 
   return (
     <Container>
-      <div className="content">
+      {/* <h1>About me</h1> */}
+      {/* <div className="content">
         <h6>{t.aboutSubtitle2}</h6>
         {pageWidth < 516 ? <CustomAccordionMobile /> : <CustomCardsDesktop />}
-      </div>
+      </div> */}
     </Container>
   )
 }

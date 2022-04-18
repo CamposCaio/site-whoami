@@ -31,13 +31,13 @@ export const ContainerSection = styled.section`
     }
   }
 
-  .cv__container span svg {
+  .cv__span-content svg {
     @media (max-width: 330px) {
       display: none;
     }
   }
 
-  .cv__container span {
+  .cv__span-content {
     display: flex;
     align-items: center;
     gap: 0.5rem;

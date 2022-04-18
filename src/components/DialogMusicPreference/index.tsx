@@ -26,13 +26,13 @@ export function DialogMusicPreference() {
       <Box sx={{ pl: '1.5rem', pr: '1.5rem' }}>
         {t.soundDialogContent}
         <Container>
-          <Button variant="contained" onClick={() => handleDialogButton(true)}>
+          <Button variant="outlined" onClick={() => handleDialogButton(true)}>
             <VolumeUpOutlinedIcon sx={{ mr: '0.5rem' }} />
-            {t.soundDialogEnable}
+            <span>{t.soundDialogEnable}</span>
           </Button>
-          <Button variant="contained" onClick={() => handleDialogButton(false)}>
+          <Button variant="outlined" onClick={() => handleDialogButton(false)}>
             <VolumeOffOutlinedIcon sx={{ mr: '0.5rem' }} />
-            {t.soundDialogDisable}
+            <span>{t.soundDialogDisable}</span>
           </Button>
         </Container>
       </Box>

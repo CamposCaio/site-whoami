@@ -1,21 +1,38 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  .accordion__icon-div {
-    background-color: ${(props) => {
-      return `rgba(${parseInt(props.color.substring(1, 3), 16)},${parseInt(
-        props.color.substring(3, 5),
-        16
-      )},${parseInt(props.color.substring(5, 7), 16)}, 0.2)`
-    }};
-    color: ${(props) => props.color};
-    font-size: 1.5rem;
-    border-radius: 0.25rem;
-    width: 3rem;
-    height: 3rem;
-    margin-right: 1rem;
+  padding-inline: 3rem;
+  max-width: 630px;
+
+  @media (min-width: 900px) {
+    display: none;
+  }
+
+  .card-title__number {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    background-color: ${({ theme }: any) =>
+      theme.palette.mode === 'light'
+        ? 'rgba(81,45,168, 0.2)'
+        : 'rgba(33, 150, 243, 0.2)'};
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 5px;
+      width: 2rem;
+      height: 2rem;
+      background-color: ${({ theme }: any) =>
+        theme.palette.mode === 'light'
+          ? 'rgba(81,45,168, 0.2)'
+          : 'rgba(33, 150, 243, 0.2)'};
+      border-radius: 50%;
+    }
   }
 `

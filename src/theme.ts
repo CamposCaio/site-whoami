@@ -8,10 +8,13 @@ const components: Theme['components'] = {
         ...(ownerState.variant === 'outlined' && {
           borderColor: theme.palette.primary.main,
           borderRadius: '2px',
+          '& > *': {
+            zIndex: 2,
+          },
           '&:after': {
             content: '""',
             position: 'absolute',
-            zIndex: '-1',
+            // zIndex: '-1',
             right: 0,
             width: 0,
             height: '100%',
@@ -67,7 +70,6 @@ const components: Theme['components'] = {
     styleOverrides: {
       select: ({ theme }) => ({
         fontSize: '81.25%',
-        // wordSpacing: '4px',
         padding: 0,
         paddingRight: '2.5rem',
         color: theme.palette.text.secondary,
@@ -78,7 +80,6 @@ const components: Theme['components'] = {
     styleOverrides: {
       root: {
         borderRadius: '2px',
-        // backgroundColor: 'transparent',
         backgroundImage: 'none',
       },
     },
@@ -108,15 +109,13 @@ export const lightTheme = createTheme({
   shadows,
   palette: {
     mode: 'light',
-    // primary: {
-    // main: '#2196F3',
-    // light: '#D9DDF2',
-    // },
-    // secondary: {
-    //   main: '#616161',
-    // },
     text: {
       primary: '#000000',
+    },
+    primary: {
+      main: '#512DA8',
+      light: '#673AB7',
+      dark: '#512DA8',
     },
   },
 })
@@ -130,15 +129,10 @@ export const darkTheme = createTheme({
     text: {
       primary: '#FFFFFF',
     },
-    // primary: {
-    //   main: '#2196F3',
-    // },
-    // secondary: {
-    //   main: '#616161',
-    // },
-    // background: {
-    //   paper: '#181818',
-    //   default: '#181818',
-    // },
+    primary: {
+      main: '#2196F3',
+      light: '#BBDEFB',
+      dark: '#1976D2',
+    },
   },
 })

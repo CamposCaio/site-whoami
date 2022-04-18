@@ -29,19 +29,16 @@ export default {
     'Em geral, sempre busco me comunicar de forma eficiente e interagir com toda a equipe. Acredito que o respeito seja essencial para isso.',
   ],
   about1Button: 'Continuar',
-  aboutSubtitle2: 'Minha experiência profissional',
-  aboutAccordionTitle1: 'Experiência profissional',
-  aboutAccordionContent1:
-    '4 anos atuando como Freelancer e Desenvolvedor Full Stack profissional.',
-  aboutAccordionTitle2: 'Trabalho em equipe',
-  aboutAccordionContent2:
-    'Comunicação eficiente e interação com toda a equipe de trabalho.',
-  aboutAccordionTitle3: 'Interação com o cliente',
-  aboutAccordionContent3:
-    'Considero a clareza das ideias e o respeito com o outro como pontos muito importantes.',
-  aboutAccordionTitle4: 'Metodologias ágeis',
-  aboutAccordionContent4:
-    'Conhecimento sobre SCRUM, já tendo atuado como Product Owner.',
+  about2Title: 'Áreas em que trabalho',
+  about2Card1Title: 'Front-end',
+  about2Card1Content:
+    'Trabalho com UI e UX, desde o design de páginas utilizando o Figma, até o desenvolvimento do código em JavaScript.',
+  about2Card2Title: 'Back-end',
+  about2Card2Content:
+    'Utilizo POO com os princípios do Clean Code e SOLID. Tenho experiência com DBs relacionais e não-relacionais, como MySQL, Postgres, MongoDB e Redis.',
+  about2Card3Title: 'DevOps',
+  about2Card3Content:
+    'Possuo experiência em configurar automação com pipelines e CI/CD e gerenciar clusters Kubernetes, hospedados na Digital Ocean.',
   technologiesTitle: 'Tecnologias',
   technologiesSubtitle: 'Tecnologias que venho utilizando',
   technologiesCard1: 'TypeScript',

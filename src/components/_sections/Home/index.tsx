@@ -41,10 +41,7 @@ export function SectionHome() {
   }, [])
 
   useEffect(
-    () =>
-      particlesEffect.setColor(
-        activeTheme.palette.mode === 'light' ? '#1565c0' : '#90caf9'
-      ),
+    () => particlesEffect.setColor(activeTheme.palette.primary.light),
     [activeTheme]
   )
 
@@ -58,7 +55,7 @@ export function SectionHome() {
         </div>
 
         <div className="cv__container">
-          <span>
+          <span className="cv__span-content">
             <IconArrowForward fontSize="small" />
             {t.homeCvText}
           </span>
@@ -70,8 +67,7 @@ export function SectionHome() {
               target="_blank"
             >
               <IconOpenInNew sx={{ mr: '0.5rem' }} fontSize="small" />
-
-              {t.homeButtonOpenCV}
+              <span>{t.homeButtonOpenCV}</span>
             </Button>
             <Button variant="text">
               <div>

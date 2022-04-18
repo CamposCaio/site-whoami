@@ -73,7 +73,7 @@ export function getGlobalStyle({ palette }: Theme) {
     }
 
     h3 {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
 
     h4 {

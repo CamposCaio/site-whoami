@@ -58,52 +58,44 @@ export function CustomAccordionMobile() {
   const { activeTheme } = useTheme()
 
   return (
-    <Container color={activeTheme.palette.primary.main}>
+    <Container>
       <Accordion
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <div className="accordion__icon-div">4+</div>
-          <h5>{t.aboutAccordionTitle1}</h5>
+          <div className="card-title__number">
+            <h3>1</h3>
+          </div>
+          <h3>{t.about2Card1Title}</h3>
         </AccordionSummary>
-        <AccordionDetails>{t.aboutAccordionContent1}</AccordionDetails>
+        <AccordionDetails>{t.about2Card1Content}</AccordionDetails>
       </Accordion>
+
       <Accordion
         expanded={expanded === 'panel2'}
         onChange={handleChange('panel2')}
       >
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <div className="accordion__icon-div">
-            <GroupsOutlinedIcon />
+          <div className="card-title__number">
+            <h3>2</h3>
           </div>
-          <h5>{t.aboutAccordionTitle2}</h5>
+          <h3>{t.about2Card2Title}</h3>
         </AccordionSummary>
-        <AccordionDetails>{t.aboutAccordionContent2}</AccordionDetails>
+        <AccordionDetails>{t.about2Card2Content}</AccordionDetails>
       </Accordion>
+
       <Accordion
         expanded={expanded === 'panel3'}
         onChange={handleChange('panel3')}
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <div className="accordion__icon-div">
-            <SentimentVerySatisfiedOutlinedIcon />
+          <div className="card-title__number">
+            <h3>3</h3>
           </div>
-          <h5>{t.aboutAccordionTitle3}</h5>
+          <h3>{t.about2Card3Title}</h3>
         </AccordionSummary>
-        <AccordionDetails>{t.aboutAccordionContent3}</AccordionDetails>
-      </Accordion>
-      <Accordion
-        expanded={expanded === 'panel4'}
-        onChange={handleChange('panel4')}
-      >
-        <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
-          <div className="accordion__icon-div">
-            <TrendingUpOutlinedIcon />
-          </div>
-          <h5>{t.aboutAccordionTitle4}</h5>
-        </AccordionSummary>
-        <AccordionDetails>{t.aboutAccordionContent4}</AccordionDetails>
+        <AccordionDetails>{t.about2Card3Content}</AccordionDetails>
       </Accordion>
     </Container>
   )

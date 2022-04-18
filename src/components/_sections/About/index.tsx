@@ -11,8 +11,8 @@ export function About() {
 
   return (
     <Container>
-      {/* <AboutPage2 /> */}
-      <AboutPage1 />
+      <AboutPage2 />
+      {/* <AboutPage1 /> */}
     </Container>
   )
 }

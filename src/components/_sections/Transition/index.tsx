@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 100vh;
   overflow: hidden;
   background-color: ${({ theme }: any) =>
-    theme.palette.mode === 'light' ? '#EFEFEF' : '#020202'};
+    theme.palette.mode === 'light' ? '#EAEAEA' : '#000000'};
 
   .scroll-parallax {
     font-size: 5rem;

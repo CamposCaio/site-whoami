@@ -63,6 +63,10 @@ const components: Theme['components'] = {
             },
           },
         }),
+
+        ...(ownerState.variant === 'contained' && {
+          borderRadius: '2px',
+        }),
       }),
     },
   },
@@ -99,6 +103,16 @@ const components: Theme['components'] = {
       },
     },
   },
+  MuiDialogTitle: {
+    styleOverrides: {
+      root: {
+        fontWeight: 300,
+        fontSize: '1.8rem',
+        paddingLeft: '3rem',
+        paddingTop: '1rem',
+      },
+    },
+  },
 }
 
 const shadows = new Array(25).fill('')
@@ -111,11 +125,6 @@ export const lightTheme = createTheme({
     mode: 'light',
     text: {
       primary: '#000000',
-    },
-    primary: {
-      main: '#512DA8',
-      light: '#673AB7',
-      dark: '#512DA8',
     },
   },
 })

@@ -19,7 +19,7 @@ export default {
   soundDialogDisable: 'Continuar sem som',
   homeTitle: 'Uma experiência Full Stack',
   homeSubtitle: 'para construir tudo o que você quiser.',
-  homeCvText: 'Acesse também o meu currículo:',
+  homeCvText: 'Acesse o meu currículo:',
   homeButtonOpenCV: 'Abrir CV',
   homeButtonDownloadCV: 'Download CV',
   homeScrollDown: 'Rolar para baixo',

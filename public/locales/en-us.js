@@ -23,34 +23,22 @@ export default {
   homeButtonOpenCV: 'Open CV',
   homeButtonDownloadCV: 'Download CV',
   homeScrollDown: 'Scroll down',
-  aboutTitle: 'About me',
-  aboutSubtitle1: 'My work',
   about1Title: 'Professional experience',
   about1Content: [
     'I have 4 years of experience working as a Freelancer and Full Stack developer. During my career I have used agile methodologies such as SCRUM, and I was even Product Owner of a project.',
     'In general, I always seek to communicate efficiently and interact with the entire team. I believe that respect is essential for this.',
   ],
   about1Button: 'Continue',
-  aboutContent1FrontEnd:
-    'I work with UI and UX, from designing pages using Figma, to developing the source code in JS.',
-  aboutContent1BackEnd:
+  about2Title: 'Areas I work',
+  about2Card1Title: 'Front-end',
+  about2Card1Content:
+    'I work with UI and UX, from the design of pages using Figma, to the development of code in JavaScript.',
+  about2Card2Title: 'Back-end',
+  about2Card2Content:
     'I use OOP with the principles of Clean Code and SOLID. I have experience with relational and non-relational DBs such as MySQL, Postgres, MongoDB and Redis.',
-  aboutContent1DevOps:
-    'I have experience configuring automation with pipelines and CI/CD and managing Kubernetes cluster, hosted at Digital Ocean.',
-  aboutSubtitle2: 'My professional experience',
-  aboutAccordionTitle1: 'Professional experience',
-  aboutAccordionContent1:
-    '4 years working as a professional Freelancer and Full Stack Developer.',
-  aboutAccordionTitle2: 'Team work',
-  aboutAccordionContent2:
-    'Efficient communication and interaction with the entire work team.',
-  aboutAccordionTitle3: 'Customer interaction',
-  aboutAccordionContent3:
-    'I consider clarity of ideas and respect for others to be very important points.',
-  aboutAccordionTitle4: 'Agile methodologies',
-  aboutAccordionContent4:
-    'Knowledge about SCRUM, having already acted as Product Owner.',
-
+  about2Card3Title: 'DevOps',
+  about2Card3Content:
+    'I have experience in configuring automation with pipelines and CI/CD and managing Kubernetes clusters, hosted at Digital Ocean.',
   technologiesTitle: 'Technologies',
   technologiesSubtitle: "Technologies I've been using",
   technologiesCard1: 'TypeScript',

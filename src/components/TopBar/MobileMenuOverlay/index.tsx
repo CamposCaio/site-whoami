@@ -4,36 +4,54 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { useLocale } from '@providers/locale';
 import { useTheme } from '@providers/theme';
+import { AudioOff, AudioOn } from '@src/components/_svg';
 import { scrollController } from '@src/pages';
+import { useAudio } from '@src/providers/audio';
 import { darkTheme, lightTheme } from '@src/theme';
 
 import { Container } from './styles';
 
-export function MobileMenuOverlay({ isOpen, toggleMenu }) {
+export function MobileMenuOverlay({ isOpen, setIsOpen }) {
   const { t, locale, setLocale } = useLocale()
   const { activeTheme, setActiveTheme } = useTheme()
+  const { isAudioEnable, setIsAudioEnable } = useAudio()
 
-  function handleSelectTheme(value: string) {
-    setActiveTheme(value === 'light' ? lightTheme : darkTheme)
+  function toggleTheme({ target }) {
+    const { mode } = activeTheme.palette
+    if (target.value === mode) return
+    setIsOpen(false)
+    setActiveTheme(mode === 'light' ? darkTheme : lightTheme)
   }
 
-  function handleNavigation(page: number) {
-    toggleMenu()
+  function handleNavigation(page: string) {
+    setIsOpen(false)
     scrollController.scrollTo(page)
   }
 
   return (
     <Container theme={activeTheme} style={{ top: isOpen ? '0' : '-100%' }}>
       <div className="content">
+        {isAudioEnable ? (
+          <AudioOn
+            color={activeTheme.palette.text.primary}
+            onClick={() => setIsAudioEnable(false)}
+            className="audio-icon"
+          />
+        ) : (
+          <AudioOff
+            color={activeTheme.palette.text.primary}
+            onClick={() => setIsAudioEnable(true)}
+            className="audio-icon"
+          />
+        )}
         <div className="div-selects">
           {t.theme.translation}:
           <FormControl size="small">
             <Select
               value={activeTheme.palette.mode}
-              onChange={(e) => handleSelectTheme(e.target.value)}
+              onChange={toggleTheme}
               displayEmpty
               inputProps={{ 'aria-label': 'Without label' }}
-              sx={{ color: '#fff' }}
             >
               <MenuItem value="dark">{t.theme.dark}</MenuItem>
               <MenuItem value="light">{t.theme.light}</MenuItem>
@@ -46,10 +64,9 @@ export function MobileMenuOverlay({ isOpen, toggleMenu }) {
               onChange={(e) => setLocale(e.target.value)}
               displayEmpty
               inputProps={{ 'aria-label': 'Without label' }}
-              sx={{ color: '#fff' }}
             >
-              <MenuItem value="en-us">En US</MenuItem>
-              <MenuItem value="pt-br">Pt BR</MenuItem>
+              <MenuItem value="en-us">EN - US</MenuItem>
+              <MenuItem value="pt-br">PT - BR</MenuItem>
             </Select>
           </FormControl>
         </div>
@@ -57,37 +74,37 @@ export function MobileMenuOverlay({ isOpen, toggleMenu }) {
           <Button
             variant="text"
             color="inherit"
-            onClick={() => handleNavigation(0)}
+            onClick={() => handleNavigation('home')}
           >
-            {t.sideNavbarHome}
+            {t.home}
           </Button>
           <Button
             variant="text"
             color="inherit"
-            onClick={() => handleNavigation(1)}
+            onClick={() => handleNavigation('about')}
           >
-            {t.sideNavbarAbout}
+            {t.about}
           </Button>
           <Button
             variant="text"
             color="inherit"
-            onClick={() => handleNavigation(3)}
+            onClick={() => handleNavigation('technologies')}
           >
-            {t.sideNavbarTechnologies}
+            {t.technologies}
           </Button>
           <Button
             variant="text"
             color="inherit"
-            onClick={() => handleNavigation(4)}
+            onClick={() => handleNavigation('portfolio')}
           >
-            {t.sideNavbarPortfolio}
+            {t.portfolio}
           </Button>
           <Button
             variant="text"
             color="inherit"
-            onClick={() => handleNavigation(5)}
+            onClick={() => handleNavigation('contact')}
           >
-            {t.sideNavbarContact}
+            {t.contact}
           </Button>
         </div>
       </div>

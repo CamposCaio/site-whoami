@@ -4,7 +4,7 @@ export const Container = styled.div`
   padding-inline: 3rem;
   max-width: 630px;
 
-  @media (min-width: 900px) {
+  @media (min-width: 901px) {
     display: none;
   }
 

@@ -8,28 +8,24 @@ import { Container } from './styles';
 
 export function IconTheme() {
   const { activeTheme, setActiveTheme } = useTheme()
+  const { mode } = activeTheme.palette
 
   useEffect(() => {
-    const svgContainer = document.querySelector(
-      '.svg-container'
-    ) as HTMLDivElement
-
-    svgContainer.style.top =
-      activeTheme.palette.mode === 'light' ? '-100%' : '0'
+    const contentIconTheme = document.getElementById('content-icon-theme')
+    contentIconTheme.style.top = mode === 'light' ? '0' : '-100%'
   }, [activeTheme])
 
   return (
     <Container
-      id="icon-theme"
       onClick={() =>
-        setActiveTheme(
-          activeTheme.palette.mode === 'light' ? darkTheme : lightTheme
+        setActiveTheme(({ palette }) =>
+          palette.mode === 'light' ? darkTheme : lightTheme
         )
       }
     >
-      <div className="svg-container">
-        <Moon color={activeTheme.palette.text.primary} />
+      <div id="content-icon-theme">
         <Sun color={activeTheme.palette.text.primary} />
+        <Moon color={activeTheme.palette.text.primary} />
       </div>
     </Container>
   )

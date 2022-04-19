@@ -15,37 +15,25 @@ export const ContainerSection = styled.section`
     height: 100vh;
     z-index: -1;
     opacity: ${({ theme }: any) =>
-      theme.palette.mode === 'light' ? 0.38 : 0.2};
+      theme.palette.mode === 'light' ? 0.4 : 0.3};
   }
 
   .content {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
     padding-inline: 2rem;
   }
 
   .heading__title {
     text-align: justify;
+    margin-bottom: 0.5rem;
     @media (max-width: 610px) {
       width: min-content;
     }
   }
 
-  .cv__span-content svg {
-    @media (max-width: 330px) {
-      display: none;
-    }
-  }
-
-  .cv__span-content {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding-block: 0.5rem;
-  }
-
-  .cv__buttons-container {
+  .container-buttons {
     display: flex;
     gap: 1rem;
 

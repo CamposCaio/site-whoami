@@ -41,7 +41,7 @@ export function SectionHome() {
   }, [])
 
   useEffect(
-    () => particlesEffect.setColor(activeTheme.palette.primary.light),
+    () => particlesEffect.setColor(activeTheme.palette.primary.main),
     [activeTheme]
   )
 
@@ -54,28 +54,13 @@ export function SectionHome() {
           <h4 className="heading__subtitle">{t.homeSubtitle}</h4>
         </div>
 
-        <div className="cv__container">
-          <span className="cv__span-content">
-            <IconArrowForward fontSize="small" />
-            {t.homeCvText}
-          </span>
-
-          <div className="cv__buttons-container">
-            <Button
-              variant="outlined"
-              href="https://drive.google.com/file/d/1p6rGQDahJ8CTOpQJqX5APrSnQfDnKXUF/view?usp=sharing"
-              target="_blank"
-            >
-              <IconOpenInNew sx={{ mr: '0.5rem' }} fontSize="small" />
-              <span>{t.homeButtonOpenCV}</span>
-            </Button>
-            <Button variant="text">
-              <div>
-                <IconFileDownload sx={{ mr: '0.5rem' }} />
-                {t.homeButtonDownloadCV}
-              </div>
-            </Button>
-          </div>
+        <div className="container-buttons">
+          <Button variant="contained">
+            <span>{t.homeButtonPortfolio}</span>
+          </Button>
+          <Button variant="outlined">
+            <div>{t.homeButtonAbout}</div>
+          </Button>
         </div>
       </div>
       <div id="scroll-down" onClick={() => scrollController.scrollTo('about')}>

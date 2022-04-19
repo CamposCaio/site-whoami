@@ -1,20 +1,30 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
+  position: relative;
   width: 1.2rem;
   height: 1.2rem;
-  cursor: pointer;
   overflow: hidden;
+  transition: opacity 0.2s;
+  cursor: pointer;
 
-  .svg-container {
-    font-size: 1.2rem;
+  #content-icon-theme {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
     display: flex;
     flex-direction: column;
-    position: relative;
-    transition: all 0.4s ease;
+    transition: top 0.4s;
 
-    &:hover {
-      opacity: 0.5;
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
     }
+  }
+
+  &:hover {
+    opacity: 0.5;
   }
 `

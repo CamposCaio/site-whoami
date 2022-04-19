@@ -1,14 +1,16 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 
-import IconMenu from '@mui/icons-material/MenuOutlined';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { useLocale } from '@providers/locale';
 import { scrollController } from '@src/pages';
 
+import { AlertMusic } from './AlertMusic';
 import { IconAudio } from './IconAudio';
+import { IconMenu } from './IconMenu';
 import { IconTheme } from './IconTheme';
-import { AuthorStamp, DesktopMenu, ToggleMenu } from './styles';
+import { MobileMenuOverlay } from './MobileMenuOverlay';
+import { AuthorStamp, DesktopMenu } from './styles';
 
 export function updateNavbarLink(currentPage: string) {
   const navbar = document.getElementById('navbar')
@@ -20,9 +22,11 @@ export function updateNavbarLink(currentPage: string) {
 
 export function TopBar() {
   const { t, locale, setLocale } = useLocale()
+  const [menuOverlay, setMenuOverlay] = useState(false)
 
   return (
     <>
+      <MobileMenuOverlay isOpen={menuOverlay} setIsOpen={setMenuOverlay} />
       <AuthorStamp>Caio Campos</AuthorStamp>
 
       <DesktopMenu id="topbar__desktop-menu">
@@ -31,31 +35,31 @@ export function TopBar() {
             onClick={() => scrollController.scrollTo('home')}
             className="home active"
           >
-            {t.navbarHome}
+            {t.home}
           </a>
           <a
             onClick={() => scrollController.scrollTo('about')}
             className="about"
           >
-            {t.navbarAbout}
+            {t.about}
           </a>
           <a
             onClick={() => scrollController.scrollTo('technologies')}
             className="technologies"
           >
-            {t.navbarTechnologies}
+            {t.technologies}
           </a>
           <a
             onClick={() => scrollController.scrollTo('portfolio')}
             className="portfolio"
           >
-            {t.navbarPortfolio}
+            {t.portfolio}
           </a>
           <a
             onClick={() => scrollController.scrollTo('contact')}
             className="contact"
           >
-            {t.navbarContact}
+            {t.contact}
           </a>
         </nav>
 
@@ -73,9 +77,10 @@ export function TopBar() {
           </Select>
         </div>
       </DesktopMenu>
-      <ToggleMenu>
-        <IconMenu />
-      </ToggleMenu>
+
+      <AlertMusic />
+
+      <IconMenu isOpen={menuOverlay} setIsOpen={setMenuOverlay} />
     </>
   )
 }

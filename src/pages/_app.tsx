@@ -6,6 +6,7 @@ import * as React from 'react';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import { LocaleProvider } from '@providers/locale';
 import { ThemeProvider } from '@providers/theme';
+import { AudioProvider } from '@src/providers/audio';
 
 import createEmotionCache from '../createEmotionCache';
 
@@ -39,7 +40,9 @@ export default function MyApp(props: MyAppProps) {
       </Head>
       <ThemeProvider>
         <LocaleProvider>
-          <Component {...pageProps} />
+          <AudioProvider>
+            <Component {...pageProps} />
+          </AudioProvider>
         </LocaleProvider>
       </ThemeProvider>
     </CacheProvider>

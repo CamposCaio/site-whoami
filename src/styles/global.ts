@@ -40,7 +40,7 @@ export function getGlobalStyle({ palette }: Theme) {
       font-family: 'Roboto', sans-serif;
       font-weight: 300;
       white-space: pre-line;
-      letter-spacing: 1.5px;
+      /* letter-spacing: 1.5px; */
       line-height: 150%;
       /* letter-spacing: 0.75px;
       line-height: 1.25rem; */
@@ -56,10 +56,10 @@ export function getGlobalStyle({ palette }: Theme) {
     h5,
     h6,
     strong {
-      letter-spacing: 0px;
+      /* letter-spacing: 0px; */
       font-weight: 200;
       font-family: 'Poppins', sans-serif;
-      line-height: 125%;
+      line-height: 105%;
       text-align: left;
     }
 

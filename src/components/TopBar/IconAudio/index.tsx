@@ -1,23 +1,19 @@
-import { playBackgroundMusic } from '@src/components/BackgroundMusic';
+import { AudioOff, AudioOn } from '@components/_svg';
+import { useAudio } from '@src/providers/audio';
+import { useTheme } from '@src/providers/theme';
 
 import { Container } from './styles';
 
-export function changeIconAudio(isAudioEnabled: boolean) {
-  const iconAudio = document.getElementById('icon-audio')
-  iconAudio.classList.add(isAudioEnabled ? 'on' : 'off')
-  iconAudio.classList.remove(isAudioEnabled ? 'off' : 'on')
-}
-
 export function IconAudio() {
-  function toggleAudio({ target }) {
-    target.classList.contains('off')
-      ? playBackgroundMusic(true)
-      : playBackgroundMusic(false)
-  }
+  const { isAudioEnable, setIsAudioEnable } = useAudio()
+  const { activeTheme } = useTheme()
 
   return (
-    <Container>
-      <div id="icon-audio" className="off" onClick={toggleAudio} />
+    <Container onClick={() => setIsAudioEnable(!isAudioEnable)}>
+      <div id="content-icon-audio">
+        <AudioOff color={activeTheme.palette.text.primary} />
+        <AudioOn color={activeTheme.palette.text.primary} />
+      </div>
     </Container>
   )
 }

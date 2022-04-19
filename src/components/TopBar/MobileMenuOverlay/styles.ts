@@ -6,12 +6,13 @@ export const Container = styled.div`
   height: 100%;
   left: 0;
   top: -100%;
+  z-index: 10;
   transition: all 0.3s;
-  background-color: ${(props: any) => props.theme.palette.primary.main};
+  background-color: ${(props: any) => props.theme.palette.background.default};
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (min-width: 1201px) {
+  @media (min-width: 1081px) {
     display: none;
   }
 
@@ -19,36 +20,35 @@ export const Container = styled.div`
     width: min(100% - 2rem, 15rem);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 3rem;
+
+    .audio-icon {
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      left: 3rem;
+      top: 3rem;
+    }
   }
 
   .div-selects {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    grid-row-gap: 0.5rem;
-    padding-bottom: 2rem;
-    color: #fff;
+    grid-row-gap: 1rem;
+  }
+
+  .MuiSelect-select,
+  .MuiMenuItem-root {
+    font-size: 1rem;
   }
 
   .div-navigation {
     display: flex;
     flex-direction: column;
-    color: rgba(255, 255, 255, 0.87);
 
     & > button {
       height: 4rem;
-      position: relative;
-
-      &:not(:last-child):after {
-        content: '';
-        background-color: ${(props: any) => props.theme.palette.divider};
-        display: block;
-        position: absolute;
-        padding-top: 1px;
-        padding-left: 100%;
-        margin-top: 4rem;
-      }
     }
   }
 

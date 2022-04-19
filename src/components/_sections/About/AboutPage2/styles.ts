@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   .content {
     width: min(100% - 6rem, 820px);
-    @media (max-width: 899px) {
+    @media (max-width: 900px) {
       display: none;
     }
   }

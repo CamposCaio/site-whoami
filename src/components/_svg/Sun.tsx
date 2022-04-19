@@ -15,6 +15,11 @@ const SvgSun = (props: SVGProps<SVGSVGElement>) => (
       stroke={props.color}
       strokeLinecap="round"
       strokeWidth={0.709}
+      style={{
+        strokeWidth: 1,
+        strokeMiterlimit: 4,
+        strokeDasharray: 'none',
+      }}
     />
   </svg>
 )

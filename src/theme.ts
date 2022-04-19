@@ -5,32 +5,9 @@ const components: Theme['components'] = {
   MuiButton: {
     styleOverrides: {
       root: ({ ownerState, theme }) => ({
-        ...(ownerState.variant === 'outlined' && {
-          borderColor: theme.palette.primary.main,
-          borderRadius: '2px',
-          '& > *': {
-            zIndex: 2,
-          },
-          '&:after': {
-            content: '""',
-            position: 'absolute',
-            // zIndex: '-1',
-            right: 0,
-            width: 0,
-            height: '100%',
-            backgroundColor: theme.palette.primary.main,
-            transition: 'width 0.4s ease',
-          },
-
-          '&:hover': {
-            color: theme.palette.primary.contrastText,
-
-            '&:after': {
-              left: 0,
-              width: '100%',
-            },
-          },
-        }),
+        minWidth: '128px',
+        // fontSize: '1rem',
+        borderRadius: '2px',
 
         ...(ownerState.variant === 'text' && {
           overflow: 'hidden',
@@ -63,20 +40,17 @@ const components: Theme['components'] = {
             },
           },
         }),
-
-        ...(ownerState.variant === 'contained' && {
-          borderRadius: '2px',
-        }),
       }),
     },
   },
   MuiSelect: {
     styleOverrides: {
       select: ({ theme }) => ({
-        fontSize: '81.25%',
+        fontSize: '0.875rem',
+        fontFamily: '"Poppins", sans-serif',
+        fontWeight: 200,
         padding: 0,
         paddingRight: '2.5rem',
-        color: theme.palette.text.secondary,
       }),
     },
   },
@@ -98,7 +72,9 @@ const components: Theme['components'] = {
   MuiMenuItem: {
     styleOverrides: {
       root: {
-        fontSize: '81.25%',
+        fontSize: '0.875rem',
+        fontFamily: '"Poppins", sans-serif',
+        fontWeight: 200,
         backgroundColor: 'transparent',
       },
     },
@@ -111,6 +87,19 @@ const components: Theme['components'] = {
         paddingLeft: '3rem',
         paddingTop: '1rem',
       },
+    },
+  },
+
+  MuiAlert: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        fontWeight: 300,
+        fontSize: '0.9375rem',
+        paddingBlock: '0.25rem',
+        '@media (max-width: 1080px)': {
+          backgroundColor: theme.palette.background.default,
+        },
+      }),
     },
   },
 }

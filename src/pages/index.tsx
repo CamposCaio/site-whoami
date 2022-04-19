@@ -3,7 +3,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head';
 import { useEffect } from 'react';
 
-import { DialogMusicPreference } from '@components/DialogMusicPreference';
 import { TopBar } from '@components/TopBar';
 import { About } from '@sections/About';
 import { SectionContact } from '@sections/Contact';
@@ -11,7 +10,6 @@ import { SectionHome } from '@sections/Home';
 import { SectionPortfolio } from '@sections/Portfolio';
 import { SectionTechnologies } from '@sections/Technologies';
 import { Transition, transitionsControll } from '@src/components/_sections/Transition';
-import { BackgroundMusic } from '@src/components/BackgroundMusic';
 import { useLocale } from '@src/providers/locale';
 import { ScrollController } from '@src/snapScroll';
 
@@ -32,8 +30,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Caio Campos</title>
       </Head>
-      <BackgroundMusic />
-      <DialogMusicPreference />
+      <audio id="bg-music" src="/audio/background-music.mp3" loop />
       <TopBar />
       {/* Page sections: */}
       <SectionHome />

@@ -9,13 +9,14 @@ const Container = styled.div`
   height: 100vh;
   overflow: hidden;
   background-color: ${({ theme }: any) =>
-    theme.palette.mode === 'light' ? '#EAEAEA' : '#000000'};
+    theme.palette.mode === 'light' ? '#EDEDED' : '#000000'};
 
   .scroll-parallax {
     font-size: 5rem;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%) !important;
+    color: ${({ theme }: any) => theme.palette.text.secondary};
     /* color: #fff; */
   }
 `

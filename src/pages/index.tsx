@@ -34,29 +34,17 @@ const Home: NextPage = () => {
       <TopBar />
       {/* Page sections: */}
       <SectionHome />
-      <Transition
-        pageNumber="1"
-        textup={t.navbarHome}
-        textdown={t.navbarAbout}
-      />
+      <Transition pageNumber="1" textup={t.home} textdown={t.about} />
       <About />
-      <Transition
-        pageNumber="3"
-        textup={t.navbarAbout}
-        textdown={t.navbarTechnologies}
-      />
+      <Transition pageNumber="3" textup={t.about} textdown={t.technologies} />
       <SectionTechnologies />
       <Transition
         pageNumber="5"
-        textup={t.navbarTechnologies}
-        textdown={t.navbarPortfolio}
+        textup={t.technologies}
+        textdown={t.portfolio}
       />
       <SectionPortfolio />
-      <Transition
-        pageNumber="7"
-        textup={t.navbarPortfolio}
-        textdown={t.navbarContact}
-      />
+      <Transition pageNumber="7" textup={t.portfolio} textdown={t.contact} />
       <SectionContact />
     </>
   )

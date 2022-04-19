@@ -19,7 +19,7 @@ export default {
   ],
   homeTitle: 'Uma experiência Full Stack',
   homeSubtitle: 'para construir tudo o que você quiser.',
-  homeButtonPortfolio: 'Portfólio',
+  homeButtonPortfolio: 'Confira meu portfólio',
   homeButtonAbout: 'Sobre mim',
   homeScrollDown: 'Rolar para baixo',
   about1Title: 'Experiência profissional',

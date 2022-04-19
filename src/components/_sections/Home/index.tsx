@@ -32,11 +32,7 @@ export function SectionHome() {
     window.addEventListener('mousemove', particlesEffect.handleMouseMove)
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY === 0) particlesEffect.start(ctx)
-      else {
-        particlesEffect.stop()
-        document.getElementById('scroll-down').style.display = 'none'
-      }
+      window.scrollY === 0 ? particlesEffect.start(ctx) : particlesEffect.stop()
     })
   }, [])
 

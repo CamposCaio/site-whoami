@@ -15,7 +15,7 @@ export const ContainerSection = styled.section`
     height: 100vh;
     z-index: -1;
     opacity: ${({ theme }: any) =>
-      theme.palette.mode === 'light' ? 0.4 : 0.3};
+      theme.palette.mode === 'light' ? 0.45 : 0.3};
   }
 
   .content {

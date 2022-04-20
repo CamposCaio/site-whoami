@@ -50,12 +50,19 @@ export function SectionHome() {
           <h4 className="heading__subtitle">{t.homeSubtitle}</h4>
         </div>
 
+        <div className="container-text">
+          <p>{t.homeContentText}</p>
+        </div>
+
         <div className="container-buttons">
           <Button variant="contained">
-            <span>{t.homeButtonPortfolio}</span>
+            <div>{t.homeButtonLearnMore}</div>
           </Button>
-          <Button variant="outlined">
-            <div>{t.homeButtonAbout}</div>
+          <Button variant="text">
+            <div>
+              {t.homeButtonPortfolio}
+              <IconArrowForward sx={{ ml: '0.5rem', fontSize: '0.9375rem' }} />
+            </div>
           </Button>
         </div>
       </div>

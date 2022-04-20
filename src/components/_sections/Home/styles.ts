@@ -19,25 +19,30 @@ export const ContainerSection = styled.section`
   }
 
   .content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     padding-inline: 2rem;
+    @media (max-width: 780px) {
+      max-width: 360px;
+    }
   }
 
   .heading__title {
     text-align: justify;
-    margin-bottom: 0.5rem;
-    @media (max-width: 610px) {
-      width: min-content;
+  }
+
+  .container-text {
+    color: ${({ theme }: any) => theme.palette.text.secondary};
+    width: 40ch;
+    @media (max-width: 780px) {
+      width: 100%;
     }
+    padding-block: 4rem 1rem;
   }
 
   .container-buttons {
     display: flex;
     gap: 1rem;
 
-    @media (max-width: 610px) {
+    @media (max-width: 780px) {
       flex-direction: column;
     }
   }

@@ -19,8 +19,10 @@ export default {
   ],
   homeTitle: 'Uma experiência Full Stack',
   homeSubtitle: 'para construir tudo o que você quiser.',
+  homeContentText:
+    'Um desenvolvedor web pode fazer muito mais do que apenas interfaces de usuário e APIs Rest.',
+  homeButtonLearnMore: 'Descubra mais',
   homeButtonPortfolio: 'Confira meu portfólio',
-  homeButtonAbout: 'Sobre mim',
   homeScrollDown: 'Rolar para baixo',
   about1Title: 'Experiência profissional',
   about1Content: [

@@ -59,12 +59,12 @@ export function getGlobalStyle({ palette }: Theme) {
       /* letter-spacing: 0px; */
       font-weight: 200;
       font-family: 'Poppins', sans-serif;
-      line-height: 105%;
+      line-height: 112%;
       text-align: left;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.4rem;
     }
 
     h2 {
@@ -77,7 +77,7 @@ export function getGlobalStyle({ palette }: Theme) {
     }
 
     h4 {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
 
     h6 {

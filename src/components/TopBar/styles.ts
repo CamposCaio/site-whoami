@@ -6,18 +6,17 @@ export const AuthorStamp = styled.div`
   top: 50vh;
   height: max(26px, calc(50vw - 1080px / 2));
   transform: translate(-50%, -50%) rotate(-90deg) translateY(50%);
-  color: ${({ theme }: any) => theme.palette.text.secondary};
+  color: ${({ theme }: any) => theme.palette.text.disabled};
   display: flex;
   align-items: flex-end;
+  font-family: 'Poppins', sans-serif;
 
   &:after {
     content: '';
     position: absolute;
     background-color: ${({ theme }: any) => theme.palette.divider};
-    width: 50vh;
+    width: calc(50% + 50vh);
     height: 1px;
-    margin-left: calc(100% + 4px);
-    margin-bottom: 0.5rem;
   }
 
   @media (max-width: 1080px) {
@@ -72,11 +71,11 @@ export const DesktopMenu = styled.div`
 
   #settings {
     position: absolute;
-    right: 3rem;
+    right: max(3rem, calc(50vw - 1080px / 2));
     top: 1rem;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
 
     fieldset {
       outline: 0 !important;

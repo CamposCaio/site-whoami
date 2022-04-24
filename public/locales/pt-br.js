@@ -12,16 +12,15 @@ export default {
   technologies: 'Tecnologias',
   portfolio: 'Portfólio',
   contact: 'Contato',
-  topbarAlertMusic: [
+  alertMusic: [
     'Este site contém música de fundo - ',
-    'clique aqui',
-    ' para ativar',
+    'clique aqui ',
+    'para ativar.',
   ],
   homeTitle: 'Uma experiência Full Stack',
   homeSubtitle: 'para construir tudo o que você quiser.',
-  homeContentText:
-    'Um desenvolvedor web pode fazer muito mais do que apenas interfaces de usuário e APIs Rest.',
-  homeButtonLearnMore: 'Descubra mais',
+  homeContentText: 'Front-end / Back-end / DevOps.',
+  homeButtonLearnMore: 'Saiba mais',
   homeButtonPortfolio: 'Confira meu portfólio',
   homeScrollDown: 'Rolar para baixo',
   about1Title: 'Experiência profissional',

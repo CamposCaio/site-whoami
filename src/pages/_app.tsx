@@ -1,14 +1,14 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import PropTypes from 'prop-types';
-import * as React from 'react';
+import { AppProps } from 'next/app'
+import Head from 'next/head'
+import PropTypes from 'prop-types'
+import * as React from 'react'
 
-import { CacheProvider, EmotionCache } from '@emotion/react';
-import { LocaleProvider } from '@providers/locale';
-import { ThemeProvider } from '@providers/theme';
-import { AudioProvider } from '@src/providers/audio';
+import { CacheProvider, EmotionCache } from '@emotion/react'
+import { LocaleProvider } from '@providers/locale'
+import { ThemeProvider } from '@providers/theme'
+import { AudioProvider } from '@src/providers/audio'
 
-import createEmotionCache from '../createEmotionCache';
+import createEmotionCache from '../createEmotionCache'
 
 const clientSideEmotionCache = createEmotionCache()
 

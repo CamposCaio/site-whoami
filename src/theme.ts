@@ -1,5 +1,4 @@
-import { sliderClasses } from '@mui/material/Slider';
-import { createTheme, Theme } from '@mui/material/styles';
+import { createTheme, Theme } from '@mui/material/styles'
 
 const components: Theme['components'] = {
   MuiButton: {
@@ -7,7 +6,7 @@ const components: Theme['components'] = {
       root: ({ ownerState, theme }) => ({
         minWidth: '128px',
         fontSize: '0.875rem',
-        fontFamily: '"Poppins", sans-serif',
+        fontFamily: '"Open Sans", sans-serif',
         fontWeight: 400,
         height: '2.4rem',
         borderRadius: '1.2rem',
@@ -17,80 +16,70 @@ const components: Theme['components'] = {
 
         div: {
           zIndex: 2,
-          position: 'relative',
-          display: 'flex',
-          alignItems: 'center',
-          width: 'max-content',
-        },
-
-        '&:hover': {
-          div: {
-            animation:
-              'text-out 0.2s ease-out forwards, 0.4s text-in 0.2s ease-in forwards',
-          },
-        },
-
-        '@keyframes text-out': {
-          to: {
-            transform: 'translateY(-112%)',
-          },
-        },
-
-        '@keyframes text-in': {
-          '0%': {
-            transform: 'translateY(100%)',
-          },
-          '40%': {
-            transform: 'translateY(-12%)',
-          },
-          '100%': {
-            transform: 'translateY(0%)',
-          },
         },
 
         ...(ownerState.variant === 'contained' && {
           '&:after': {
             content: '""',
             position: 'absolute',
-            bottom: 0,
-            height: 0,
-            width: '100%',
+            left: 0,
+            height: '100%',
+            width: 0,
             backgroundColor: theme.palette.primary.dark,
-            transition: 'height 0.4s ease',
+            transition: 'width 0.4s ease',
           },
-          // '&:hover': {
-          //   backgroundColor: theme.palette.primary.main,
-          //   '&:after': {
-          //     height: '100%',
-          //   },
-          //   div: {
-          //     animation:
-          //       'text-out 0.2s ease-out forwards, 0.4s text-in 0.2s ease-in forwards',
-          //   },
-          // },
+          '&:hover': {
+            backgroundColor: theme.palette.primary.main,
+            '&:after': {
+              width: '100%',
+            },
+          },
         }),
       }),
     },
   },
   MuiSelect: {
     styleOverrides: {
-      select: ({ theme }) => ({
-        fontSize: '0.875rem',
-        fontFamily: '"Poppins", sans-serif',
+      select: {
+        fontSize: '0.8125rem',
+        fontFamily: '"Open Sans", sans-serif',
         fontWeight: 200,
         padding: 0,
         paddingRight: '2.5rem',
-      }),
+      },
     },
   },
   MuiPaper: {
     styleOverrides: {
       root: {
-        borderRadius: '2px',
         backgroundImage: 'none',
       },
     },
   },
+  // MuiDialog: {
+  //   styleOverrides: {
+  //     root: {
+  //       '.MuiPaper-root': {
+  //         padding: '1.5rem',
+  //         maxWidth: '510px',
+  //       },
+  //       '.MuiTypography-root': {
+  //         padding: '0',
+  //         fontFamily: '"Montserrat", sans-serif',
+  //         fontWeight: 300,
+  //         fontSize: '2rem',
+  //         lineHeight: '100%',
+  //       },
+  //       '.MuiDialogContent-root': {
+  //         padding: '0',
+  //         marginBlock: '1rem 1.5rem',
+  //       },
+  //       '.MuiDialogActions-root': {
+  //         padding: 0,
+  //       },
+  //     },
+  //   },
+  // },
   MuiList: {
     styleOverrides: {
       root: {
@@ -101,27 +90,17 @@ const components: Theme['components'] = {
   MuiMenuItem: {
     styleOverrides: {
       root: {
-        fontSize: '0.875rem',
-        fontFamily: '"Poppins", sans-serif',
+        fontSize: '0.8125rem',
+        fontFamily: '"Open Sans", sans-serif',
         fontWeight: 200,
         backgroundColor: 'transparent',
       },
     },
   },
-  MuiDialogTitle: {
-    styleOverrides: {
-      root: {
-        fontWeight: 300,
-        fontSize: '1.8rem',
-        paddingLeft: '3rem',
-        paddingTop: '1rem',
-      },
-    },
-  },
-
   MuiAlert: {
     styleOverrides: {
       root: ({ theme }) => ({
+        fontFamily: '"Open Sans", sans-serif',
         fontWeight: 300,
         fontSize: '0.9375rem',
         paddingBlock: '0.25rem',

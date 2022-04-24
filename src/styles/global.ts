@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
-import { Theme } from '@mui/material';
+import { css } from '@emotion/react'
+import { Theme } from '@mui/material'
 
 export function getGlobalStyle({ palette }: Theme) {
   return css`
@@ -37,16 +37,17 @@ export function getGlobalStyle({ palette }: Theme) {
     textarea,
     select,
     button {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       font-weight: 300;
       white-space: pre-line;
-      /* letter-spacing: 1.5px; */
       line-height: 150%;
-      /* letter-spacing: 0.75px;
-      line-height: 1.25rem; */
-      /* word-spacing: 107.5%; */
       color: ${palette.text.primary};
       text-align: justify;
+    }
+
+    b {
+      font-weight: 400;
+      color: ${palette.primary.main};
     }
 
     h1,
@@ -56,15 +57,15 @@ export function getGlobalStyle({ palette }: Theme) {
     h5,
     h6,
     strong {
-      /* letter-spacing: 0px; */
       font-weight: 200;
-      font-family: 'Poppins', sans-serif;
-      line-height: 112%;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 125%;
       text-align: left;
     }
 
     h1 {
-      font-size: 3.4rem;
+      font-size: 3.6rem;
+      line-height: 100%;
     }
 
     h2 {
@@ -73,11 +74,11 @@ export function getGlobalStyle({ palette }: Theme) {
     }
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.375rem;
     }
 
     h4 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
 
     h6 {
@@ -97,6 +98,24 @@ export function getGlobalStyle({ palette }: Theme) {
       text-decoration: none;
       color: inherit;
       cursor: pointer;
+    }
+
+    .global__container-icon {
+      position: relative;
+      left: 0;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        opacity: 0.5;
+        background-color: rgba(127, 127, 127, 0.38);
+      }
     }
   `
 }

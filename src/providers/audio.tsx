@@ -1,4 +1,11 @@
-import { createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 
 type PropsAudioContext = {
   isAudioEnable: boolean
@@ -21,14 +28,24 @@ export function AudioProvider({ children }) {
 
   useEffect(() => {
     const bgMusic = document.getElementById('bg-music') as HTMLAudioElement
-    const contentIconAudio = document.getElementById('content-icon-audio')
+    const containerIconAudio = document.querySelector(
+      '#large-top-bar .container-icon-audio'
+    )
+    const containerAudioOff = containerIconAudio.querySelector(
+      '.container-audio-off'
+    ) as HTMLDivElement
+    const containerAudioOn = containerIconAudio.querySelector(
+      '.container-audio-on'
+    ) as HTMLDivElement
 
     if (isAudioEnable) {
       bgMusic.play()
-      contentIconAudio.style.top = '-100%'
+      containerAudioOff.style.opacity = '0'
+      containerAudioOn.style.opacity = '1'
     } else {
       bgMusic.pause()
-      contentIconAudio.style.top = '0'
+      containerAudioOn.style.opacity = '0'
+      containerAudioOff.style.opacity = '1'
     }
   }, [isAudioEnable])
 

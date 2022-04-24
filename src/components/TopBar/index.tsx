@@ -1,36 +1,36 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import { useLocale } from '@providers/locale';
-import { scrollController } from '@src/pages';
+import MenuItem from '@mui/material/MenuItem'
+import Select from '@mui/material/Select'
+import { useLocale } from '@providers/locale'
+import { scrollController } from '@src/pages'
 
-import { AlertMusic } from './AlertMusic';
-import { IconAudio } from './IconAudio';
-import { IconMenu } from './IconMenu';
-import { IconTheme } from './IconTheme';
-import { MobileMenuOverlay } from './MobileMenuOverlay';
-import { AuthorStamp, DesktopMenu } from './styles';
+import { IconAudio } from './IconAudio'
+import { IconMenu } from './IconMenu'
+import { IconTheme } from './IconTheme'
+import { Container } from './styles'
 
 export function updateNavbarLink(currentPage: string) {
-  const navbar = document.getElementById('navbar')
+  const navbar = document.querySelector('#large-top-bar .navbar')
   const activeLink = navbar.querySelector('a.active')
   activeLink.classList.remove('active')
   const newActiveLink = navbar.querySelector(`.${currentPage}`)
   newActiveLink.classList.add('active')
 }
 
-export function TopBar() {
+export function LargeTopBar() {
   const { t, locale, setLocale } = useLocale()
-  const [menuOverlay, setMenuOverlay] = useState(false)
+  const [open, setOpen] = useState(true)
 
   return (
-    <>
-      <MobileMenuOverlay isOpen={menuOverlay} setIsOpen={setMenuOverlay} />
-      <AuthorStamp>Caio Campos</AuthorStamp>
+    <Container id="large-top-bar">
+      <IconMenu isOpen={open} setIsOpen={setOpen} />
+      <div className="content">
+        <div className="container-icon-audio">
+          <IconAudio />
+        </div>
 
-      <DesktopMenu id="topbar__desktop-menu">
-        <nav id="navbar">
+        <nav className="navbar">
           <a
             onClick={() => scrollController.scrollTo('home')}
             className="home active"
@@ -63,8 +63,7 @@ export function TopBar() {
           </a>
         </nav>
 
-        <div id="settings">
-          <IconAudio />
+        <div className="settings">
           <IconTheme />
           <Select
             value={locale}
@@ -76,11 +75,7 @@ export function TopBar() {
             <MenuItem value="pt-br">PT - BR</MenuItem>
           </Select>
         </div>
-      </DesktopMenu>
-
-      <AlertMusic />
-
-      <IconMenu isOpen={menuOverlay} setIsOpen={setMenuOverlay} />
-    </>
+      </div>
+    </Container>
   )
 }

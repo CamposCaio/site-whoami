@@ -1,17 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
-import { Container } from './styles';
+import { Container } from './styles'
 
 export function IconMenu({ isOpen, setIsOpen }) {
   useEffect(() => {
-    const toggleMenu = document.getElementById('toggle-menu')
+    const toggleMenu = document.querySelector('#large-top-bar .toggle-menu')
     isOpen
       ? toggleMenu.classList.add('open')
       : toggleMenu.classList.remove('open')
   }, [isOpen])
 
   return (
-    <Container id="toggle-menu" onClick={() => setIsOpen(!isOpen)}>
+    <Container className="toggle-menu" onClick={() => setIsOpen(!isOpen)}>
       <span></span>
       <span></span>
       <span></span>

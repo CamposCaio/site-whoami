@@ -1,9 +1,9 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document';
-import * as React from 'react';
+import Document, { Head, Html, Main, NextScript } from 'next/document'
+import * as React from 'react'
 
-import createEmotionServer from '@emotion/server/create-instance';
+import createEmotionServer from '@emotion/server/create-instance'
 
-import createEmotionCache from '../createEmotionCache';
+import createEmotionCache from '../createEmotionCache'
 
 export default class MyDocument extends Document {
   render() {
@@ -13,9 +13,14 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon.svg" />
 
           <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@300;400&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Open+Sans:wght@300;400&display=swap"
             rel="stylesheet"
           />
+
+          {/* <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@300;400&display=swap"
+            rel="stylesheet"
+          /> */}
 
           {this.props['emotionStyleTags']}
         </Head>

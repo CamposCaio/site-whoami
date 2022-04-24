@@ -1,30 +1,58 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const Container = styled.div`
-  position: relative;
-  width: 1.2rem;
-  height: 1.2rem;
-  overflow: hidden;
-  transition: opacity 0.2s;
-  cursor: pointer;
-
-  #content-icon-audio {
+  .container-audio-off,
+  .container-audio-on {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    display: flex;
-    flex-direction: column;
-    transition: top 0.4s;
-
-    svg {
-      width: 1.2rem;
-      height: 1.2rem;
-    }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    transition: opacity 0.4s;
   }
 
-  &:hover {
-    opacity: 0.5;
+  .container-audio-on {
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    & span {
+      padding-right: 1px;
+      height: 100%;
+      background-color: ${({ theme }: any) => theme.palette.text.secondary};
+
+      &:nth-of-type(1) {
+        animation: volume-animation 1s ease infinite;
+      }
+      &:nth-of-type(2) {
+        animation: volume-animation 1s ease infinite;
+        animation-delay: 0.5s;
+      }
+      &:nth-of-type(3) {
+        animation: volume-animation 1s ease infinite;
+        animation-delay: 0.25s;
+      }
+      &:nth-of-type(4) {
+        animation: volume-animation 1s ease infinite;
+        animation-delay: 0.75s;
+      }
+
+      @keyframes volume-animation {
+        0% {
+          height: 0;
+        }
+
+        33% {
+          height: 100%;
+        }
+
+        100% {
+          height: 0;
+        }
+      }
+    }
   }
 `

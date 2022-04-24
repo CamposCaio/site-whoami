@@ -9,15 +9,17 @@ const Container = styled.div`
   height: 100vh;
   overflow: hidden;
   background-color: ${({ theme }: any) =>
-    theme.palette.mode === 'light' ? '#EDEDED' : '#000000'};
+    theme.palette.mode === 'light' ? '#EAEAEA' : '#000000'};
 
   .scroll-parallax {
     font-size: 5rem;
+    /* font-weight: 300; */
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%) !important;
-    color: ${({ theme }: any) => theme.palette.text.secondary};
-    /* color: #fff; */
+    color: ${({ theme }: any) => theme.palette.text.primary};
+    -webkit-box-reflect: below -12px linear-gradient(rgba(234, 234, 234, 0.1)
+          20%, rgba(255, 255, 255, 0.2));
   }
 `
 

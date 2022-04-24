@@ -1,17 +1,22 @@
 import type { NextPage } from 'next'
 
-import Head from 'next/head';
-import { useEffect } from 'react';
+import Head from 'next/head'
+import { useEffect } from 'react'
 
-import { TopBar } from '@components/TopBar';
-import { About } from '@sections/About';
-import { SectionContact } from '@sections/Contact';
-import { SectionHome } from '@sections/Home';
-import { SectionPortfolio } from '@sections/Portfolio';
-import { SectionTechnologies } from '@sections/Technologies';
-import { Transition, transitionsControll } from '@src/components/_sections/Transition';
-import { useLocale } from '@src/providers/locale';
-import { ScrollController } from '@src/snapScroll';
+import { LargeTopBar } from '@components/TopBar'
+import { About } from '@sections/About'
+import { SectionContact } from '@sections/Contact'
+import { SectionHome } from '@sections/Home'
+import { SectionPortfolio } from '@sections/Portfolio'
+import { SectionTechnologies } from '@sections/Technologies'
+import {
+  Transition,
+  transitionsControll,
+} from '@src/components/_sections/Transition'
+import { useLocale } from '@src/providers/locale'
+import { ScrollController } from '@src/snapScroll'
+import AuthorStamp from '@src/components/AuthorStamp'
+import { AlertMusic } from '@src/components/AlertMusic'
 
 export const scrollController = new ScrollController(4)
 
@@ -31,7 +36,9 @@ const Home: NextPage = () => {
         <title>Caio Campos</title>
       </Head>
       <audio id="bg-music" src="/audio/background-music.mp3" loop />
-      <TopBar />
+      <AlertMusic />
+      <AuthorStamp />
+      <LargeTopBar />
       {/* Page sections: */}
       <SectionHome />
       <Transition pageNumber="1" textup={t.home} textdown={t.about} />
